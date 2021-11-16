@@ -27,9 +27,9 @@
         </b-row>
         <b-row>
             <b-col><sheep/></b-col>
+            <b-col><turtle/></b-col>
             <b-col></b-col>
-            <b-col></b-col>
-            <b-col></b-col>
+            <b-col><viper/></b-col>
             <b-col></b-col>
             <b-col></b-col>
         </b-row>
@@ -64,9 +64,13 @@
     import Quetzal from "./animals_svg/quetzal";
     import Raccoon from "./animals_svg/raccoon";
     import Sheep from "./animals_svg/sheep";
+    import Turtle from "./animals_svg/turtle";
+    import Viper from "./animals_svg/viper";
     export default {
         name: "alphabet",
         components: {
+            Viper,
+            Turtle,
             Sheep,
             Raccoon,
             Quetzal,
