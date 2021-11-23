@@ -1,5 +1,5 @@
 <template>
-    <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 1900 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
         <text id="Letters" transform="matrix(1.0281 0 0 1 562.6792 652.0333)">
             <tspan x="0" y="0" class="st0 st1">C</tspan>
