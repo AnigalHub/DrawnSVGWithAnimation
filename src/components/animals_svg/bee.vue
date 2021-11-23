@@ -1,6 +1,11 @@
 <template>
     <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 1900 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+        <text id="Letters" transform="matrix(1.0281 0 0 1 609.9177 924.8158)">
+            <tspan x="0" y="0" class="st26 st27">B</tspan>
+            <tspan x="142.44" y="0" class="st26 st28"> </tspan>
+            <tspan x="158.3" y="0" class="st26 st27">b</tspan>
+        </text>
         <g id="Square">
 	        <path d="M1349,201v798H551V201H1349 M1350,200H550v800h800V200L1350,200z"/>
         </g>
@@ -75,11 +80,6 @@
                 <path class="st4" d="M1175.1,495.72c-16.36,12.44-38.47,23.74-67.25,26.18c-28.88,2.45-56.46-4.7-79.19-13.88"/>
 	        </g>
         </g>
-        <text id="Letters" transform="matrix(1.0281 0 0 1 609.9177 924.8158)">
-            <tspan x="0" y="0" class="st26 st27">B</tspan>
-            <tspan x="142.44" y="0" class="st26 st28"> </tspan>
-            <tspan x="158.3" y="0" class="st26 st27">b</tspan>
-        </text>
     </svg>
 </template>
 
