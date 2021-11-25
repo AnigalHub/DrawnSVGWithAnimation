@@ -1,5 +1,5 @@
 <template>
-   <svg enable-background="new 0 0 1920 951.55" version="1.1" viewBox="0 0 1920 951.55" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" >
+   <svg viewBox="0 0 1320 1080" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" >
       <circle class="st0" cx="850.5" cy="284.8" r="109"/>
       <path class="st1" d="m850.4 175.8c59.9 0 108.5 48.6 108.5 108.5s-48.5 108.5-108.5 108.5c-59.9 0-108.5-48.6-108.5-108.5 0-28.8 11.4-56.4 31.8-76.7 20.4-20.5 48-31.9 76.7-31.8m0-1c-60.5 0-109.5 49-109.5 109.5s49.1 109.5 109.5 109.5c60.5 0 109.5-49 109.5-109.5 0.2-60.5-49-109.5-109.5-109.5 0.2 0 0.2 0 0 0z"/>
       <ellipse class="st2" cx="825.3" cy="263.6" rx="97" ry="103.5"/>
