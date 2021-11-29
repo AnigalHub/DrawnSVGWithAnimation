@@ -25,7 +25,6 @@ export default {
       font-family: 'Poiret One', cursive;
       font-weight: 800 !important;
   }
-
   #mainMenu, #gameMenu{
       padding-top: 15%;
       button{
@@ -38,7 +37,7 @@ export default {
           transition-duration: 0.4s;
       }
   }
-  #mainMenu, #gameMenu, #alphabet,#colorChange,#loopingAnimation {
+  #mainMenu, #gameMenu, #alphabet,#colorChange,#loopingAnimation,#wordConstructor, #collectCouple {
       button {
           border: none;
           border-radius: 10px;
@@ -58,7 +57,7 @@ export default {
           margin-bottom: 0 !important;
       }
   }
-  #alphabet,#colorChange,#loopingAnimation{
+  #alphabet,#colorChange,#loopingAnimation,#wordConstructor,#collectCouple{
       margin-left: 60px;
       button{
           width: 150px;
