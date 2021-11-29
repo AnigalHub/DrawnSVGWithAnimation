@@ -15,6 +15,16 @@ export default[
         component: () => import("./components/alphabet")
     },
     {
+        path: '/collectCouple',
+        name: 'CollectCouple',
+        component: () => import("./components/collectCouple")
+    },
+    {
+        path: '/wordConstructor',
+        name: 'WordConstructor',
+        component: () => import("./components/wordConstructor")
+    },
+    {
         path: '/colorChange',
         name: 'ColorChange',
         component: () => import("./components/colorChange")
