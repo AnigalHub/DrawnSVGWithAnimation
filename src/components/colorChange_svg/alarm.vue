@@ -1,5 +1,5 @@
 <template>
-    <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    <svg version="1.1" v-bind:class="{turnOn: isTurnOn}" id="alarm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 1200 600"  xml:space="preserve">
         <g>
 	        <g id="Switch">
@@ -68,11 +68,17 @@
 
 <script>
     export default {
-        name: "alarm"
+        name: "alarm",
+        props:{
+            isTurnOn: {
+                type: Boolean,
+                default: false,
+            }
+        }
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .st0{fill:#495154;}
     .st1{fill:#4D8D93;}
     .st2{fill:#626A6D;}
@@ -84,4 +90,9 @@
     .st8{display:inline;}
     .st9{fill:#838484;}
     .st10{fill:none;stroke:#000000;stroke-miterlimit:10;}
+
+    .turnOn{
+    #Lines,#Arrow2{display: block !important;}
+    #Arrow1{display: none !important;}
+    }
 </style>
