@@ -1,7 +1,6 @@
 <template>
-    <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    <svg version="1.1" v-bind:class="{turnOn: isTurnOn}" id="candle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 1200 600" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
-       <!-- <rect id="Square" x="615" y="50" class="st0" width="600" height="560"/> -->
         <g>
             <g id="Wax">
                 <g>
@@ -41,11 +40,17 @@
 
 <script>
     export default {
-        name: "candle"
+        name: "candle",
+        props:{
+            isTurnOn: {
+                type: Boolean,
+                default: false,
+            }
+        }
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .st0{fill:none;stroke:#000000;stroke-miterlimit:10;}
     .st1{fill:#E8DBCD;}
     .st2{fill:#C6B3A1;}
@@ -59,4 +64,7 @@
     .st10{fill:#605D5A;}
     .st11{fill:#4F4E4D;}
     .st12{fill:#686665;}
+    .turnOn{
+        #Fire{display: block !important;}
+    }
 </style>
