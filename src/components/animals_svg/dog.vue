@@ -6,9 +6,7 @@
             <tspan x="154.16" y="0" class="st0 st2"> </tspan>
             <tspan x="170.01" y="0" class="st0 st1">d</tspan>
         </text>
-        <g id="Square">
-	        <path d="M1349,201v798H551V201H1349 M1350,200H550v800h800V200L1350,200z"/>
-        </g>
+        <rect id="Square" x="550" y="200"  width="800" height="800"/>
         <g id="Dog">
 	        <g id="Moving_tail" class="st3">
 		        <g class="st4">
@@ -103,7 +101,7 @@
 </script>
 
 <style scoped lang="scss">
-    svg {
+    #Dog{
         &:hover #Moving_tail {display: block;}
         &:hover #Tail {display: none;}
     }

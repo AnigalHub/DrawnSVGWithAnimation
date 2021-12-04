@@ -6,9 +6,7 @@
             <tspan x="142.33" y="0" class="st0 st2"> </tspan>
             <tspan x="158.18" y="0" class="st0 st1">g</tspan>
         </text>
-        <g id="Square">
-	        <path d="M1349,201v798H551V201H1349 M1350,200H550v800h800V200L1350,200z"/>
-        </g>
+        <rect id="Square" x="550" y="200"  width="800" height="800"/>
         <g id="Giraffe">
 	        <g id="Moving_left_ear" class="st3">
 		        <path class="st4" d="M711.15,134.26c0.1-2.36-1.03-6.24-33.72-27.39c-33.54-21.71-50.32-32.56-63.29-36.62c-4.55-1.42-49.55-14.82-92.37,4.89c-14.72,6.77-26.71,12.3-27.02,21.73c-0.68,20.71,55.39,47.58,104.46,55.68C652.79,161.41,710.47,149.94,711.15,134.26z"/>
@@ -138,7 +136,7 @@
 </script>
 
 <style scoped lang="scss">
-    svg {
+    #Giraffe {
         &:hover #Moving_left_ear, &:hover #Moving_right_ear {display: block;}
         &:hover #Left_ear, &:hover #Right_ear {display: none;}
     }
