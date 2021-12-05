@@ -37,7 +37,7 @@ export default {
           transition-duration: 0.4s;
       }
   }
-  #mainMenu, #gameMenu, #alphabet,#colorChange,#loopingAnimation,#wordConstructor, #collectCouple {
+  #mainMenu, #gameMenu, #alphabet,#colorChange,#loopingAnimation,#wordConstructor, #collectCouple,#territory {
       button {
           border: none;
           border-radius: 10px;
@@ -57,7 +57,7 @@ export default {
           margin-bottom: 0 !important;
       }
   }
-  #alphabet,#colorChange,#loopingAnimation,#wordConstructor,#collectCouple{
+  #alphabet,#colorChange,#loopingAnimation,#wordConstructor,#collectCouple,#territory{
       margin-left: 60px;
       button{
           width: 150px;
