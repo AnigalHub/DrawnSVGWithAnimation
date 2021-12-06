@@ -29,9 +29,8 @@
         data(){
             return{
                Svgs:[
-                   {svg:Bulb,name:'bulb', checked:false},
-                   {svg:Alarm,name:'alarm', checked:false,},
-                   {svg:Television,name:'television'}, {svg:Candle,name:'candle'}, {svg: Toaster,name:'toaster'},  {svg: Kettle,name:'kettle'}
+                   {svg:Bulb,name:'bulb'}, {svg:Alarm,name:'alarm'}, {svg:Television,name:'television'},
+                   {svg:Candle,name:'candle'}, {svg: Toaster,name:'toaster'}, {svg: Kettle,name:'kettle'},
                ]
             }
         },
@@ -86,33 +85,4 @@
     .slider.round:before {border-radius: 50%;}
     svg{ margin-top: -40px; margin-bottom:45px;margin-left: -210px;}
 </style>
-<!-- <style  lang="scss">
-    .check{
-        #bulb{
-           #Body{fill:#FDEF9F !important;stroke: #e2d079 !important;}
-           #Middle{fill:#FDEF9F !important;}
-           #Sleeve{fill:#FBCF73 !important;}
-           #RightLine{fill:#FBCF73 !important;stroke:#FCEE21 !important;}
-           #LeftLine{fill:#FFFAFA !important;stroke:#FFFFFF !important;}
-        }
-        #alarm{
-            #Lines,#Arrow2{display: block !important;}
-            #Arrow1{display: none !important;}
-        }
-        #television{
-            #Colors,#Switch2{display: block !important;}
-            #Switch1{display: none !important;}
-        }
-        #candle{
-            #Fire{display: block !important;}
-        }
-        #toaster{
-            #Bread,#Button2{display: block !important;}
-            #Button1,#Fire{display: none !important;}
-        }
-        #kettle{
-            #Steam,#Arrow2{display: block !important;}
-            #Arrow1{display: none !important;}
-        }
-    }
-</style> -->
+
