@@ -1,6 +1,7 @@
 <template>
     <div id="territory">
         <router-link :to="{name: 'MainMenu'}" tag="button" class="back">Назад</router-link>
+        <h1>Наведи на субъект на Карте</h1>
         <div>
             <territory-russia/>
         </div>
