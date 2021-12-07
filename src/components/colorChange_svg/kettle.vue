@@ -1,8 +1,7 @@
 <template>
-    <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    <svg version="1.1"  v-bind:class="{turnOn: isTurnOn}" id="kettle" xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 1200 600" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
-        <!--  <rect id="Square" x="615" y="50" class="st0" width="600" height="560"/> -->
-        <g>
+       <g>
             <g id="Spout">
                 <path class="st1" d="M692.2,415c-25.7-15.1-51.4-30.2-77-45.3c19.4-18.6,38.7-37.2,58.1-55.8c22.2,6.6,44.5,13.3,66.7,19.9
                     C724.1,360.9,708.2,388,692.2,415z"/>
@@ -49,12 +48,17 @@
 
 <script>
     export default {
-        name: "kettle"
+        name: "kettle",
+        props:{
+            isTurnOn: {
+                type: Boolean,
+                default: false,
+            }
+        }
     }
 </script>
 
-<style scoped>
-    .st0{fill:none;stroke:#000000;stroke-miterlimit:10;}
+<style scoped lang="scss">
     .st1{fill:#AF310E;stroke:#84220B;stroke-width:3;stroke-miterlimit:10;}
     .st2{fill:#84220B;stroke:#84220B;stroke-width:3;stroke-miterlimit:10;}
     .st3{fill:#C4C4C4;stroke:#6D6A6A;stroke-width:4;stroke-miterlimit:10;}
@@ -70,4 +74,8 @@
     .st13{fill:#BFBEBE;stroke:#6D6A6A;stroke-width:4;stroke-miterlimit:10;}
     .st14{fill:#4F4F4F;stroke:#4F4F4F;stroke-width:3;stroke-miterlimit:10;}
     .st15{fill:#84220B;}
+    .turnOn{
+        #Steam,#Arrow2{display: block !important;}
+        #Arrow1{display: none !important;}
+    }
 </style>
