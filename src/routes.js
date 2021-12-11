@@ -34,4 +34,10 @@ export default[
         name: 'LoopingAnimation',
         component: () => import("./components/loopingAnimation")
     },
+    {
+        path: '/territory',
+        name: 'Territory',
+        component: () => import("./components/territory")
+    }
+
 ];
