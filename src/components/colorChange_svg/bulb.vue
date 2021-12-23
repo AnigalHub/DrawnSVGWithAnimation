@@ -1,6 +1,6 @@
 <template>
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-         viewBox="0 0 1200 600" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+      id="bulb" v-bind:class="{turnOn: isTurnOn}"  viewBox="0 0 1200 600" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
         <g>
 	        <path id="CentralContact" class="st0" d="M955.9,582H847.7c-3,0-5.5-2.4-5.5-5.4v-10.8c0-3,2.4-5.4,5.5-5.4h108.1c3,0,5.5,2.4,5.5,5.4v10.8C961.3,579.6,958.9,582,955.9,582z"/>
             <g id="Base">
@@ -25,17 +25,22 @@
                 <path class="st7" d="M952.3,237.9v0.4c0,1.6-1.2,2.8-2.8,2.8H845.7c-1.6,0-2.8-1.2-2.8-2.8v-0.4c0-1.6,1.2-2.8,2.8-2.8h103.8C951.1,235.1,952.3,236.3,952.3,237.9z"/>
 	        </g>
         </g>
-        <!--  <rect id="Square" x="615" y="50" class="st8" width="600" height="560"/> -->
     </svg>
 </template>
 
 <script>
     export default {
-        name: "bulb"
+        name: "bulb",
+        props:{
+            isTurnOn: {
+                type: Boolean,
+                default: false,
+            }
+        }
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .st0{fill:#636362;stroke:#B3B3B3;stroke-width:0.75;stroke-miterlimit:10;}
     .st1{fill:#808080;stroke:#808080;stroke-miterlimit:10;}
     .st2{fill:#4D4D4D;stroke:#4D4D4D;stroke-width:1.5;stroke-miterlimit:10;}
@@ -45,4 +50,12 @@
     .st6{fill: #a8d6ec;}
     .st7{fill:#FFFFFF;stroke:#F2F2F2;stroke-miterlimit:10;}
     .st8{fill:none;stroke:#000000;stroke-miterlimit:10;}
+
+    .turnOn{
+    #Body{fill:#FDEF9F !important;stroke: #e2d079 !important;}
+    #Middle{fill:#FDEF9F !important;}
+    #Sleeve{fill:#FBCF73 !important;}
+    #RightLine{fill:#FBCF73 !important;stroke:#FCEE21 !important;}
+    #LeftLine{fill:#FFFAFA !important;stroke:#FFFFFF !important;}
+    }
 </style>
