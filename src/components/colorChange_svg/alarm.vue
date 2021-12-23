@@ -62,7 +62,6 @@
 		        </g>
 	        </g>
         </g>
-        <!--  <rect id="Square" x="615" y="50" class="st10" width="600" height="560"/> -->
     </svg>
 </template>
 
@@ -90,9 +89,8 @@
     .st8{display:inline;}
     .st9{fill:#838484;}
     .st10{fill:none;stroke:#000000;stroke-miterlimit:10;}
-
     .turnOn{
-    #Lines,#Arrow2{display: block !important;}
-    #Arrow1{display: none !important;}
+        #Lines,#Arrow2{display: block !important;}
+        #Arrow1{display: none !important;}
     }
 </style>
