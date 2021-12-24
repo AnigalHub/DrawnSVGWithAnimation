@@ -8,9 +8,9 @@
             </b-col>
             <b-col>
                 <div class="card" >
-                    <div class="letters"> {{wordsSvgs[index].letters}}</div>
+                    <div class="letters"> {{lettersSvgs[index].letter}}</div>
                     <br>
-                    <div class="name_animals">{{wordsSvgs[index].words.join('')}}</div>
+                    <div class="name_animals">{{lettersSvgs[index].letters.join('')}}</div>
                 </div>
             </b-col>
         </b-row>
@@ -27,7 +27,7 @@
             return {
                 svgsAmount: 4,
                 currentSvgs: [],
-                wordsSvgs:[],
+                lettersSvgs:[],
             }
         },
         methods:{
@@ -44,7 +44,7 @@
                     }
                 } while (!isDuplicate)
             }
-            this.wordsSvgs = this.currentSvgs.map(i=>[Math.random(), i]).sort().map(i=>i[1])
+            this.lettersSvgs = this.currentSvgs.map(i=>[Math.random(), i]).sort().map(i=>i[1])
         }
     }
 </script>
@@ -67,8 +67,6 @@
         width: 170px;
         margin-top: -10px;font-family: 'Merriweather', serif;
         font-weight: 300 !important;
-
-
         height: 170px; margin-left: 80px;
         background: rgba(255, 255, 255, 0.2);
     }
