@@ -1,5 +1,5 @@
 <template>
-	<svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	<svg version="1.1"  v-bind:class="{turnOn: isTurnOn}" id="television" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 		 viewBox="0 0 1200 600" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
 		<g>
 		<path id="LowerCase" class="st0" d="M1096.3,580.8H717.6v4.6c0,5.8,4.7,10.6,10.6,10.6h360.5c4.2,0,7.6-3.4,7.6-7.6V580.8z"/>
@@ -88,17 +88,22 @@
 				</g>
 			</g>
 		</g>
-		<!-- <rect id="Square" x="615" y="50" class="st16" width="600" height="560"/> -->
-   </svg>
+	</svg>
 </template>
 
 <script>
    export default {
-       name: "television"
+       name: "television",
+	   props:{
+		   isTurnOn: {
+			   type: Boolean,
+			   default: false,
+		   }
+	   }
    }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
    .st0{fill:#442F28;}
    .st1{fill:#684B3E;}
    .st2{fill:#543F3B;}
@@ -115,5 +120,8 @@
    .st13{fill:#234AAD;}
    .st14{fill:#6524AA;}
    .st15{fill:#852493;}
-   .st16{fill:none;stroke:#000000;stroke-miterlimit:10;}
+   .turnOn{
+	   #Colors,#Switch2{display: block !important;}
+	   #Switch1{display: none !important;}
+   }
 </style>
