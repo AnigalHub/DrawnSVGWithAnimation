@@ -1,5 +1,5 @@
 <template>
-    <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    <svg version="1.1" v-bind:class="{turnOn: isTurnOn}" id="toaster"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 1200 600" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
         <g>
 			<g id="Button2" class="st0">
@@ -62,17 +62,22 @@
 			</g>
             <path id="Line" class="st12" d="M981.3,298.7H788.1c-2.5,0-4.5-2-4.5-4.5l0,0c0-2.5,2-4.5,4.5-4.5h193.2c2.5,0,4.5,2,4.5,4.5l0,0C985.9,296.6,983.8,298.7,981.3,298.7z"/>
 		</g>
-	<!--<rect id="Square" x="615" y="50" class="st13" width="600" height="560"/> -->
 	</svg>
 </template>
 
 <script>
     export default {
-        name: "toaster"
+        name: "toaster",
+		props:{
+			isTurnOn: {
+				type: Boolean,
+				default: false,
+			}
+		}
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .st0{display:none;}
     .st1{display:inline;}
     .st2{fill:#363838;}
@@ -86,5 +91,8 @@
     .st10{fill:#344241;}
     .st11{fill:none;stroke:#991010;stroke-width:4;stroke-miterlimit:10;}
     .st12{fill:#E8DD1A;}
-    .st13{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.turnOn{
+		#Bread,#Button2{display: block !important;}
+		#Button1,#Fire{display: none !important;}
+	}
 </style>
