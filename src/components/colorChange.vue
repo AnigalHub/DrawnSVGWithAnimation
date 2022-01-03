@@ -1,7 +1,7 @@
 <template>
     <div id="colorChange">
-        <h1>Нажми на кнопку</h1>
         <router-link :to="{name: 'MainMenu'}" tag="button" class="back">Назад</router-link>
+        <h1>Нажми на кнопку</h1>
         <div class="flex-container">
             <div v-for="(letter,index) in Svgs" :key="index" >
                     <label  class="switch">
