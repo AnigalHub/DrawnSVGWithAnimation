@@ -52,10 +52,10 @@
 <style scoped lang="scss">
     .animal{
         width: 400px !important;
+        margin-left: 120px;
     }
     svg {
         display: block;
-        width: 100% !important;
         margin-bottom: 25px;
         margin-top: -50px;
         margin-left: 80px;
@@ -64,17 +64,54 @@
         border: 1.5px solid #8e8a8a;
         display: flex;
         align-items: center;justify-content: center;
-        width: 170px;
-        margin-top: -10px;font-family: 'Merriweather', serif;
+        width: 135px;
+        margin-top: -17px;
+        font-family: 'Merriweather', serif;
         font-weight: 300 !important;
-        height: 170px; margin-left: 80px;
+        height: 135px; margin-left: 80px;
         background: rgba(255, 255, 255, 0.2);
     }
     .letters{
         font-size:60px;
         letter-spacing: 2px;
     }
-    .name_animals{font-size:20px;}
+    .name_animals{
+        margin-top: -15px;
+        font-size:20px;
+    }
+    @media screen and  (min-width: 500px)and  (max-width: 768px) {
+        .animal{
+            width: 320px !important;
+            margin-left: -120px;
+        }
+        .letters{font-size:35px;}
+        .card{
+            width: 102px;
+            margin-top: -25px;
+            height: 102px;
+            margin-left: 40px;
+        }
+    }
+    @media screen and  (min-width: 768px)and  (max-width: 992px) {
+        .animal{
+            width: 360px !important;
+            margin-left: -60px;
+        }
+        .letters{font-size:50px;}
+        .card{
+            width: 120px;
+            margin-top: -20px;
+            font-weight: 300 !important;
+            height: 120px;
+            margin-left: 80px;
+        }
+    }
+    @media screen and  (min-width: 992px)and  (max-width: 1200px) {
+        .animal{
+            width: 400px !important;
+            margin-left: 0;
+        }
+    }
 </style>
 <style  lang="scss">
     #collectCouple{
