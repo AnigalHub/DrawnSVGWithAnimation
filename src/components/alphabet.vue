@@ -33,6 +33,23 @@
         margin-bottom: 8.15px;
         margin-top: 45px;
     }
+    @media screen and  (min-width: 500px)and  (max-width: 768px) {
+        svg{
+            margin-left: -98px !important;
+        }
+        .flex-container > div {
+            width: 25%;
+            margin-bottom: 22px;
+            margin-top: 45px;
+        }
+    }
+    @media screen and  (min-width: 768px)and  (max-width: 992px) {
+        .flex-container > div {
+            width: 17.5%;
+            margin-right: 2.5%;
+            margin-bottom: 2.5%;
+        }
+    }
 </style>
 <style  lang="scss">
     #alphabet{
