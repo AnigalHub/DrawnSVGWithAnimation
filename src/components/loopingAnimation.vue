@@ -17,7 +17,16 @@
 </script>
 
 <style scoped lang="scss">
-    svg{ margin-top: 20px;margin-left: -9 0px;}
+    svg{
+        margin-top: 28px;
+        margin-left: -20px;
+    }
+    @media screen and  (min-width: 992px)and  (max-width: 1200px) {
+        svg{
+            margin-top: 10px;
+            margin-left: -10px;
+        }
+    }
 </style>
 <style  lang="scss">
 
