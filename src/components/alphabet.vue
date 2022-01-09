@@ -1,20 +1,25 @@
 <template>
     <div id="alphabet">
         <router-link :to="{name: 'GameMenu'}" tag="button" class="back">Назад</router-link>
-        <h1>Алфавит с животными</h1>
-        <div class="flex-container">
-            <div v-for="(letter,index) in Letters" :key="index">
-                <component :is="letter.svg"/>
+        <div id="content">
+            <h1>Алфавит с животными</h1>
+            <div class="flex-container">
+                <div v-for="(letter,index) in Letters" :key="index">
+                    <component :is="letter.svg"/>
+                </div>
             </div>
         </div>
+        <screen-rotation/>
     </div>
 </template>
 
 <script>
     import mixinLetters from "../mixins/mixinLetters";
+    import ScreenRotation from "./screenRotation";
 
     export default {
         name: "alphabet",
+        components: {ScreenRotation},
         mixins: [mixinLetters],
     }
 </script>
@@ -33,17 +38,17 @@
         margin-bottom: 8.15px;
         margin-top: 45px;
     }
-    @media screen and  (min-width: 500px)and  (max-width: 768px) {
-        svg{
-            margin-left: -98px !important;
-        }
+    @media screen and (min-width: 500px) and (max-width: 768px) {
+        h1{margin-left: -40px;}
+        button{margin-left: 25%!important;}
+        svg{margin-left: -98px !important;}
         .flex-container > div {
             width: 25%;
             margin-bottom: 22px;
             margin-top: 45px;
         }
     }
-    @media screen and  (min-width: 768px)and  (max-width: 992px) {
+    @media screen and (min-width: 768px )and (max-width: 992px) {
         .flex-container > div {
             width: 17.5%;
             margin-right: 2.5%;
