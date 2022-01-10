@@ -1,27 +1,32 @@
 <template>
     <div id="wordConstructor" >
         <router-link :to="{name: 'GameMenu'}" tag="button" class="back">Назад</router-link>
-        <h1>Собери слово - название животного</h1>
-        <div class="animal">
-            <component :is="currentSvg.svg"/>
+        <div id="content">
+            <h1>Собери слово - название животного</h1>
+            <div class="animal">
+                <component :is="currentSvg.svg"/>
+            </div>
+           <div class="letters" >
+                <div class="letter" v-for="(n,index) in  randomLettersAnimal" :key="index"
+                     draggable @dragstart="startDrag($event,n,index)">{{n}}</div>
+            </div>
+            <div class="name_animal" >
+                <div class="letter" v-for="(x,index) in animalName" :key="index" :id="index"
+                     @dragover.prevent @dragenter.prevent  @drop="onDrop($event, animalName)"
+                     draggable @dragstart="startDrag($event,x,index)">{{x}}</div>
+            </div>
+            <b-button @click="newAnimal()">Далее</b-button>
         </div>
-       <div class="letters" >
-            <div class="letter" v-for="(n,index) in  randomLettersAnimal" :key="index"
-                 draggable @dragstart="startDrag($event,n,index)">{{n}}</div>
-        </div>
-        <div class="name_animal" >
-            <div class="letter" v-for="(x,index) in animalName" :key="index" :id="index"
-                 @dragover.prevent @dragenter.prevent  @drop="onDrop($event, animalName)"
-                 draggable @dragstart="startDrag($event,x,index)">{{x}}</div>
-        </div>
-        <b-button @click="newAnimal()">Далее</b-button>
+        <screen-rotation/>
     </div>
 </template>
 
 <script>
     import mixinLetters from "../mixins/mixinLetters";
+    import ScreenRotation from "./screenRotation";
 
     export default {
+        components: {ScreenRotation},
         mixins: [mixinLetters],
         name: "wordConstructor",
         data(){
@@ -70,13 +75,13 @@
 <style scoped lang="scss">
      svg {
          display: block;
-         width: 850px !important;
-         height: 550px;
-         margin: -80px auto 0 !important;
+         width: 650px !important;
+         height: 480px;
+         margin: -115px auto 0 !important;
      }
+     .letters{margin-top: -20px !important;}
     .letters,.name_animal{
         width: 100%;
-        margin: 0 auto !important;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -84,7 +89,7 @@
             background: rgba(255, 255, 255, 0.5);
             border: 1.8px solid #9a9797;
             float: left;
-            margin: 0 15px;
+            margin: 0 10px;
             font-size: 2.25rem;
             text-align: center;
             width: 60px;
@@ -94,18 +99,40 @@
     .name_animal{
         margin-top: 20px !important;
         height: 60px;
-        //background: rgba(255, 255, 255, 0.5);
-        .letter{
-            background: rgba(255, 255, 255, 0.5);
-            border: 1.8px solid #9a9797;
-            float: left;
-            margin: 0 15px;
-            font-size: 2.25rem;
-            text-align: center;
-            width: 60px;
-            height: 60px;
-        }
     }
+     @media screen and (min-width: 500px) and (max-width: 768px) {
+         svg {width: 400px !important;}
+     }
+     @media screen and (min-width: 500px) and (max-width: 768px) {
+         h1{margin-left: -40px;}
+         button{margin-left: 25%!important;}
+         svg {margin: -180px auto 0 !important;}
+         .letters,.name_animal{
+             margin-left: -25px;
+             .letter{
+                 width: 45px;
+                 height: 45px;
+                 margin: 0 4px;
+                 font-size: 1.5rem;
+             }
+         }
+         .letters{margin-top: -120px !important;}
+     }
+     @media screen and (min-width: 768px) and (max-width: 992px) {
+         svg {
+             width: 550px !important;
+             margin: -145px auto 0 !important;
+         }
+         .letters,.name_animal{
+             .letter{
+                 width: 50px;
+                 height: 50px;
+                 margin: 0 8px;
+                 font-size: 2rem;
+             }
+         }
+         .letters{margin-top: -60px !important;}
+     }
 </style>
 <style  lang="scss">
     #wordConstructor{
