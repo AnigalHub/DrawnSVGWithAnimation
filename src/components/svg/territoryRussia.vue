@@ -1041,9 +1041,7 @@
     #Bel:hover #TextBel,#Psk:hover #TextPsk,#Kda:hover #TextKda,#Sta:hover #TextSta,#Kb:hover #TextKb,
     #In:hover #TextIn{
         display: block;
-        #TextMap{
-            display: none;
-        }
+        #TextMap{display: none;}
     }
     #Kam:hover #MapKam,#Mag:hover #MapMag,#Pri:hover #MapPri,#Yev:hover #MapYev,#Sak:hover #MapSak,
     #Amu:hover #MapAmu,#Zab:hover #MapZab,#Bu:hover #MapBu,#Irk:hover #MapIrk,#Ty:hover #MapTy,
