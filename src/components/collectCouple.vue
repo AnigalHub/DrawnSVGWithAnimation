@@ -15,6 +15,7 @@
                     </div>
                 </b-col>
             </b-row>
+            <b-button class="onward">Далее</b-button>
         </div>
         <screen-rotation/>
     </div>
