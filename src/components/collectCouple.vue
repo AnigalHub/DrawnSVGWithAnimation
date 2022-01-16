@@ -1,26 +1,31 @@
 <template>
     <div id="collectCouple">
         <router-link :to="{name: 'GameMenu'}" tag="button" class="back">Назад</router-link>
-        <h1>Собери пару - букву и животное</h1>
-        <b-row v-for="(letter,index) in currentSvgs" :key="index">
-            <b-col>
-                <div class="animal"><component :is="currentSvgs[index].svg"/></div>
-            </b-col>
-            <b-col>
-                <div class="card" >
-                    <div class="letters"> {{lettersSvgs[index].letter}}</div>
-                    <br>
-                    <div class="name_animals">{{lettersSvgs[index].letters.join('')}}</div>
-                </div>
-            </b-col>
-        </b-row>
+        <div id="content">
+            <h1>Собери пару - букву и животное</h1>
+            <b-row v-for="(letter,index) in currentSvgs" :key="index">
+                <b-col>
+                    <div class="animal"><component :is="currentSvgs[index].svg"/></div>
+                </b-col>
+                <b-col>
+                    <div class="card" >
+                        <div class="letters"> {{lettersSvgs[index].letter}}</div>
+                        <br>
+                        <div class="name_animals">{{lettersSvgs[index].letters.join('')}}</div>
+                    </div>
+                </b-col>
+            </b-row>
+        </div>
+        <screen-rotation/>
     </div>
 </template>
 
 <script>
     import mixinLetters from "../mixins/mixinLetters";
+    import ScreenRotation from "./screenRotation";
 
     export default {
+        components: {ScreenRotation},
         mixins: [mixinLetters],
         name: "collectCouple",
         data(){
@@ -54,6 +59,7 @@
         width: 400px !important;
         margin-left: 120px;
     }
+    h1{margin-bottom: 40px !important;}
     svg {
         display: block;
         margin-bottom: 25px;
@@ -79,20 +85,23 @@
         margin-top: -15px;
         font-size:20px;
     }
-    @media screen and  (min-width: 500px)and  (max-width: 768px) {
+    @media screen and (min-width: 500px) and (max-width: 768px) {
         .animal{
             width: 320px !important;
             margin-left: -120px;
         }
-        .letters{font-size:35px;}
+        h1{margin-left: -40px;}
+        button{margin-left: 25%!important;}
+        .letters{font-size:30px;}
         .card{
             width: 102px;
             margin-top: -25px;
             height: 102px;
+            margin-bottom: 45px;
             margin-left: 40px;
         }
     }
-    @media screen and  (min-width: 768px)and  (max-width: 992px) {
+    @media screen and (min-width: 768px) and (max-width: 992px) {
         .animal{
             width: 360px !important;
             margin-left: -60px;
@@ -101,12 +110,13 @@
         .card{
             width: 120px;
             margin-top: -20px;
+            margin-bottom: 45px;
             font-weight: 300 !important;
             height: 120px;
             margin-left: 80px;
         }
     }
-    @media screen and  (min-width: 992px)and  (max-width: 1200px) {
+    @media screen and (min-width: 992px) and (max-width: 1200px) {
         .animal{
             width: 400px !important;
             margin-left: 0;
