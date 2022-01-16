@@ -16,7 +16,8 @@ export default {
 <style lang="scss">
   $background: #8dccee;
   #app{
-      height: 100vh;
+      height: 100%;
+      min-height: 100vh;
       background: $background;
   }
   h1{
@@ -27,6 +28,7 @@ export default {
   }
   #mainMenu, #gameMenu{
       padding-top: 15%;
+      padding-bottom: 20px;
       button{
           display: block;
           background-color: #269e2b;
@@ -46,33 +48,49 @@ export default {
           text-align: center;
           text-decoration: none;
           transition-duration: 0.4s;
-          &:hover {
-              box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-          }
+          &:hover {box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);}
       }
   }
-  #colorChange{
-      h1{
-          padding-top: 20px;
-          margin-bottom: 0 !important;
-      }
-  }
+
   #alphabet,#colorChange,#loopingAnimation,#wordConstructor,#collectCouple,#territory{
       margin-left: 60px;
-      button{
-          width: 150px;
-          padding:10px 32px;
-          transition-duration: 0.4s;
-          position: sticky;
-          top: 35px;
-          margin-left: -250px;
-      }
+      padding-top: 15px;
   }
-  .back{background-color: #517952 !important;}
+  .back{
+      width: 150px;
+      padding:10px 32px;
+      transition-duration: 0.4s;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #517952 !important;
+  }
   .flex-container {
       display: flex;
       flex-wrap: wrap;
-      //margin-top: 1.5%;
-      //margin-left: 20px;
   }
+  #screenRotation{display: none;}
+  @media screen and  (max-width: 499px) {
+      #alphabet{padding-left: 0;}
+      #alphabet,#colorChange,#loopingAnimation,#wordConstructor,#collectCouple,#territory{margin-left: 0;}
+      #content{display: none;}
+      #screenRotation{display: block;}
+  }
+  @media screen and (max-width: 992px) {
+      #alphabet,#colorChange,#loopingAnimation,#wordConstructor,#collectCouple,#territory{
+          button{padding:7px;}
+      }
+      #mainMenu, #gameMenu{
+          padding-top: 8%;
+          button{
+              padding:15px;
+              margin: 10px auto;
+          }
+      }
+      h1{font-size: 1.5rem !important;}
+      #mainMenu, #gameMenu, #alphabet,#colorChange,#loopingAnimation,#wordConstructor, #collectCouple,#territory {
+          button {font-size: .9rem;}
+      }
+  }
+
 </style>
