@@ -65,6 +65,17 @@ export default {
       margin-right: auto;
       background-color: #517952 !important;
   }
+  .onward{
+      width: 150px;
+      padding:10px 32px !important;
+      font-size: 1.15rem;
+      text-align: center;
+      text-decoration: none;
+      transition-duration: 0.4s;
+      display: block !important;
+      margin-left: auto;
+      margin-right: auto;
+  }
   .flex-container {
       display: flex;
       flex-wrap: wrap;
