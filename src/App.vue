@@ -65,16 +65,22 @@ export default {
       margin-right: auto;
       background-color: #517952 !important;
   }
-  .onward{
-      width: 150px;
-      padding:10px 32px !important;
+
+  .buttonGame{
+      width: 350px;
+
       font-size: 1.15rem;
       text-align: center;
       text-decoration: none;
       transition-duration: 0.4s;
-      display: block !important;
+      display: flex !important;
       margin-left: auto;
       margin-right: auto;
+      button{
+          width: 125px;
+          padding:10px !important;
+          margin: 0 3px;
+      }
   }
   .flex-container {
       display: flex;
