@@ -67,7 +67,7 @@ export default {
   }
 
   .buttonGame{
-      width: 350px;
+      width: 380px;
 
       font-size: 1.15rem;
       text-align: center;
@@ -77,9 +77,9 @@ export default {
       margin-left: auto;
       margin-right: auto;
       button{
-          width: 125px;
+          width: 155px;
           padding:10px !important;
-          margin: 0 3px;
+          margin: 0 10px;
       }
   }
   .flex-container {
