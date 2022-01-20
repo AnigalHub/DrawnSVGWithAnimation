@@ -15,7 +15,10 @@
                      @dragover.prevent @dragenter.prevent  @drop="onDrop($event, animalName)"
                      draggable @dragstart="startDrag($event,x,index)">{{x}}</div>
             </div>
-            <b-button class="onward" @click="newAnimal()">Далее</b-button>
+            <div class="buttonGame">
+                <b-button @click="newAnimal()">Далее</b-button>
+                <b-button>Завершить</b-button>
+            </div>
         </div>
         <screen-rotation/>
     </div>
@@ -79,7 +82,7 @@
          height: 480px;
          margin: -115px auto 0 !important;
      }
-     .onward{margin-top: 25px;}
+     .buttonGame{margin-top: 25px;}
      .letters{margin-top: -20px !important;}
     .letters,.name_animal{
         width: 100%;

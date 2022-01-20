@@ -15,7 +15,10 @@
                     </div>
                 </b-col>
             </b-row>
-            <b-button class="onward">Далее</b-button>
+            <div class="buttonGame">
+                <b-button>Далее</b-button>
+                <b-button>Завершить</b-button>
+            </div>
         </div>
         <screen-rotation/>
     </div>
