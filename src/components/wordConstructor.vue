@@ -106,7 +106,7 @@
     }
      @media screen and (min-width: 500px) and (max-width: 768px) {
          h1{margin-left: -40px;}
-         button{margin-left: 25%!important;}
+         .back{margin-left: 25%!important;}
          svg {
              width: 400px !important;
              margin: -180px auto 0 !important;
