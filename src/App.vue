@@ -68,7 +68,6 @@ export default {
 
   .buttonGame{
       width: 380px;
-
       font-size: 1.15rem;
       text-align: center;
       text-decoration: none;
@@ -80,6 +79,8 @@ export default {
           width: 155px;
           padding:10px !important;
           margin: 0 10px;
+          &:first-child{background: #517952;}
+          &:last-child{background: #3a6f3a;}
       }
   }
   .flex-container {
