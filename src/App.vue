@@ -93,6 +93,12 @@ export default {
       #content{display: none;}
       #screenRotation{display: block;}
   }
+  @media screen and (min-width: 500px) and (max-width: 768px) {
+      #collectCouple,#wordConstructor{
+          h1{margin-left: -40px;}
+          .back{margin-left: 25%!important;}
+      }
+  }
   @media screen and (max-width: 992px) {
       #alphabet,#colorChange,#loopingAnimation,#wordConstructor,#collectCouple,#territory{
           button{padding:7px;}
