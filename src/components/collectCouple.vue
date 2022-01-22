@@ -94,8 +94,6 @@
             width: 320px !important;
             margin-left: -120px;
         }
-        h1{margin-left: -40px;}
-        .back{margin-left: 30%!important;}
         .letters{font-size:30px;}
         .card{
             width: 102px;
