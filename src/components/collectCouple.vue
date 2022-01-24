@@ -16,7 +16,7 @@
                 </b-col>
             </b-row>
             <div class="buttonGame">
-                <b-button>Далее</b-button>
+                <b-button @click="newWords()">Далее</b-button>
                 <b-button>Завершить</b-button>
             </div>
         </div>
@@ -40,20 +40,23 @@
             }
         },
         methods:{
-
+            newWords:function () {
+                this.currentSvgs = []
+                for(let i = 0; i < this.svgsAmount; i++){
+                    let isDuplicate = false
+                    do{
+                        let svgCollect = this.getRandomSvg()
+                        isDuplicate = !this.currentSvgs.includes(svgCollect);
+                        if(isDuplicate){
+                            this.currentSvgs.push(svgCollect)
+                        }
+                    } while (!isDuplicate)
+                }
+                this.lettersSvgs = this.currentSvgs.map(i=>[Math.random(), i]).sort().map(i=>i[1])
+            }
         },
         created() {
-            for(let i = 0; i < this.svgsAmount; i++){
-                let isDuplicate = false
-                do{
-                    let svgCollect = this.getRandomSvg()
-                    isDuplicate = !this.currentSvgs.includes(svgCollect);
-                    if(isDuplicate){
-                        this.currentSvgs.push(svgCollect)
-                    }
-                } while (!isDuplicate)
-            }
-            this.lettersSvgs = this.currentSvgs.map(i=>[Math.random(), i]).sort().map(i=>i[1])
+            this.newWords()
         }
     }
 </script>
