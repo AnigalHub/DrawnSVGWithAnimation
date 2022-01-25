@@ -68,6 +68,41 @@
 </script>
 
 <style scoped lang="scss">
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 210px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+    }
+    /*контент модального окна*/
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 55%;
+    }
+    /*кнопка - "Х"*/
+    .close {
+        color: #aaaaaa;
+        margin-left: auto;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    /*кнопка - "Х" - при наведении и в фокусе*/
+    .close:hover, .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
     .animal{
         width: 400px !important;
         margin-left: 120px;
