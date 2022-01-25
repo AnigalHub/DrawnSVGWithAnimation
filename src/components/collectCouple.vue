@@ -17,7 +17,13 @@
             </b-row>
             <div class="buttonGame">
                 <b-button @click="newWords()">Далее</b-button>
-                <b-button>Завершить</b-button>
+                <b-button @click="document.getElementById('ModalWindow').style.display='block'" >Завершить</b-button>
+            </div>
+            <div id="ModalWindow" class="modal">
+                <div class="modal-content">
+                    <span class="close" @click="document.getElementById('ModalWindow').style.display='none'">&times;</span>
+                    <p>Игра завершена!</p>
+                </div>
             </div>
         </div>
         <screen-rotation/>
