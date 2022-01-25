@@ -15,15 +15,15 @@
                     </div>
                 </b-col>
             </b-row>
-            <div class="buttonGame">
-                <b-button @click="newWords()">Далее</b-button>
-                <b-button @click="document.getElementById('ModalWindow').style.display='block'" >Завершить</b-button>
-            </div>
             <div id="ModalWindow" class="modal">
                 <div class="modal-content">
                     <span class="close" @click="document.getElementById('ModalWindow').style.display='none'">&times;</span>
                     <p>Игра завершена!</p>
                 </div>
+            </div>
+            <div class="buttonGame">
+                <b-button @click="newWords()">Далее</b-button>
+                <b-button @click="document.getElementById('ModalWindow').style.display='block'" >Завершить</b-button>
             </div>
         </div>
         <screen-rotation/>
@@ -69,7 +69,8 @@
 
 <style scoped lang="scss">
     .modal {
-        display: none;
+        //display: none;
+        display: block;
         position: fixed;
         z-index: 1;
         padding-top: 210px;
@@ -85,15 +86,19 @@
     .modal-content {
         background-color: #fefefe;
         margin: auto;
-        padding: 20px;
+        padding: 10px 20px 50px;
         border: 1px solid #888;
-        width: 55%;
+        width: 35%;
+        text-align: center;
+        font-size: 2rem;
+        font-family: 'Poiret One', cursive;
+        font-weight: 800 !important;
     }
     /*кнопка - "Х"*/
     .close {
         color: #aaaaaa;
         margin-left: auto;
-        font-size: 28px;
+        font-size: 55px;
         font-weight: bold;
     }
     /*кнопка - "Х" - при наведении и в фокусе*/
