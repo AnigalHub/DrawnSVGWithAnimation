@@ -67,37 +67,7 @@
         }
     }
 </script>
-<style>
-    .close { /*"крестик" (размер) - кнопка закрытия модального окна*/
-        border: none !important;
-        background: none !important;
-        font-size: 30px;
-    }
-    .modal-dialog{
-        margin-top: 15% !important;
-    }
-    .modal-header{
-        border: none !important;
-        padding: 10px !important;
-    }
-    .modal-body { /*тело модального окна*/
-        padding:10px !important;
-        height: 100px;
-        text-align: center;
-        font-size: 30px;
-        margin-bottom: 15px !important;
-        font-family: 'Poiret One', cursive;
-        font-weight: 800 !important;
-    }
-    .modal-footer{ /*footer-модального окна*/
-        display: none !important;
-    }
-    @media (min-width: 992px){
-        .modal-lg, .modal-xl { /*ширина модального окна на разных экранах*/
-            max-width: 750px !important;
-        }
-    }
-</style>
+
 <style scoped lang="scss">
     .animal{
         width: 400px !important;
