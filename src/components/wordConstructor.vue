@@ -15,9 +15,13 @@
                      @dragover.prevent @dragenter.prevent  @drop="onDrop($event, animalName)"
                      draggable @dragstart="startDrag($event,x,index)">{{x}}</div>
             </div>
+            <b-modal ref="modal">
+                <p>Игра завершена!</p>
+            </b-modal>
+           
             <div class="buttonGame">
                 <b-button @click="newAnimal()">Далее</b-button>
-                <b-button>Завершить</b-button>
+                <b-button @click="showModal()">Завершить</b-button>
             </div>
         </div>
         <screen-rotation/>
@@ -43,6 +47,9 @@
           this.newAnimal()
         },
         methods:{
+            showModal(){
+                this.$refs['modal'].show()
+            },
             newAnimal:function(){
                 this.currentSvg = this.getRandomSvg()
                 this.randomLettersAnimal = this.randomLetters(this.currentSvg.letters)
