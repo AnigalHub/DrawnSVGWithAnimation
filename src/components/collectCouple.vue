@@ -15,15 +15,12 @@
                     </div>
                 </b-col>
             </b-row>
-            <div id="ModalWindow" class="modal">
-                <div class="modal-content">
-                    <span class="close" @click="document.getElementById('ModalWindow').style.display='none'">&times;</span>
-                    <p>Игра завершена!</p>
-                </div>
-            </div>
+            <b-modal ref="modal">
+                <p>Игра завершена!</p>
+            </b-modal>
             <div class="buttonGame">
                 <b-button @click="newWords()">Далее</b-button>
-                <b-button @click="document.getElementById('ModalWindow').style.display='block'" >Завершить</b-button>
+                <b-button @click="showModal()">Завершить</b-button>
             </div>
         </div>
         <screen-rotation/>
@@ -39,6 +36,7 @@
         mixins: [mixinLetters],
         name: "collectCouple",
         data(){
+
             return {
                 svgsAmount: 4,
                 currentSvgs: [],
@@ -46,6 +44,9 @@
             }
         },
         methods:{
+            showModal(){
+                this.$refs['modal'].show()
+            },
             newWords:function () {
                 this.currentSvgs = []
                 for(let i = 0; i < this.svgsAmount; i++){
@@ -66,48 +67,38 @@
         }
     }
 </script>
-
-<style scoped lang="scss">
-    .modal {
-        //display: none;
-        display: block;
-        position: fixed;
-        z-index: 1;
-        padding-top: 210px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgb(0,0,0);
-        background-color: rgba(0,0,0,0.4);
+<style>
+    .close { /*"крестик" (размер) - кнопка закрытия модального окна*/
+        border: none !important;
+        background: none !important;
+        font-size: 30px;
     }
-    /*контент модального окна*/
-    .modal-content {
-        background-color: #fefefe;
-        margin: auto;
-        padding: 10px 20px 50px;
-        border: 1px solid #888;
-        width: 35%;
+    .modal-dialog{
+        margin-top: 15% !important;
+    }
+    .modal-header{
+        border: none !important;
+        padding: 10px !important;
+    }
+    .modal-body { /*тело модального окна*/
+        padding:10px !important;
+        height: 100px;
         text-align: center;
-        font-size: 2rem;
+        font-size: 30px;
+        margin-bottom: 15px !important;
         font-family: 'Poiret One', cursive;
         font-weight: 800 !important;
     }
-    /*кнопка - "Х"*/
-    .close {
-        color: #aaaaaa;
-        margin-left: auto;
-        font-size: 55px;
-        font-weight: bold;
+    .modal-footer{ /*footer-модального окна*/
+        display: none !important;
     }
-    /*кнопка - "Х" - при наведении и в фокусе*/
-    .close:hover, .close:focus {
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
+    @media (min-width: 992px){
+        .modal-lg, .modal-xl { /*ширина модального окна на разных экранах*/
+            max-width: 750px !important;
+        }
     }
-
+</style>
+<style scoped lang="scss">
     .animal{
         width: 400px !important;
         margin-left: 120px;
