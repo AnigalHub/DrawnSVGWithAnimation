@@ -12,38 +12,38 @@ export default {
   name: 'App',
 }
 </script>
-<style>
-    .close { /*"крестик" (размер) - кнопка закрытия модального окна*/
-        border: none !important;
-        background: none !important;
-        font-size: 30px;
-    }
-    .modal-dialog{
-        margin-top: 15% !important;
-    }
-    .modal-header{
-        border: none !important;
-        padding: 10px !important;
-    }
-    .modal-body { /*тело модального окна*/
-        padding:10px !important;
-        height: 100px;
-        text-align: center;
-        font-size: 30px;
-        margin-bottom: 15px !important;
-        font-family: 'Poiret One', cursive;
-        font-weight: 800 !important;
-    }
-    .modal-footer{ /*footer-модального окна*/
-        display: none !important;
-    }
-    @media (min-width: 992px){
-        .modal-lg, .modal-xl { /*ширина модального окна на разных экранах*/
-            max-width: 750px !important;
-        }
-    }
-</style>
 <style lang="scss">
+    #Square{fill: rgba(255, 255, 255, 0.2);stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
+  .close { /*"крестик" (размер) - кнопка закрытия модального окна*/
+      border: none !important;
+      background: none !important;
+      font-size: 30px;
+  }
+  .modal-dialog:first-child{
+      margin-top: 5% !important;
+  }
+  .modal-header{
+      border: none !important;
+      padding: 10px !important;
+  }
+  .modal-body { /*тело модального окна*/
+      padding:10px !important;
+      min-height: 100px;
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 15px !important;
+      font-family: 'Poiret One', cursive;
+      font-weight: 800 !important;
+      p:first-child{margin-top: -40px !important;}
+  }
+  .modal-footer{ /*footer-модального окна*/
+      display: none !important;
+  }
+  @media (min-width: 992px){
+      .modal-lg, .modal-xl { /*ширина модального окна на разных экранах*/
+          max-width: 750px !important;
+      }
+  }
   $background: #8dccee;
   #app{
       height: 100%;
@@ -95,16 +95,8 @@ export default {
       margin-right: auto;
       background-color: #517952 !important;
   }
-
   .buttonGame{
       width: 380px;
-      font-size: 1.15rem;
-      text-align: center;
-      text-decoration: none;
-      transition-duration: 0.4s;
-      display: flex !important;
-      margin-left: auto;
-      margin-right: auto;
       button{
           width: 155px;
           padding:10px !important;
@@ -112,6 +104,22 @@ export default {
           &:first-child{background: #517952;}
           &:last-child{background: #3a6f3a;}
       }
+  }
+  .help{
+      margin-top: 30px;
+      margin-bottom: 15px;
+      width: 150px;
+      padding: 10px 10px 10px 30px !important;
+  }
+  .buttonGame,.help{
+      font-size: 1.15rem;
+      text-align: center;
+      text-decoration: none;
+      transition-duration: 0.4s;
+      display: flex !important;
+      margin-left: auto;
+      margin-right: auto;
+
   }
   .flex-container {
       display: flex;
