@@ -18,7 +18,12 @@
             <b-modal ref="modal">
                 <p>Игра завершена!</p>
             </b-modal>
-           
+            <b-modal ref="modalHelp">
+                <p><u>Название животного:</u></p>
+                <component :is="currentSvg.svg"/>
+                <p class="nameSelectAnimal">{{currentSvg.svg.name}}</p>
+            </b-modal>
+            <b-button class="help" @click="showNameAnimal()">Подсказка</b-button>
             <div class="buttonGame">
                 <b-button @click="newAnimal()">Далее</b-button>
                 <b-button @click="showModal()">Завершить</b-button>
@@ -49,6 +54,9 @@
         methods:{
             showModal(){
                 this.$refs['modal'].show()
+            },
+            showNameAnimal(){
+             this.$refs['modalHelp'].show()
             },
             newAnimal:function(){
                 this.currentSvg = this.getRandomSvg()
@@ -83,9 +91,20 @@
 </script>
 
 <style scoped lang="scss">
+    .modal-body svg{
+        display: block;
+        width: 400px;
+        margin-bottom: 0 !important;
+        margin-left: 50px !important;
+        margin-top: -170px !important;
+    }
+    .nameSelectAnimal{
+        margin-top: -140px;
+        font-size: 3.2rem;
+    }
      svg {
          display: block;
-         width: 650px !important;
+         width: 650px;
          height: 480px;
          margin: -115px auto 0 !important;
      }
@@ -143,9 +162,5 @@
          .letters{margin-top: -60px !important;}
      }
 </style>
-<style  lang="scss">
-    #wordConstructor{
-        #Square{fill: rgba(255, 255, 255, 0.2);stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
-    }
-</style>
+
 
