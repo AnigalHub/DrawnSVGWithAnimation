@@ -58,6 +58,6 @@
 </style>
 <style  lang="scss">
     #alphabet{
-        #Square{fill: none;stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
+        #Square{fill: none !important;}
     }
 </style>
