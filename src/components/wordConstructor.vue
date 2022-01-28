@@ -21,7 +21,7 @@
             <b-modal ref="modalHelp">
                 <p><u>Название животного:</u></p>
                 <component :is="currentSvg.svg"/>
-                <p class="nameSelectAnimal">{{currentSvg.svg.name}}</p>
+                <p class="nameSelectAnimal">{{currentSvg.letters.join('')}}</p>
             </b-modal>
             <b-button class="help" @click="showNameAnimal()">Подсказка</b-button>
             <div class="buttonGame">
@@ -82,8 +82,6 @@
                 /*удаление*/
                 let a = this.randomLettersAnimal.splice(parsedData.id,1)
                 console.log(a)
-
-                console.log()
             }
         }
     }
