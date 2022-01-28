@@ -103,7 +103,7 @@
 
 <script>
     export default {
-        name: "x-ray fish"
+        name: "x-ray_fish"
     }
 </script>
 
