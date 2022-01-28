@@ -45,7 +45,7 @@ export default {
                 {svg:Cat, letters:["c","a","t"],letter:"Cc"},
                 {svg:Dog, letters:["d","o","g"],letter:"Dd"},
                 {svg: Elephant, letters:["e","l","e","p","h","a","n","t"],letter:"Ee"},
-                {svg:Frog, letters:["f","r","o","g"],letter:"F f"},
+                {svg:Frog, letters:["f","r","o","g"],letter:"Ff"},
                 {svg: Giraffe, letters:["g","i","r","a","f","f","e"],letter:"Gg"},
                 {svg: Hamster, letters:["h","a","m","s","t","e","r"],letter:"Hh"},
                 {svg:Iguana, letters:["i","g","u","a","n","a"],letter:"Ii"},
