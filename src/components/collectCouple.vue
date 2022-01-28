@@ -5,10 +5,21 @@
             <h1>Собери пару - букву и животное</h1>
             <b-row v-for="(letter,index) in currentSvgs" :key="index">
                 <b-col>
-                    <div class="animal"><component :is="currentSvgs[index].svg"/></div>
+                    <div class="animal"  draggable @dragstart="startDrag($event)">
+                        <component :is="currentSvgs[index].svg"/>
+                    </div>
                 </b-col>
                 <b-col>
-                    <div class="card" >
+                    <div class="card"></div>
+                </b-col>
+                <b-col>
+                    <hr size=3.5px width=134px>
+                </b-col>
+                <b-col>
+                    <div class="card"></div>
+                </b-col>
+                <b-col>
+                    <div class="card"   draggable @dragstart="startDrag($event)">
                         <div class="letters"> {{lettersSvgs[index].letter}}</div>
                         <br>
                         <div class="name_animals">{{lettersSvgs[index].letters.join('')}}</div>
@@ -18,6 +29,17 @@
             <b-modal ref="modal">
                 <p>Игра завершена!</p>
             </b-modal>
+            <b-modal ref="modalHelp">
+                <p><u>Животные:</u></p>
+                <b-row v-for="(letter,index) in currentSvgs" :key="index">
+                    <b-col>
+                        <div class="animal">
+                            <component :is="currentSvgs[index].svg"/>
+                        </div>
+                    </b-col>
+                </b-row>
+            </b-modal>
+            <b-button class="help" @click="showNameAnimal()">Подсказка</b-button>
             <div class="buttonGame">
                 <b-button @click="newWords()">Далее</b-button>
                 <b-button @click="showModal()">Завершить</b-button>
@@ -36,7 +58,6 @@
         mixins: [mixinLetters],
         name: "collectCouple",
         data(){
-
             return {
                 svgsAmount: 4,
                 currentSvgs: [],
@@ -44,8 +65,16 @@
             }
         },
         methods:{
+            startDrag(evt){
+                console.log(evt)
+                evt.dataTransfer.dropEffect = 'move'
+                evt.dataTransfer.effectAllowed = 'move'
+            },
             showModal(){
                 this.$refs['modal'].show()
+            },
+            showNameAnimal(){
+                this.$refs['modalHelp'].show()
             },
             newWords:function () {
                 this.currentSvgs = []
@@ -67,11 +96,26 @@
         }
     }
 </script>
-
+<style  lang="scss">
+    #collectCouple{
+       .animal  text{
+            display: none !important;
+        }
+    }
+</style>
 <style scoped lang="scss">
+    .modal-body svg{
+        display: block;
+        margin-bottom: 5px;
+        margin-top: -30px;
+        margin-left: 100px;
+    }
     .animal{
         width: 400px !important;
-        margin-left: 120px;
+        margin-left: 35px;
+    }
+    .help{
+        margin-top: -30px !important;
     }
     h1{margin-bottom: 40px !important;}
     svg {
@@ -79,6 +123,7 @@
         margin-bottom: 25px;
         margin-top: -50px;
         margin-left: 80px;
+
     }
     .card{
         border: 1.5px solid #8e8a8a;
@@ -88,8 +133,25 @@
         margin-top: -17px;
         font-family: 'Merriweather', serif;
         font-weight: 300 !important;
-        height: 135px; margin-left: 80px;
+        height: 135px;
         background: rgba(255, 255, 255, 0.2);
+    }
+    .col:nth-child(2) .card{
+            margin-left: -60px;
+    }
+    .col:nth-child(3){
+        padding-top: 30px;
+        margin-left: -168px;
+        hr{
+            background-color: #8e8a8a !important;
+            opacity: 1 !important;
+        }
+    }
+    .col:nth-child(4) .card{
+            margin-left: -110px;
+    }
+    .col:nth-child(5) .card{
+        margin-left: -160px;
     }
     .letters{
         font-size:60px;
@@ -98,45 +160,5 @@
     .name_animals{
         margin-top: -15px;
         font-size:20px;
-    }
-    @media screen and (min-width: 500px) and (max-width: 768px) {
-        .animal{
-            width: 320px !important;
-            margin-left: -120px;
-        }
-        .letters{font-size:30px;}
-        .card{
-            width: 102px;
-            margin-top: -25px;
-            height: 102px;
-            margin-bottom: 45px;
-            margin-left: 40px;
-        }
-    }
-    @media screen and (min-width: 768px) and (max-width: 992px) {
-        .animal{
-            width: 360px !important;
-            margin-left: -60px;
-        }
-        .letters{font-size:50px;}
-        .card{
-            width: 120px;
-            margin-top: -20px;
-            margin-bottom: 45px;
-            font-weight: 300 !important;
-            height: 120px;
-            margin-left: 80px;
-        }
-    }
-    @media screen and (min-width: 992px) and (max-width: 1200px) {
-        .animal{
-            width: 400px !important;
-            margin-left: 0;
-        }
-    }
-</style>
-<style  lang="scss">
-    #collectCouple{
-        #Square{fill: rgba(255, 255, 255, 0.2);stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
     }
 </style>
