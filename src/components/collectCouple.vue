@@ -13,7 +13,7 @@
                     <div class="card"></div>
                 </b-col>
                 <b-col>
-                    <hr size=3.5px width=134px>
+                    <hr size=3.5px>
                 </b-col>
                 <b-col>
                     <div class="card"></div>
@@ -136,23 +136,18 @@
         height: 135px;
         background: rgba(255, 255, 255, 0.2);
     }
-    .col:nth-child(2) .card{
-            margin-left: -60px;
-    }
+    .col:nth-child(2) .card{margin-left: -60px;}
     .col:nth-child(3){
         padding-top: 30px;
         margin-left: -168px;
         hr{
             background-color: #8e8a8a !important;
             opacity: 1 !important;
+            width: 134px;
         }
     }
-    .col:nth-child(4) .card{
-            margin-left: -110px;
-    }
-    .col:nth-child(5) .card{
-        margin-left: -160px;
-    }
+    .col:nth-child(4) .card{margin-left: -110px;}
+    .col:nth-child(5) .card{margin-left: -160px;}
     .letters{
         font-size:60px;
         letter-spacing: 2px;
@@ -160,5 +155,16 @@
     .name_animals{
         margin-top: -15px;
         font-size:20px;
+    }
+   
+    @media screen and (min-width: 1200px) and (max-width: 1400px) {
+        .col:nth-child(2) .card{margin-left: -90px;}
+        .col:nth-child(3){
+            hr{
+                width: 72px !important;
+                margin-left: 15px;
+            }
+        }
+        .col:nth-child(5) .card{margin-left: -140px;}
     }
 </style>
