@@ -5,8 +5,10 @@
             <h1>Собери пару - букву и животное</h1>
             <b-row v-for="(letter,index) in currentSvgs" :key="index">
                 <b-col>
-                    <div class="animal"  draggable @dragstart="startDrag($event)">
-                        <component :is="currentSvgs[index].svg"/>
+                    <div class="card">
+                        <div class="animal"  draggable @dragstart="startDrag($event)">
+                            <component :is="currentSvgs[index].svg"/>
+                        </div>
                     </div>
                 </b-col>
                 <b-col>
@@ -102,48 +104,57 @@
             display: none !important;
         }
     }
+    #alphabet{
+        #Square{stroke: none !important;}
+    }
 </style>
 <style scoped lang="scss">
+
     .modal-body svg{
         display: block;
         margin-bottom: 5px;
         margin-top: -30px;
         margin-left: 100px;
     }
+    .row{
+        margin-left: 10%;
+    }
     .animal{
-        width: 400px !important;
-        margin-left: 35px;
+        width: 399px !important;
+        margin-left: -83px;
+        margin-top: -4px;
     }
     .help{
-        margin-top: -30px !important;
+        margin-top: -5px !important;
     }
     h1{margin-bottom: 40px !important;}
     svg {
         display: block;
-        margin-bottom: 25px;
-        margin-top: -50px;
-        margin-left: 80px;
-
+        margin-top: -15px;
+        margin-left: 84px;
     }
     .card{
         border: 1.5px solid #8e8a8a;
         display: flex;
         align-items: center;justify-content: center;
         width: 135px;
-        margin-top: -17px;
+        margin-top: -5px;
         font-family: 'Merriweather', serif;
         font-weight: 300 !important;
+        margin-bottom: 25px;
         height: 135px;
         background: rgba(255, 255, 255, 0.2);
     }
-    .col:nth-child(2) .card{margin-left: -60px;}
+    .col:first-child .card{margin-left: 45px;}
+    .col:nth-child(2) .card{margin-left: -5px;}
     .col:nth-child(3){
         padding-top: 30px;
-        margin-left: -168px;
+        margin-left: -158px;
         hr{
             background-color: #8e8a8a !important;
             opacity: 1 !important;
-            width: 134px;
+            width: 116px;
+            margin-left: 30px;
         }
     }
     .col:nth-child(4) .card{margin-left: -110px;}
@@ -156,15 +167,14 @@
         margin-top: -15px;
         font-size:20px;
     }
-   
     @media screen and (min-width: 1200px) and (max-width: 1400px) {
-        .col:nth-child(2) .card{margin-left: -90px;}
+        .col:nth-child(2) .card{margin-left: -5px;}
         .col:nth-child(3){
             hr{
-                width: 72px !important;
-                margin-left: 15px;
+                width: 52px !important;
+                margin-left: 62px;
             }
         }
-        .col:nth-child(5) .card{margin-left: -140px;}
+        .col:nth-child(5) .card{margin-left: -160px;}
     }
 </style>
