@@ -123,7 +123,6 @@
         margin-top: -4px;
     }
     .help{margin-top: -5px !important;}
-    h1{margin-bottom: 40px !important;}
     svg {
         display: block;
         margin-top: -15px;
@@ -132,12 +131,13 @@
     .card{
         border: 1.5px solid #8e8a8a;
         display: flex;
-        align-items: center;justify-content: center;
+        align-items: center;
+        justify-content: center;
         width: 135px;
         margin-top: -5px;
         font-family: 'Merriweather', serif;
         font-weight: 300 !important;
-        margin-bottom: 25px;
+        margin-bottom: 28px;
         height: 135px;
         background: rgba(255, 255, 255, 0.2);
     }
@@ -164,6 +164,14 @@
         font-size:20px;
     }
     @media screen and (min-width: 500px) and (max-width: 768px) {
+        .letters{
+            font-size:55px;
+            letter-spacing: 2px;
+        }
+        .name_animals{
+            margin-top: -40px;
+            font-size:18px;
+        }
         .card{
             width: 100px;
             height: 100px;
