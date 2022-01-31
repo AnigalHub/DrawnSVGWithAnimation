@@ -30,6 +30,8 @@
             </b-row>
             <b-modal ref="modal">
                 <p>Игра завершена!</p>
+                <p>Количество набранных баллов:</p>
+                <p>За {{svgsAmount}} правильно собранные пары  - 1 балл.</p>
             </b-modal>
             <b-modal ref="modalHelp">
                 <p><u>Животные:</u></p>
@@ -109,7 +111,6 @@
     }
 </style>
 <style scoped lang="scss">
-
     .modal-body svg{
         display: block;
         margin-bottom: 5px;
@@ -182,6 +183,9 @@
             margin-top: -4px;
         }
         .row{margin-left: 0;}
+        .modal-body .row{
+            margin-left: 20%;
+        }
         .col:first-child .card{margin-left: -55px;}
         .col:nth-child(2) .card{margin-left: -10px;}
         .col:nth-child(3){
