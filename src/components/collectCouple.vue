@@ -3,25 +3,26 @@
         <router-link :to="{name: 'GameMenu'}" tag="button" class="back">Назад</router-link>
         <div id="content">
             <h1>Собери пару - букву и животное</h1>
-            <b-row v-for="(letter,index) in currentSvgs" :key="index">
+            <b-row v-for="(letter,index) in currentSvgs" :key="index" :id="index">
                 <b-col>
-                    <div class="card">
-                        <div class="animal"  draggable @dragstart="startDrag($event)">
+                    <div class="card" draggable @dragstart="startDrag($event,currentSvgs[index].letter,index)">
+                        <div class="animal" >
                             <component :is="currentSvgs[index].svg"/>
                         </div>
                     </div>
                 </b-col>
                 <b-col>
-                    <div class="card"></div>
+                    <div class="card" @dragover.prevent @dragenter.prevent @drop="onDrop($event, letterWords)">
+                        {{letterWords[index]}}</div>
                 </b-col>
                 <b-col>
                     <hr size=3.5px>
                 </b-col>
                 <b-col>
-                    <div class="card"></div>
+                    <div class="card" @dragover.prevent @dragenter.prevent @drop="onDrop($event, letterWords)">{{letterWords[index]}}</div>
                 </b-col>
                 <b-col>
-                    <div class="card"   draggable @dragstart="startDrag($event)">
+                    <div class="card"   draggable @dragstart="startDrag($event,lettersSvgs[index].letter,index)">
                         <div class="letters"> {{lettersSvgs[index].letter}}</div>
                         <br>
                         <div class="name_animals">{{lettersSvgs[index].letters.join('')}}</div>
@@ -31,7 +32,7 @@
             <b-modal ref="modalError">
                 <p>Ошибка!</p>
             </b-modal>
-            <b-modal ref="modal">
+            <b-modal ref="modalEnd">
                 <p>Игра завершена!</p>
                 <p>Количество набранных баллов:</p>
                 <p>За {{svgsAmount}} правильно собранные пары  - 1 балл.</p>
@@ -69,16 +70,25 @@
                 svgsAmount: 4,
                 currentSvgs: [],
                 lettersSvgs:[],
+                letterWords:[],
             }
         },
         methods:{
-            startDrag(evt){
-                console.log(evt)
+            startDrag(evt,item,id){
                 evt.dataTransfer.dropEffect = 'move'
                 evt.dataTransfer.effectAllowed = 'move'
+                evt.dataTransfer.setData('letter', JSON.stringify({item:item,id:id}))
+
+            },
+            onDrop(evt,list){
+                const data = evt.dataTransfer.getData('letter')
+                let parsedData = JSON.parse(data)
+                list[evt.toElement.id]=parsedData.item
+                console.log(list[evt.toElement.id])
+                console.log(list)
             },
             showModal(){
-                this.$refs['modal'].show()
+                this.$refs['modalEnd'].show()
             },
             showNameAnimal(){
                 this.$refs['modalHelp'].show()
