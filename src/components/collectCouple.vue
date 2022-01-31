@@ -28,6 +28,9 @@
                     </div>
                 </b-col>
             </b-row>
+            <b-modal ref="modalError">
+                <p>Ошибка!</p>
+            </b-modal>
             <b-modal ref="modal">
                 <p>Игра завершена!</p>
                 <p>Количество набранных баллов:</p>
