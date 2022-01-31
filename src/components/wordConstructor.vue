@@ -15,7 +15,10 @@
                      @dragover.prevent @dragenter.prevent  @drop="onDrop($event, animalName)"
                      draggable @dragstart="startDrag($event,x,index)">{{x}}</div>
             </div>
-            <b-modal ref="modal">
+            <b-modal ref="modalError">
+                <p>Ошибка!</p>
+            </b-modal>
+            <b-modal ref="modalEnd">
                 <p>Игра завершена!</p>
                 <p>Количество набранных баллов:</p>
                 <p>За правильное написание животного - 1 балл.</p>
@@ -55,7 +58,7 @@
         },
         methods:{
             showModal(){
-                this.$refs['modal'].show()
+                this.$refs['modalEnd'].show()
             },
             showNameAnimal(){
              this.$refs['modalHelp'].show()
@@ -69,21 +72,19 @@
               return  array.map(i=>[Math.random(), i]).sort().map(i=>i[1])
             },
             startDrag(evt,item,id){
-                console.log(evt)
                 evt.dataTransfer.dropEffect = 'move'
                 evt.dataTransfer.effectAllowed = 'move'
-                console.log(item)
                 evt.dataTransfer.setData('letter', JSON.stringify({item:item,id:id}))
             },
             onDrop(evt,list){
                 const data = evt.dataTransfer.getData('letter')
                 let parsedData = JSON.parse(data)
-                console.log(evt)
                 list[evt.toElement.id]=parsedData.item
+                console.log(list[evt.toElement.id])
 
                 /*удаление*/
                 let a = this.randomLettersAnimal.splice(parsedData.id,1)
-                console.log(a)
+                //console.log(a)
             }
         }
     }
