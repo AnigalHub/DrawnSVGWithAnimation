@@ -5,31 +5,31 @@
             <h1>Собери пару - букву и животное</h1>
             <b-row v-for="(letter,index) in currentSvgs" :key="index" :id="index" >
                 <b-col>
-                    <div class="card" draggable @dragstart="startDrag($event,currentSvgs[index].letter,index)">
+                    <div class="card" draggable @dragstart="startDrag($event,'currentSvgs', index)">
                         <div class="animal" >
                             <component :is="currentSvgs[index].svg"/>
                         </div>
                     </div>
                 </b-col>
                 <b-col>
-                    <div class="card" @dragover.prevent @dragenter.prevent @drop="onDrop($event, arraySvgs)">
-                        {{arraySvgs[index]}}</div>
+                    <div class="card" @dragover.prevent @dragenter.prevent @drop="onDrop($event, arraySvgs,index)">
+                        <div class="animal"v-if="arraySvgs[index]" >
+                            <component :is="arraySvgs[index].svg"/>
+                        </div>
+                    </div>
                 </b-col>
                 <b-col>
                     <hr size=3.5px>
                 </b-col>
                 <b-col>
                     <div class="card" @dragover.prevent @dragenter.prevent @drop="onDrop($event,arrayWords,index)">
-                        <div>
-                            {{index}}
-                        </div>
-                        <div>
-                            {{arrayWords[index]}}
+                        <div v-if="arrayWords[index]">
+                            {{arrayWords[index].letter}}
                         </div>
                     </div>
                 </b-col>
                 <b-col>
-                    <div class="card"  draggable @dragstart="startDrag($event,lettersSvgs[index])">
+                    <div class="card"  draggable @dragstart="startDrag($event,'lettersSvgs', index)">
                         <div class="letters"> {{lettersSvgs[index].letter}}</div>
                         <br>
                         <div class="name_animals">{{lettersSvgs[index].letters.join('')}}</div>
@@ -82,21 +82,27 @@
             }
         },
         methods:{
-            startDrag(evt,item){
+            startDrag(evt, nameOfArray, index){
                 evt.dataTransfer.dropEffect = 'move'
                 evt.dataTransfer.effectAllowed = 'move'
-                evt.dataTransfer.setData('letter', JSON.stringify({item:item}))
-                console.log(item)
+                const animalCard = JSON.stringify({ nameOfArray, index})
+                evt.dataTransfer.setData('animalCard',animalCard)
+                console.log("drag", animalCard)
 
             },
             onDrop(evt,list,id){
                 console.log(evt)
-                const data = evt.dataTransfer.getData('letter')
+                const data = evt.dataTransfer.getData('animalCard')
                 let parsedData = JSON.parse(data)
-                list[id]=parsedData.item
+                console.log("DROP", parsedData)
+                let itemFromSource = this[parsedData.nameOfArray]
+                console.log("массив",itemFromSource)
+                list.splice(id, 1, itemFromSource[parsedData.index])
                 console.log(list)
                 console.log(id)
                 console.log(list[id])
+
+                //itemFromSource.splice(parsedData.index, 1, undefined)
             },
             showModal(){
                 this.$refs['modalEnd'].show()
@@ -117,6 +123,8 @@
                     } while (!isDuplicate)
                 }
                 this.lettersSvgs = this.currentSvgs.map(i=>[Math.random(), i]).sort().map(i=>i[1])
+                this.arrayWords = new Array(this.lettersSvgs.length)
+                this.arraySvgs = new Array(this.lettersSvgs.length)
             }
         },
         created() {
@@ -141,9 +149,9 @@
         margin-top: -30px;
         margin-left: 100px;
     }
-    .row{margin-left: 10%;}
+    .row{margin-left: 10%;
+    }
     .animal{
-        width: 399px !important;
         margin-left: -83px;
         margin-top: -4px;
     }
@@ -151,6 +159,7 @@
     svg {
         display: block;
         margin-top: -15px;
+        width: 215px !important;
         margin-left: 84px;
     }
     .card{
@@ -200,6 +209,10 @@
         .card{
             width: 100px;
             height: 100px;
+        }
+        svg {
+            width: 140px !important;
+            margin-left: 40%;
         }
         .animal{
             width: 319px !important;
