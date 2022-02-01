@@ -18,7 +18,7 @@
                         </div>
                     </div>
                 </b-col>
-                <b-col>
+                <b-col cols="1">
                     <hr size=3.5px>
                 </b-col>
                 <b-col>
@@ -149,46 +149,42 @@
         margin-top: -30px;
         margin-left: 100px;
     }
-    .row{margin-left: 10%;
-    }
-    .animal{
-        margin-left: -83px;
-        margin-top: -4px;
+    .row{
+        width: 95%;
+        .col{
+            width: 135px;
+            height: 135px;
+            margin-bottom: 10px;
+
+        }
     }
     .help{margin-top: -5px !important;}
     svg {
         display: block;
-        margin-top: -15px;
-        width: 215px !important;
-        margin-left: 84px;
+        width: 100%;
+        height: 127px;
     }
     .card{
         border: 1.5px solid #8e8a8a;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 135px;
         margin-top: -5px;
         font-family: 'Merriweather', serif;
         font-weight: 300 !important;
-        margin-bottom: 28px;
         height: 135px;
         background: rgba(255, 255, 255, 0.2);
     }
-    .col:first-child .card{margin-left: 45px;}
-    .col:nth-child(2) .card{margin-left: -5px;}
-    .col:nth-child(3){
-        padding-top: 30px;
-        margin-left: -158px;
+   .col-1{
+        width: 100px !important;
+        padding: 0 !important;
         hr{
             background-color: #8e8a8a !important;
             opacity: 1 !important;
-            width: 116px;
-            margin-left: 30px;
+            width: 100%;
+            margin-top: 50%;
         }
-    }
-    .col:nth-child(4) .card{margin-left: -110px;}
-    .col:nth-child(5) .card{margin-left: -160px;}
+   }
     .letters{
         font-size:60px;
         letter-spacing: 2px;
@@ -197,76 +193,33 @@
         margin-top: -15px;
         font-size:20px;
     }
+
     @media screen and (min-width: 500px) and (max-width: 768px) {
-        .letters{
-            font-size:55px;
-            letter-spacing: 2px;
+        .row{width: 100%;}
+        .col-1{
+            width: 20px !important;
+            hr{margin-top: 180%;}
         }
+        .row .col{padding: 0 5px;}
+        .card, .row .col{height: 90px;}
+        svg {height: 95px;}
+        .letters{font-size:30px;}
         .name_animals{
-            margin-top: -40px;
-            font-size:18px;
+            margin-top: -25px;
+            font-size:15px;
         }
-        .card{
-            width: 100px;
-            height: 100px;
-        }
-        svg {
-            width: 140px !important;
-            margin-left: 40%;
-        }
-        .animal{
-            width: 319px !important;
-            margin-left: -83px;
-            margin-top: -4px;
-        }
-        .row{margin-left: 0;}
-        .modal-body .row{
-            margin-left: 20%;
-        }
-        .col:first-child .card{margin-left: -55px;}
-        .col:nth-child(2) .card{margin-left: -10px;}
-        .col:nth-child(3){
-            margin-left: 0;
-            hr{
-                width: 100% !important;
-                margin-left: -24px;
-            }
-        }
-        .col:nth-child(4) .card{margin-left: -50px;}
-        .col:nth-child(5) .card{margin-left: 0;}
     }
     @media screen and (min-width: 768px) and (max-width: 992px) {
-        .col:first-child .card{margin-left: -80px;}
-        .col:nth-child(2) .card{margin-left: -50px;}
-        .col:nth-child(3){
-            margin-left: -48px;
-            hr{
-                width: 20px !important;
-                margin-left: 7px;
-            }
+        .row{width: 100%;}
+        .col-1{
+            width: 60px !important;
+            hr{margin-top: 80%;}
         }
-        .col:nth-child(4) .card{margin-left: -100px;}
-        .col:nth-child(5) .card{margin-left: -65px;}
+        .card, .row .col{height: 105px;}
+        svg {height: 110px;}
+        .letters{font-size:45px;}
+        .name_animals{margin-top: -30px;}
     }
-    @media screen and (min-width: 992px) and (max-width: 1200px) {
-        .col:nth-child(2) .card{margin-left: 0;}
-        .col:nth-child(3){
-            margin-left: -48px;
-            hr{
-                width: 33px !important;
-                margin-left: 20px;
-            }
-        }
-        .col:nth-child(5) .card{margin-left: -110px;}
-    }
-    @media screen and (min-width: 1200px) and (max-width: 1400px) {
-        .col:nth-child(2) .card{margin-left: -5px;}
-        .col:nth-child(3){
-            hr{
-                width: 52px !important;
-                margin-left: 62px;
-            }
-        }
-        .col:nth-child(5) .card{margin-left: -160px;}
-    }
+
+
 </style>
