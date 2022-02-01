@@ -150,7 +150,8 @@
         margin-left: 100px;
     }
     .row{
-        width: 95%;
+        width: 85%;
+        margin: 0 6.5%;
         .col{
             width: 135px;
             height: 135px;
@@ -186,16 +187,19 @@
         }
    }
     .letters{
-        font-size:60px;
+        font-size:48px;
         letter-spacing: 2px;
     }
     .name_animals{
-        margin-top: -15px;
+        margin-top: -28px;
         font-size:20px;
     }
 
     @media screen and (min-width: 500px) and (max-width: 768px) {
-        .row{width: 100%;}
+        .row{
+            width: 100%;
+            margin: 0 -7%;
+        }
         .col-1{
             width: 20px !important;
             hr{margin-top: 180%;}
@@ -203,22 +207,28 @@
         .row .col{padding: 0 5px;}
         .card, .row .col{height: 90px;}
         svg {height: 95px;}
-        .letters{font-size:30px;}
+        .letters{font-size:25px;}
         .name_animals{
             margin-top: -25px;
             font-size:15px;
         }
     }
     @media screen and (min-width: 768px) and (max-width: 992px) {
-        .row{width: 100%;}
+        .row{
+            width: 100%;
+            margin: 0 -5.5%;
+        }
         .col-1{
             width: 60px !important;
             hr{margin-top: 80%;}
         }
         .card, .row .col{height: 105px;}
         svg {height: 110px;}
-        .letters{font-size:45px;}
-        .name_animals{margin-top: -30px;}
+        .letters{font-size:35px;}
+        .name_animals{
+            margin-top: -30px;
+            font-size:18px;
+        }
     }
 
 
