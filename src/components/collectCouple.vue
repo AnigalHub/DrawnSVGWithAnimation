@@ -24,7 +24,9 @@
                 <b-col>
                     <div class="card" @dragover.prevent @dragenter.prevent @drop="onDrop($event,arrayWords,index)">
                         <div v-if="arrayWords[index]">
-                            {{arrayWords[index].letter}}
+                            <div class="letters"> {{arrayWords[index].letter}}</div>
+                            <br>
+                            <div class="name_animals">{{arrayWords[index].letters.join('')}}</div>
                         </div>
                     </div>
                 </b-col>
