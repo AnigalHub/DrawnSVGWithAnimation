@@ -3,7 +3,7 @@
         <router-link :to="{name: 'GameMenu'}" tag="button" class="back">Назад</router-link>
         <div id="content">
             <h1>Собери пару - букву и животное</h1>
-            <b-row v-for="(letter,index) in currentSvgs" :key="index" :id="index">
+            <b-row v-for="(letter,index) in currentSvgs" :key="index" :id="index" >
                 <b-col>
                     <div class="card" draggable @dragstart="startDrag($event,currentSvgs[index].letter,index)">
                         <div class="animal" >
@@ -12,17 +12,24 @@
                     </div>
                 </b-col>
                 <b-col>
-                    <div class="card" @dragover.prevent @dragenter.prevent @drop="onDrop($event, letterWords)">
-                        {{letterWords[index]}}</div>
+                    <div class="card" @dragover.prevent @dragenter.prevent @drop="onDrop($event, arraySvgs)">
+                        {{arraySvgs[index]}}</div>
                 </b-col>
                 <b-col>
                     <hr size=3.5px>
                 </b-col>
                 <b-col>
-                    <div class="card" @dragover.prevent @dragenter.prevent @drop="onDrop($event, letterWords)">{{letterWords[index]}}</div>
+                    <div class="card" @dragover.prevent @dragenter.prevent @drop="onDrop($event,arrayWords,index)">
+                        <div>
+                            {{index}}
+                        </div>
+                        <div>
+                            {{arrayWords[index]}}
+                        </div>
+                    </div>
                 </b-col>
                 <b-col>
-                    <div class="card"   draggable @dragstart="startDrag($event,lettersSvgs[index].letter,index)">
+                    <div class="card"  draggable @dragstart="startDrag($event,lettersSvgs[index])">
                         <div class="letters"> {{lettersSvgs[index].letter}}</div>
                         <br>
                         <div class="name_animals">{{lettersSvgs[index].letters.join('')}}</div>
@@ -70,22 +77,26 @@
                 svgsAmount: 4,
                 currentSvgs: [],
                 lettersSvgs:[],
-                letterWords:[],
+                arrayWords: [],
+                arraySvgs:[],
             }
         },
         methods:{
-            startDrag(evt,item,id){
+            startDrag(evt,item){
                 evt.dataTransfer.dropEffect = 'move'
                 evt.dataTransfer.effectAllowed = 'move'
-                evt.dataTransfer.setData('letter', JSON.stringify({item:item,id:id}))
+                evt.dataTransfer.setData('letter', JSON.stringify({item:item}))
+                console.log(item)
 
             },
-            onDrop(evt,list){
+            onDrop(evt,list,id){
+                console.log(evt)
                 const data = evt.dataTransfer.getData('letter')
                 let parsedData = JSON.parse(data)
-                list[evt.toElement.id]=parsedData.item
-                console.log(list[evt.toElement.id])
+                list[id]=parsedData.item
                 console.log(list)
+                console.log(id)
+                console.log(list[id])
             },
             showModal(){
                 this.$refs['modalEnd'].show()
