@@ -26,16 +26,14 @@
 
 <style scoped lang="scss">
     #alphabet{
-        padding-left: 40px;
         padding-bottom: 35px;
     }
     svg{
         margin-top: -83px !important;
-        margin-left: -130px !important;
     }
     .flex-container > div {
-        width: 16.5%;
-        margin-bottom: 8.15px;
+        width: 16%;
+        margin-bottom:12px;
         margin-top: 45px;
     }
     @media screen and (min-width: 500px) and (max-width: 768px) {
@@ -58,6 +56,7 @@
 </style>
 <style  lang="scss">
     #alphabet{
-        #Square{fill: none !important;}
+        #Square{//fill: none !important;
+        }
     }
 </style>
