@@ -137,11 +137,11 @@
 <style  lang="scss">
     #collectCouple{
        .animal  text{
-            display: none !important;
+           // display: none !important;
         }
     }
     #collectCouple{
-        #Square{stroke: none !important;}
+      //  #Square{stroke: none !important;}
     }
 </style>
 <style scoped lang="scss">
@@ -152,20 +152,15 @@
         margin-left: 100px;
     }
     .row{
-        width: 85%;
-        margin: 0 6.5%;
-        .col{
-            width: 135px;
-            height: 135px;
-            margin-bottom: 10px;
-
-        }
+        width: 65%;
+        margin: 0 auto;
     }
     .help{margin-top: -5px !important;}
     svg {
         display: block;
-        width: 100%;
-        height: 127px;
+
+        width: 135px;
+        height: 135px;
     }
     .card{
         border: 1.5px solid #8e8a8a;
@@ -173,9 +168,11 @@
         align-items: center;
         justify-content: center;
         margin-top: -5px;
-        font-family: 'Merriweather', serif;
+        margin-bottom: 20px;
+        font-family: "Merriweather", serif;
         font-weight: 300 !important;
         height: 135px;
+        width: 135px;
         background: rgba(255, 255, 255, 0.2);
     }
    .col-1{
