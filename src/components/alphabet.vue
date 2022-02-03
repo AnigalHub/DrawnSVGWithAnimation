@@ -29,11 +29,11 @@
         padding-bottom: 35px;
     }
     svg{
-        margin-top: -83px !important;
+        margin-top: -63px !important;
     }
     .flex-container > div {
-        width: 16%;
-        margin-bottom:12px;
+        width: 14%;
+        margin-bottom:20px;
         margin-top: 45px;
     }
     @media screen and (min-width: 500px) and (max-width: 768px) {
