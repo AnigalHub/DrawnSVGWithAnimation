@@ -13,7 +13,7 @@ export default {
 }
 </script>
 <style lang="scss">
-    #Square{fill: rgba(255, 255, 255, 0.2);stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
+    #Square{fill: rgba(138, 235, 243, 0.35);stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
   .close { /*"крестик" (размер) - кнопка закрытия модального окна*/
       border: none !important;
       background: none !important;
