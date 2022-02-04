@@ -1,8 +1,8 @@
 <template>
     <svg version="1.1" id="Elephant" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 850 850" style="enable-background:new 0 0 850 850;" xml:space="preserve">
-        <text id="Letters" transform="matrix(0.8517 0 0 1 595 487.3867)" class="st0 st1">Ee</text>
         <rect id="Square" x="80" y="80"  width="700" height="700"/>
+        <text id="Letters" transform="matrix(0.8517 0 0 1 595 487.3867)" class="st0 st1">Ee</text>
         <g class="Animal">
 	        <g id="Tail">
 		        <path class="st2" d="M669.8,608.2c0,0-6.6,8.6-13.1,19c-3.2,5-4.4,7.3-6.2,10.4c-2.8,4.6-10.1,16.7-21.3,26c-14.6,12.1-29.5,14.1-33.7,14.6c-7.6,0.8-16.5,1.8-26.3-3c-7.6-3.7-12.5-9.3-22.1-9.7c-3.5-0.1-9.4,0.3-9.8,1.9c-0.9,3.9,29.9,21.9,60.9,15.3C642.7,673.4,669.9,608.2,669.8,608.2z"/>
