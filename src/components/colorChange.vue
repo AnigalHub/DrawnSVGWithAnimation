@@ -5,11 +5,11 @@
             <h1>Нажми на кнопку</h1>
             <div class="flex-container">
                 <div v-for="(letter,index) in Svgs" :key="index" >
-                        <label  class="switch">
-                            <input type="checkbox" v-model="Svgs[index].checked" >
-                            <span class="slider round">{{Svgs[index].checked ? "Вкл" : "Выкл"}}</span>
-                        </label>
-                        <component :isTurnOn="Svgs[index].checked" :is="letter.svg" :id="letter.name"/>
+                    <label  class="switch">
+                        <input type="checkbox" v-model="Svgs[index].checked" >
+                        <span class="slider round">{{Svgs[index].checked ? "Вкл" : "Выкл"}}</span>
+                    </label>
+                    <component :isTurnOn="Svgs[index].checked" :is="letter.svg" :id="letter.name"/>
                 </div>
             </div>
         </div>
@@ -45,30 +45,29 @@
 <style scoped lang="scss">
     #colorChange{
         .flex-container{
-            margin-left: 10%;
-            &> div {
-                width: 33%;
-                margin-left: -40px;
-            }
+            width: 70%;
+            margin: 0 auto;
+            &> div {width: 33%;}
         }
     }
     .switch {
         position: relative;
         display: inline-block;
-        width: 210px;
+        width: 190px;
         height: 34px;
+        margin-left: 20px;
     }
     input{display: none;}
     .slider {
         position: absolute;
         cursor: pointer;
         top: 0;
-        left: 50px;
+        left: 10px;
         right: 0;
         bottom: 0;
         background-color: #ccc;
         transition: .4s;
-        padding: 5px 0 0 105px;
+        padding: 5px 0 0 125px;
         font-weight: bold;
         font-family: 'Alegreya', serif;
 
@@ -88,55 +87,48 @@
         background-color: #2196F3;
         padding: 5px 0 0 20px;
     }
-    input:checked + .slider:before {transform: translateX(125px);}
+    input:checked + .slider:before {transform: translateX(145px);}
     .slider.round {border-radius: 34px;}
     .slider.round:before {border-radius: 50%;}
     svg{
-        width: 520px;
-        margin-top: 0;
-        margin-bottom:30px;
-        margin-left: -210px;
+       width: 250px;
+       height: 250px;
+       margin: 15px;
     }
     @media screen and (min-width: 500px) and (max-width: 768px) {
-        svg{width: 320px;}
-        #colorChange{
-            .flex-container{
-                margin-left: 30%;
-                &> div {
-                    width: 44%;
-                    margin-left: -40px;
-                    margin-right: 55px;
-                }
-            }
+        #colorChange .flex-container{width: 100%;}
+        svg{
+            width: 135px;
+            height: 135px;
+            margin: 5px;
         }
         .slider {padding: 5px 45px 0 90px;}
         .switch {
-            margin-left: -60%;
-            width: 170px;
+            margin-left: 0;
+            width: 130px;
             height: 32px;
         }
         input:checked + .slider:before {transform: translateX(85px);}
     }
     @media screen and (min-width: 768px) and (max-width: 992px) {
-        svg{width: 380px;}
-        #colorChange{
-            .flex-container{
-                margin-left: 5%;
-                &> div {
-                    margin-right: 35px;
-                }
-            }
+        #colorChange .flex-container{width: 85%;}
+        svg{
+            width: 190px;
+            height: 190px;
         }
         .slider {padding: 5px 45px 0 105px;}
         .switch {
-            margin-left: -22%;
             width: 190px;
             height: 32px;
         }
         input:checked + .slider:before {transform: translateX(105px);}
     }
     @media screen and (min-width: 992px) and (max-width: 1200px) {
-        svg{width: 460px;}
+        #colorChange .flex-container{width: 85%;}
+        svg{
+            width: 230px;
+            height: 230px;
+        }
     }
 </style>
 
