@@ -25,9 +25,10 @@
                 <component :is="currentSvg.svg"/>
                 <p class="nameSelectAnimal">{{currentSvg.letters.join('')}}</p>
             </b-modal>
-            <b-button class="help" @click="showNameAnimal()">Подсказка</b-button>
             <div class="buttonGame">
+                <b-button class="help" @click="showNameAnimal()">Подсказка</b-button>
                 <b-button @click="newAnimal()">Далее</b-button>
+                <b-button>Проверить</b-button>
                 <b-button @click="showModal()">Завершить</b-button>
             </div>
         </div>
@@ -94,22 +95,19 @@
     .modal-body svg{
         display: block;
         width: 400px;
-        margin-bottom: 0 !important;
-        margin-left: 50px !important;
-        margin-top: -170px !important;
+        margin: -10% auto 0 !important;
     }
     .nameSelectAnimal{
-        margin-top: -140px;
+        margin-top: -50px;
         font-size: 3.2rem;
     }
      svg {
          display: block;
-         width: 650px;
-         height: 480px;
-         margin: -45px auto 0 !important;
+         width: 450px;
+         height: 450px;
+         margin: -25px auto 0 !important;
      }
      .buttonGame{margin-top: 25px;}
-     .letters{margin-top: -20px !important;}
     .letters,.name_animal{
         width: 100%;
         display: flex;
@@ -131,12 +129,8 @@
         height: 60px;
     }
      @media screen and (min-width: 500px) and (max-width: 768px) {
-         svg {
-             width: 400px !important;
-             margin: -180px auto 0 !important;
-         }
          .letters,.name_animal{
-             margin-left: -25px;
+             margin-top: 10px !important;
              .letter{
                  width: 45px;
                  height: 45px;
@@ -144,23 +138,38 @@
                  font-size: 1.5rem;
              }
          }
-         .letters{margin-top: -120px !important;}
+         svg {
+             width: 250px;
+             height: 250px;
+         }
+         .modal-body svg{margin-top: -5% !important;}
+         .nameSelectAnimal{margin-top: -35px;}
      }
      @media screen and (min-width: 768px) and (max-width: 992px) {
-         svg {
-             width: 550px !important;
-             margin: -145px auto 0 !important;
-         }
          .letters,.name_animal{
+             margin-top: 10px !important;
              .letter{
                  width: 50px;
                  height: 50px;
                  margin: 0 8px;
                  font-size: 2rem;
              }
-         }
-         .letters{margin-top: -60px !important;}
-     }
+        }
+        svg {
+            width: 300px;
+            height: 300px;
+        }
+        .modal-body svg{margin-top: -5% !important;}
+        .nameSelectAnimal{margin-top: -35px;}
+    }
+    @media screen and (min-width: 992px) and (max-width: 1200px) {
+        svg {
+            width: 350px;
+            height: 350px;
+        }
+        .modal-body svg{margin-top: -5%  !important;}
+        .nameSelectAnimal{margin-top: -35px;}
+    }
 </style>
 
 
