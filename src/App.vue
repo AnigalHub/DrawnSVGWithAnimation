@@ -13,15 +13,13 @@ export default {
 }
 </script>
 <style lang="scss">
-    #Square{fill: rgba(138, 235, 243, 0.35);stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
+  #Square{fill: rgba(138, 235, 243, 0.35);stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
   .close { /*"крестик" (размер) - кнопка закрытия модального окна*/
       border: none !important;
       background: none !important;
       font-size: 30px;
   }
-  .modal-dialog:first-child{
-      margin-top: 5% !important;
-  }
+  .modal-dialog:first-child{margin-top: 5% !important;}
   .modal-header{
       border: none !important;
       padding: 10px !important;
@@ -31,7 +29,6 @@ export default {
       min-height: 100px;
       text-align: center;
       font-size: 30px;
-      margin-bottom: 15px !important;
       font-family: 'Poiret One', cursive;
       font-weight: 800 !important;
       p:first-child{margin-top: -40px !important;}
@@ -81,9 +78,7 @@ export default {
           &:hover {box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);}
       }
   }
-
   #alphabet,#colorChange,#loopingAnimation,#wordConstructor,#collectCouple,#territory{
-      margin-left: 60px;
       padding-top: 15px;
   }
   .back{
@@ -96,30 +91,20 @@ export default {
       background-color: #517952 !important;
   }
   .buttonGame{
-      width: 380px;
-      button{
-          width: 155px;
-          padding:10px !important;
-          margin: 0 10px;
-          &:first-child{background: #517952;}
-          &:last-child{background: #3a6f3a;}
-      }
-  }
-  .help{
-      margin-top: 30px;
-      margin-bottom: 15px;
-      width: 150px;
-      padding: 10px 10px 10px 30px !important;
-  }
-  .buttonGame,.help{
       font-size: 1.15rem;
       text-align: center;
       text-decoration: none;
       transition-duration: 0.4s;
       display: flex !important;
-      margin-left: auto;
-      margin-right: auto;
-
+      margin: 10px auto 15px;
+      width: 700px;
+      button{
+          width: 155px;
+          padding:10px !important;
+          margin: 0 8px;
+          &:first-child{background: #517952;}
+          &:last-child{background: #3a6f3a;}
+      }
   }
   .flex-container {
       display: flex;
@@ -128,14 +113,19 @@ export default {
   #screenRotation{display: none;}
   @media screen and  (max-width: 499px) {
       #alphabet{padding-left: 0;}
-      #alphabet,#colorChange,#loopingAnimation,#wordConstructor,#collectCouple,#territory{margin-left: 0;}
+      #mainMenu, #gameMenu{
+          button{width: 100%;}
+      }
       #content{display: none;}
       #screenRotation{display: block;}
   }
   @media screen and (min-width: 500px) and (max-width: 768px) {
-      #collectCouple,#wordConstructor{
-          h1{margin-left: -40px;}
-          .back{margin-left: 25%!important;}
+      #collectCouple, #wordConstructor {
+          h1 {margin-left: -40px;}
+      }
+      .buttonGame {
+          width: 100%;
+          margin-top: 10px !important;
       }
   }
   @media screen and (max-width: 992px) {
@@ -154,5 +144,4 @@ export default {
           button {font-size: .9rem;}
       }
   }
-
 </style>
