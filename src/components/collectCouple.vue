@@ -50,15 +50,16 @@
                 <p><u>Животные:</u></p>
                 <b-row v-for="(letter,index) in currentSvgs" :key="index">
                     <b-col>
-                        <div class="animal">
+                        <div class="card">
                             <component :is="currentSvgs[index].svg"/>
                         </div>
                     </b-col>
                 </b-row>
             </b-modal>
-            <b-button class="help" @click="showNameAnimal()">Подсказка</b-button>
             <div class="buttonGame">
+                <b-button class="help" @click="showNameAnimal()">Подсказка</b-button>
                 <b-button @click="newWords()">Далее</b-button>
+                <b-button>Проверить</b-button>
                 <b-button @click="showModal()">Завершить</b-button>
             </div>
         </div>
@@ -134,34 +135,22 @@
         }
     }
 </script>
-<style  lang="scss">
-    #collectCouple{
-       .animal  text{
-           // display: none !important;
-        }
-    }
-    #collectCouple{
-      //  #Square{stroke: none !important;}
-    }
-</style>
 <style scoped lang="scss">
-    .modal-body svg{
+    .modal-body .card{
         display: block;
-        margin-bottom: 5px;
-        margin-top: -30px;
-        margin-left: 100px;
+        margin: 0 auto 7px;
+        border: 1.5px solid #bfbaba;
     }
     .row{
-        width: 65%;
+        width: 60%;
         margin: 0 auto;
     }
     .help{margin-top: -5px !important;}
     svg {
         display: block;
-
-        width: 135px;
-        height: 135px;
+        width: 100%;
     }
+    .card,svg{height: 145px;}
     .card{
         border: 1.5px solid #8e8a8a;
         display: flex;
@@ -171,9 +160,8 @@
         margin-bottom: 20px;
         font-family: "Merriweather", serif;
         font-weight: 300 !important;
-        height: 135px;
-        width: 135px;
-        background: rgba(255, 255, 255, 0.2);
+        width: 145px;
+        background: rgba(255, 255, 255, 0.4);
     }
    .col-1{
         width: 100px !important;
@@ -185,50 +173,61 @@
             margin-top: 50%;
         }
    }
-    .letters{
-        font-size:48px;
-        letter-spacing: 2px;
-    }
-    .name_animals{
-        margin-top: -28px;
-        font-size:20px;
-    }
+   .letters{
+       font-size:48px;
+       letter-spacing: 2px;
+   }
+   .name_animals{
+       margin-top: -28px;
+       font-size:20px;
+   }
 
-    @media screen and (min-width: 500px) and (max-width: 768px) {
-        .row{
-            width: 100%;
-            margin: 0 -7%;
-        }
-        .col-1{
-            width: 20px !important;
-            hr{margin-top: 180%;}
-        }
-        .row .col{padding: 0 5px;}
-        .card, .row .col{height: 90px;}
-        svg {height: 95px;}
-        .letters{font-size:25px;}
-        .name_animals{
-            margin-top: -25px;
-            font-size:15px;
-        }
-    }
-    @media screen and (min-width: 768px) and (max-width: 992px) {
-        .row{
-            width: 100%;
-            margin: 0 -5.5%;
-        }
-        .col-1{
-            width: 60px !important;
-            hr{margin-top: 80%;}
-        }
-        .card, .row .col{height: 105px;}
-        svg {height: 110px;}
-        .letters{font-size:35px;}
-        .name_animals{
-            margin-top: -30px;
-            font-size:18px;
-        }
-    }
-
-
+   @media screen and (min-width: 500px) and (max-width: 768px) {
+       .row{width: 100%;}
+       .col{padding: 0 !important;}
+       .col-1{
+           width: 55px !important;
+           hr{
+               margin-top: 65%;
+               margin-left: -18%;
+           }
+       }
+       .card{width: 100px;}
+       .card,svg{height: 100px;}
+       .letters{font-size:25px;}
+       .name_animals{
+           margin-top: -25px;
+           font-size:15px;
+       }
+   }
+   @media screen and (min-width: 768px) and (max-width: 992px) {
+       .row{width: 100%;}
+       .col-1{
+           width: 55px !important;
+           hr{margin-top: 90%;}
+       }
+       .card{width: 133px;}
+       .card,svg{height: 133px;}
+       .letters{font-size:35px;}
+       .name_animals{
+           margin-top: -30px;
+           font-size:18px;
+       }
+   }
+   @media screen and (min-width: 992px) and (max-width: 1200px) {
+       .row{width: 85%;}
+       .letters{font-size:35px;}
+       .name_animals{
+           margin-top: -30px;
+           font-size:18px;
+       }
+   }
+   @media screen and (min-width: 1200px) and (max-width: 1400px) {
+       .row{width: 70%;}
+       .letters{font-size:35px;}
+       .name_animals{
+           margin-top: -30px;
+           font-size:18px;
+       }
+   }
 </style>
