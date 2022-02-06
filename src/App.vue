@@ -97,6 +97,7 @@ export default {
       transition-duration: 0.4s;
       display: flex !important;
       margin: 10px auto 15px;
+      padding-bottom: 40px;
       width: 700px;
       button{
           width: 155px;
