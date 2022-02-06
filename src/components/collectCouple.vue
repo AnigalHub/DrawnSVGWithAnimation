@@ -112,9 +112,7 @@
 
                 if(parsedData.nameOfArray == parsedData2.list){
                     for(let a; a<parsedData.nameOfArray.length; a++){
-                        if(a== 0){
 
-                        }
 
                     }
                 }
@@ -227,6 +225,10 @@
 
    @media screen and (min-width: 500px) and (max-width: 768px) {
        .row{width: 100%;}
+       .words{
+           height: 220px;
+           margin-bottom: 30px;
+       }
        .cardsGame {width: 77%;}
        .col-3{
            width: 80px !important;
