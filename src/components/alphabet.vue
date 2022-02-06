@@ -25,32 +25,18 @@
 </script>
 
 <style scoped lang="scss">
-    #alphabet{
-        padding-bottom: 35px;
-    }
-    svg{
-        border: 2px solid red;
-        margin: 5px !important;
-    }
-    .flex-container > div {
-        width: 14%;
+    #alphabet{padding-bottom: 35px;}
+    svg{margin: 3px;}
+    .flex-container{
+        margin-top: -13px;
+        & > div {width: 14%;}
     }
     @media screen and (min-width: 500px) and (max-width: 768px) {
-        h1{margin-left: -40px;}
-        button{margin-left: 25%!important;}
-        svg{margin-left: -98px !important;}
-        .flex-container > div {
-            width: 25%;
-            margin-bottom: 22px;
-            margin-top: 45px;
-        }
+        svg{margin: 1px;}
+        .flex-container > div {width: 20%;}
     }
     @media screen and (min-width: 768px )and (max-width: 992px) {
-        .flex-container > div {
-            width: 17.5%;
-            margin-right: 2.5%;
-            margin-bottom: 2.5%;
-        }
+        .flex-container > div {width: 16%;}
     }
 </style>
 <style  lang="scss">
