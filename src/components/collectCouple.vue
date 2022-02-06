@@ -107,8 +107,20 @@
                 newArray.splice(id, 1, itemFromSource[parsedData.index])
 
 
+                console.log(parsedData.nameOfArray)
+                console.log(parsedData2.list)
+
+                if(parsedData.nameOfArray == parsedData2.list){
+                    for(let a; a<parsedData.nameOfArray.length; a++){
+                        if(a== 0){
+
+                        }
+
+                    }
+                }
+                else {
                     itemFromSource.splice(parsedData.index, 1)
-                
+                }
 
 
               // console.log('new',this.arrayWords)
