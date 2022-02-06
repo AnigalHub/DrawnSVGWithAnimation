@@ -16,7 +16,8 @@
                     <hr size=3.5px>
                 </b-col>
                 <b-col>
-                    <div class="card" @dragover.prevent @dragenter.prevent @drop="onDrop($event,arrayWords,index)" >
+                    <div class="card" @dragover.prevent @dragenter.prevent @drop="onDrop($event,'arrayWords',index)"
+                         draggable @dragstart="startDrag($event,'arrayWords',index)">
                         <div v-if="arrayWords[index]">
                             <div class="letters" v-if="arrayWords[index]"> {{arrayWords[index].letter}}</div>
                             <br>
@@ -86,22 +87,33 @@
                 evt.dataTransfer.dropEffect = 'move'
                 evt.dataTransfer.effectAllowed = 'move'
                 const animalCard = JSON.stringify({ nameOfArray, index})
+                console.log(animalCard)
                 evt.dataTransfer.setData('animalCard',animalCard)
                 console.log("drag", animalCard)
             },
             onDrop(evt,list,id){
                 console.log(evt)
-                const data = evt.dataTransfer.getData('animalCard')
-                let parsedData = JSON.parse(data)
-                console.log("DROP", parsedData)
-                let itemFromSource = this[parsedData.nameOfArray]
-                console.log("массив",itemFromSource)
-                list.splice(id, 1, itemFromSource[parsedData.index])
+               const data = evt.dataTransfer.getData('animalCard')
+               let parsedData = JSON.parse(data)
+               console.log("DROP", parsedData)
+               let itemFromSource = this[parsedData.nameOfArray]
+               console.log("массив",itemFromSource)
 
 
-                console.log('new',this.arrayWords)
-                console.log('new0',this.littleCurrentSvgs)
-               itemFromSource.splice(parsedData.index, 1)
+                let parsedData2 = JSON.parse(JSON.stringify({list,id}))
+                console.log("DROP2",parsedData2)
+                let newArray = this[parsedData2.list]
+                console.log("новый массив",newArray)
+                newArray.splice(id, 1, itemFromSource[parsedData.index])
+
+
+                    itemFromSource.splice(parsedData.index, 1)
+                
+
+
+              // console.log('new',this.arrayWords)
+               // console.log('new0',this.littleCurrentSvgs)
+              // itemFromSource.splice(parsedData.index, 1)
             },
             checkArrays:function(){
                 for(let i =0; i < this.littleCurrentSvgs.length; i++){
@@ -139,7 +151,6 @@
                this.littleCurrentSvgs = this.currentSvgs.slice(0,3)
 
                this.lettersSvgs = this.currentSvgs.map(i=>[Math.random(), i]).sort().map(i=>i[1])
-               console.log(this.lettersSvgs)
                this.arrayWords = new Array(this.littleCurrentSvgs.length)
             }
         },
