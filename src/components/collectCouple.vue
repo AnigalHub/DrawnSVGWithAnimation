@@ -105,7 +105,6 @@
                 let newArray = this[parsedData2.list]
                console.log("новый массив",newArray)
                 let inside = newArray.splice(id, 1, itemFromSource[parsedData.index])
-               // console.log('тащим',newArray[id])
                // console.log('внутри',inside)
 
 
@@ -113,6 +112,9 @@
                 console.log(parsedData2.list)
 
                 if(parsedData.nameOfArray == parsedData2.list){
+                    console.log(inside)
+
+
                     console.log('тащим -1 ',newArray[id])
                     console.log('внутри -2 ',inside[0])
                     let a = newArray[id]
@@ -121,11 +123,14 @@
                     console.log('тащим -1 ',newArray[id])
                     console.log('внутри -2 ',inside[0])
 
+                  
+                    newArray.splice(parsedData.index, parsedData2.id,newArray[id],inside[0])
+
                 }
                 else {
                     itemFromSource.splice(parsedData.index, 1)
                 }
-                
+
             },
             checkArrays:function(){
                 for(let i =0; i < this.littleCurrentSvgs.length; i++){
