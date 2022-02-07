@@ -87,43 +87,45 @@
                 evt.dataTransfer.dropEffect = 'move'
                 evt.dataTransfer.effectAllowed = 'move'
                 const animalCard = JSON.stringify({ nameOfArray, index})
-                console.log(animalCard)
+              //  console.log(animalCard)
                 evt.dataTransfer.setData('animalCard',animalCard)
-                console.log("drag", animalCard)
+             //   console.log("drag", animalCard)
             },
             onDrop(evt,list,id){
                 console.log(evt)
                const data = evt.dataTransfer.getData('animalCard')
                let parsedData = JSON.parse(data)
-               console.log("DROP", parsedData)
+              // console.log("DROP", parsedData)
                let itemFromSource = this[parsedData.nameOfArray]
-               console.log("массив",itemFromSource)
+             //  console.log("массив",itemFromSource)
 
 
                 let parsedData2 = JSON.parse(JSON.stringify({list,id}))
-                console.log("DROP2",parsedData2)
+            //    console.log("DROP2",parsedData2)
                 let newArray = this[parsedData2.list]
-                console.log("новый массив",newArray)
-                newArray.splice(id, 1, itemFromSource[parsedData.index])
+               console.log("новый массив",newArray)
+                let inside = newArray.splice(id, 1, itemFromSource[parsedData.index])
+               // console.log('тащим',newArray[id])
+               // console.log('внутри',inside)
 
 
                 console.log(parsedData.nameOfArray)
                 console.log(parsedData2.list)
 
                 if(parsedData.nameOfArray == parsedData2.list){
-                    for(let a; a<parsedData.nameOfArray.length; a++){
+                    console.log('тащим -1 ',newArray[id])
+                    console.log('внутри -2 ',inside[0])
+                    let a = newArray[id]
+                    newArray[id] = inside[0]
+                    inside[0] = a
+                    console.log('тащим -1 ',newArray[id])
+                    console.log('внутри -2 ',inside[0])
 
-
-                    }
                 }
                 else {
                     itemFromSource.splice(parsedData.index, 1)
                 }
-
-
-              // console.log('new',this.arrayWords)
-               // console.log('new0',this.littleCurrentSvgs)
-              // itemFromSource.splice(parsedData.index, 1)
+                
             },
             checkArrays:function(){
                 for(let i =0; i < this.littleCurrentSvgs.length; i++){
