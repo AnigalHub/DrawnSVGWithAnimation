@@ -16,12 +16,12 @@
                     <hr size=3.5px>
                 </b-col>
                 <b-col>
-                    <div class="card" @dragover.prevent @dragenter.prevent @drop="onDrop($event,'arrayWords',index)"
-                         draggable @dragstart="startDrag($event,'arrayWords',index)">
-                        <div v-if="arrayWords[index]">
-                            <div class="letters" v-if="arrayWords[index]"> {{arrayWords[index].letter}}</div>
+                    <div class="card" @dragover.prevent @dragenter.prevent @drop="onDrop($event,'fillableArrayWords',index)"
+                         draggable @dragstart="startDrag($event,'fillableArrayWords',index)">
+                        <div v-if="fillableArrayWords[index]">
+                            <div class="letters" v-if="fillableArrayWords[index]"> {{fillableArrayWords[index].letter}}</div>
                             <br>
-                            <div class="name_animals">{{arrayWords[index].letters.join('')}}</div>
+                            <div class="name_animals">{{fillableArrayWords[index].letters.join('')}}</div>
                         </div>
                     </div>
                 </b-col>
@@ -78,7 +78,7 @@
                 currentSvgs: [],
                 littleCurrentSvgs: [],
                 lettersSvgs:[],
-                arrayWords: [],
+                fillableArrayWords: [],
                 answerGame:'',
             }
         },
@@ -100,31 +100,35 @@
              //  console.log("массив",itemFromSource)
 
 
-                let parsedData2 = JSON.parse(JSON.stringify({list,id}))
-            //    console.log("DROP2",parsedData2)
-                let newArray = this[parsedData2.list]
-               console.log("новый массив",newArray)
+                let parsedFillableArray = JSON.parse(JSON.stringify({list,id}))
+             // console.log("DROP2",parsedFillableArray)
+                let newArray = this[parsedFillableArray.list]
+                console.log("новый массив",newArray)
                 let inside = newArray.splice(id, 1, itemFromSource[parsedData.index])
                // console.log('внутри',inside)
 
 
                 console.log(parsedData.nameOfArray)
-                console.log(parsedData2.list)
+                console.log(parsedFillableArray.list)
 
-                if(parsedData.nameOfArray == parsedData2.list){
+                if(parsedData.nameOfArray == parsedFillableArray.list){
                     console.log(inside)
 
+                        console.log('тащим -1 ',newArray[id])
+                        console.log('внутри -2 ',inside[0])
+                        let a = newArray[id]
+                        newArray[id] = inside[0]
+                        inside[0] = a
+                        console.log('тащим -1 ',newArray[id])
+                        console.log('внутри -2 ',inside[0])
 
-                    console.log('тащим -1 ',newArray[id])
-                    console.log('внутри -2 ',inside[0])
-                    let a = newArray[id]
-                    newArray[id] = inside[0]
-                    inside[0] = a
-                    console.log('тащим -1 ',newArray[id])
-                    console.log('внутри -2 ',inside[0])
+                        // newArray.splice(parsedData.index, parsedFillableArray.id,newArray[id],inside[0])
+                        console.log(parsedData.index)
+                        console.log(parsedFillableArray.id)
+                        console.log(newArray[id])
+                        console.log(inside[0])
+                        console.log(newArray.splice(parsedData.index, parsedFillableArray.id,newArray[id],inside[0]))
 
-                  
-                    newArray.splice(parsedData.index, parsedData2.id,newArray[id],inside[0])
 
                 }
                 else {
@@ -134,7 +138,7 @@
             },
             checkArrays:function(){
                 for(let i =0; i < this.littleCurrentSvgs.length; i++){
-                    if(this.littleCurrentSvgs[i] != this.arrayWords[i]){
+                    if(this.littleCurrentSvgs[i] != this.fillableArrayWords[i]){
                         console.log('неверно')
                         this.answerGame = 'неверно'
                         break
@@ -168,7 +172,7 @@
                this.littleCurrentSvgs = this.currentSvgs.slice(0,3)
 
                this.lettersSvgs = this.currentSvgs.map(i=>[Math.random(), i]).sort().map(i=>i[1])
-               this.arrayWords = new Array(this.littleCurrentSvgs.length)
+               this.fillableArrayWords = new Array(this.littleCurrentSvgs.length)
             }
         },
         created() {
