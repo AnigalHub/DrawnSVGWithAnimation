@@ -40,8 +40,8 @@
             </b-modal>
             <b-modal ref="modalEnd">
                 <p>Игра завершена!</p>
-                <p>Количество набранных баллов:</p>
-                <p>За {{svgsAmount}} правильно собранные пары  - 1 балл.</p>
+                <p>Количество набранных баллов: {{point}}</p>
+                <p>За одну игру дается 1 балл</p>
             </b-modal>
             <b-modal ref="modalHelp">
                 <p><u>Животные:</u></p>
@@ -56,7 +56,7 @@
             <div class="buttonGame">
                 <b-button class="help" @click="showNameAnimal()">Подсказка</b-button>
                 <b-button @click="newWords()">Далее</b-button>
-                <b-button @click="checkArrays">Проверить</b-button>
+                <b-button @click="showModalCheck()">Проверить</b-button>
                 <b-button @click="showModal()">Завершить</b-button>
             </div>
         </div>
@@ -88,9 +88,7 @@
                 evt.dataTransfer.dropEffect = 'move'
                 evt.dataTransfer.effectAllowed = 'move'
                 const animalCard = JSON.stringify({ nameOfArray, index})
-              //  console.log(animalCard)
                 evt.dataTransfer.setData('animalCard',animalCard)
-             //   console.log("drag", animalCard)
             },
             onDrop(evt,nameFillableArray,id){
                 const data = evt.dataTransfer.getData('animalCard')
@@ -108,6 +106,7 @@
                 }
             },
             checkArrays:function(){
+                let quantityCorrect = 0
                 for(let i =0; i < this.littleCurrentSvgs.length; i++){
                     if(this.littleCurrentSvgs[i] != this.fillableArrayWords[i]){
                         console.log('неверно')
@@ -116,12 +115,19 @@
                     }
                     console.log('верно')
                     this.answerGame = 'верно'
-                    this.point++
+                    quantityCorrect++
                 }
+                return quantityCorrect
+            },
+            showModalCheck(){
+                this.checkArrays()
                 this.$refs['modalCheck'].show()
             },
             showModal(){
                 this.$refs['modalEnd'].show()
+                if(this.checkArrays() == 3){
+                    this.point++
+                }
             },
             showNameAnimal(){
                 this.$refs['modalHelp'].show()
