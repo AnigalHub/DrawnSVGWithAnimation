@@ -80,6 +80,7 @@
                 lettersSvgs:[],
                 fillableArrayWords: [],
                 answerGame:'',
+                point:0,
             }
         },
         methods:{
@@ -115,6 +116,7 @@
                     }
                     console.log('верно')
                     this.answerGame = 'верно'
+                    this.point++
                 }
                 this.$refs['modalCheck'].show()
             },
