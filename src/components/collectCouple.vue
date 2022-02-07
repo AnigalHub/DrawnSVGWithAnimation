@@ -91,50 +91,20 @@
                 evt.dataTransfer.setData('animalCard',animalCard)
              //   console.log("drag", animalCard)
             },
-            onDrop(evt,list,id){
-                console.log(evt)
-               const data = evt.dataTransfer.getData('animalCard')
-               let parsedData = JSON.parse(data)
-              // console.log("DROP", parsedData)
-               let itemFromSource = this[parsedData.nameOfArray]
-             //  console.log("массив",itemFromSource)
-
-
-                let parsedFillableArray = JSON.parse(JSON.stringify({list,id}))
-             // console.log("DROP2",parsedFillableArray)
-                let newArray = this[parsedFillableArray.list]
-                console.log("новый массив",newArray)
-                let inside = newArray.splice(id, 1, itemFromSource[parsedData.index])
-               // console.log('внутри',inside)
-
-
-                console.log(parsedData.nameOfArray)
-                console.log(parsedFillableArray.list)
-
-                if(parsedData.nameOfArray == parsedFillableArray.list){
-                    console.log(inside)
-
-                        console.log('тащим -1 ',newArray[id])
-                        console.log('внутри -2 ',inside[0])
-                        let a = newArray[id]
-                        newArray[id] = inside[0]
-                        inside[0] = a
-                        console.log('тащим -1 ',newArray[id])
-                        console.log('внутри -2 ',inside[0])
-
-                        // newArray.splice(parsedData.index, parsedFillableArray.id,newArray[id],inside[0])
-                        console.log(parsedData.index)
-                        console.log(parsedFillableArray.id)
-                        console.log(newArray[id])
-                        console.log(inside[0])
-                        console.log(newArray.splice(parsedData.index, parsedFillableArray.id,newArray[id],inside[0]))
-
-
+            onDrop(evt,nameFillableArray,id){
+                const data = evt.dataTransfer.getData('animalCard')
+                let sourceData = JSON.parse(data)
+                let itemFromSource = this[sourceData.nameOfArray]
+                let destinationArray = this[nameFillableArray]
+                let inside = destinationArray.splice(id, 1, itemFromSource[sourceData.index])
+                if(sourceData.nameOfArray == nameFillableArray){
+                    console.log("inside", inside)
+                    if(inside)
+                        destinationArray[sourceData.index] = inside[0]
                 }
                 else {
-                    itemFromSource.splice(parsedData.index, 1)
+                    itemFromSource.splice(sourceData.index, 1)
                 }
-
             },
             checkArrays:function(){
                 for(let i =0; i < this.littleCurrentSvgs.length; i++){
