@@ -6,14 +6,16 @@
             <div class="animal">
                 <component :is="currentSvg.svg"/>
             </div>
-           <div class="letters" >
-                <div class="letter" v-for="(n,index) in  randomLettersAnimal" :key="index"
-                     draggable @dragstart="startDrag($event,n,index)">{{n}}</div>
+           <div class="letters" @dragover.prevent @dragenter.prevent @drop="onDrop($event,'randomLettersAnimal',index)">
+                <div class="letter" v-for="(n,index) in  randomLettersAnimal" :key="index">
+                   <div draggable @dragstart="startDrag($event,'randomLettersAnimal',index)">{{n}}</div>
+            </div>
             </div>
             <div class="name_animal" >
                 <div class="letter" v-for="(x,index) in animalName" :key="index" :id="index"
-                     @dragover.prevent @dragenter.prevent  @drop="onDrop($event, animalName)"
-                     draggable @dragstart="startDrag($event,x,index)">{{x}}</div>
+                     @dragover.prevent @dragenter.prevent  @drop="onDrop($event, 'animalName',index)"
+                     draggable @dragstart="startDrag($event,'animalName',index)"
+                     >{{x}}</div>
             </div>
             <b-modal ref="modal">
                 <p>Игра завершена!</p>
@@ -69,22 +71,16 @@
             randomLetters:function (array) {
               return  array.map(i=>[Math.random(), i]).sort().map(i=>i[1])
             },
-            startDrag(evt,item,id){
+            startDrag(evt,nameOfArray,index){
                 console.log(evt)
                 evt.dataTransfer.dropEffect = 'move'
                 evt.dataTransfer.effectAllowed = 'move'
-                console.log(item)
-                evt.dataTransfer.setData('letter', JSON.stringify({item:item,id:id}))
+                const letterCard = JSON.stringify({nameOfArray,index})
+                evt.dataTransfer.setData('letter', letterCard)
+                console.log(letterCard)
             },
-            onDrop(evt,list){
-                const data = evt.dataTransfer.getData('letter')
-                let parsedData = JSON.parse(data)
-                console.log(evt)
-                list[evt.toElement.id]=parsedData.item
+            onDrop(evt,nameFillableArray,id){
 
-                /*удаление*/
-                let a = this.randomLettersAnimal.splice(parsedData.id,1)
-                console.log(a)
             }
         }
     }
@@ -123,6 +119,9 @@
             width: 60px;
             height: 60px;
         }
+    }
+    .letters{
+        height: 60px;
     }
     .name_animal{
         margin-top: 20px !important;
