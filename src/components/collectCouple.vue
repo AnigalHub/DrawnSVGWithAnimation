@@ -54,7 +54,7 @@
             </b-modal>
             <div class="buttonGame">
                 <b-button class="help" @click="showNameAnimal()">Подсказка</b-button>
-                <b-button @click="newWords()">Далее</b-button>
+                <b-button @click="onwards()">Далее</b-button>
                 <b-button @click="showModalCheck()">Проверить</b-button>
                 <b-button @click="showModal()">Завершить</b-button>
             </div>
@@ -80,6 +80,7 @@
                 fillableArrayWords: [],
                 answerGame:'',
                 point:0,
+                show:false,
             }
         },
         methods:{
@@ -123,11 +124,9 @@
                 let quantityCorrect = 0
                 for(let i =0; i < this.littleCurrentSvgs.length; i++){
                     if(this.littleCurrentSvgs[i] != this.fillableArrayWords[i]){
-                        console.log('неверно')
                         this.answerGame = 'неверно'
                         break
                     }
-                    console.log('верно')
                     this.answerGame = 'верно'
                     quantityCorrect++
                 }
@@ -138,10 +137,14 @@
                 this.$refs['modalCheck'].show()
             },
             showModal(){
+                this.scoreCalculation()
+                this.newWords()
                 this.$refs['modalEnd'].show()
-                if(this.checkArrays() == 3){
-                    this.point++
-                }
+                this.show = true
+            },
+            onwards(){
+                this.scoreCalculation()
+                this.newWords()
             },
             showNameAnimal(){
                 this.$refs['modalHelp'].show()
@@ -157,6 +160,16 @@
                         }
                     } while (!isDuplicate)
                 }
+            },
+            scoreCalculation:function(){
+                if(this.show == true){
+                    this.point = 0
+                }
+                if(this.checkArrays() == 3){
+                    this.point++
+                }
+                this.show = false
+                return this.point
             },
             newWords:function () {
                this.currentSvgs = []
