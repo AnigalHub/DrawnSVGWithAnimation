@@ -80,7 +80,35 @@
                 console.log(letterCard)
             },
             onDrop(evt,nameFillableArray,id){
+                const data = evt.dataTransfer.getData('letter')
+                let sourceData = JSON.parse(data)
+                let itemFromSource = this[sourceData.nameOfArray]
+                let destinationArray = this[nameFillableArray]
+                console.log(itemFromSource[sourceData.index])
+                console.log(destinationArray[id])
 
+                if(nameFillableArray == 'randomLettersAnimal' && itemFromSource[sourceData.index] != undefined && sourceData.nameOfArray == 'animalName'){
+                    destinationArray.length++
+                    destinationArray[destinationArray.length-1] = itemFromSource[sourceData.index]
+                    itemFromSource.splice(sourceData.index, 1,undefined)
+                }
+                else{
+                    let inside = destinationArray.splice(id, 1, itemFromSource[sourceData.index])
+                    if(sourceData.nameOfArray == nameFillableArray){
+                        if(inside)
+                            destinationArray[sourceData.index] = inside[0]
+                    }
+                    else {
+                        if((inside[0] != undefined)){
+                            let c =  itemFromSource[sourceData.index]
+                            itemFromSource[sourceData.index] = inside[0]
+                            inside[0] = c
+                        }
+                        else {
+                            itemFromSource.splice(sourceData.index, 1)
+                        }
+                    }
+                }
             }
         }
     }
