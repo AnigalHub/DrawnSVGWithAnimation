@@ -27,7 +27,7 @@
                 </b-col>
             </b-row>
             <b-row class="words">
-                <b-col v-for="(letter,index) in lettersSvgs" :key="index" :id="index" class="letters_and_words">
+                <b-col v-for="(letter,index) in lettersSvgs" :key="index" :id="index" class="letters_and_words" @dragover.prevent @dragenter.prevent @drop="onDrop($event,'lettersSvgs',index)">
                     <div class="card"  draggable @dragstart="startDrag($event,'lettersSvgs',index)">
                         <div class="letters"> {{lettersSvgs[index].letter}}</div>
                         <br>
@@ -89,20 +89,33 @@
                 evt.dataTransfer.effectAllowed = 'move'
                 const animalCard = JSON.stringify({ nameOfArray, index})
                 evt.dataTransfer.setData('animalCard',animalCard)
+                console.log(animalCard)
             },
             onDrop(evt,nameFillableArray,id){
                 const data = evt.dataTransfer.getData('animalCard')
                 let sourceData = JSON.parse(data)
                 let itemFromSource = this[sourceData.nameOfArray]
                 let destinationArray = this[nameFillableArray]
-                let inside = destinationArray.splice(id, 1, itemFromSource[sourceData.index])
-                if(sourceData.nameOfArray == nameFillableArray){
-                    console.log("inside", inside)
-                    if(inside)
-                        destinationArray[sourceData.index] = inside[0]
+                console.log(itemFromSource)
+
+                if(nameFillableArray == 'lettersSvgs'){
+                    console.log('попал')
+                    destinationArray.length++
+                    if(itemFromSource[sourceData.index] != undefined){
+                       console.log(destinationArray.length)
+                        destinationArray[destinationArray.length-1] = itemFromSource[sourceData.index]
+                    }
+                    console.log(itemFromSource.splice(sourceData.index, 1,undefined))
                 }
-                else {
-                    itemFromSource.splice(sourceData.index, 1)
+                else{
+                    let inside = destinationArray.splice(id, 1, itemFromSource[sourceData.index])
+                    if(sourceData.nameOfArray == nameFillableArray){
+                        if(inside)
+                            destinationArray[sourceData.index] = inside[0]
+                    }
+                    else {
+                        console.log(itemFromSource.splice(sourceData.index, 1))
+                    }
                 }
             },
             checkArrays:function(){
@@ -150,6 +163,7 @@
                this.littleCurrentSvgs = this.currentSvgs.slice(0,3)
 
                this.lettersSvgs = this.currentSvgs.map(i=>[Math.random(), i]).sort().map(i=>i[1])
+                this.lettersSvgs.length = this.svgsAmount
                this.fillableArrayWords = new Array(this.littleCurrentSvgs.length)
             }
         },
