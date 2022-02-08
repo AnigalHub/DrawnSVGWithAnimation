@@ -89,32 +89,39 @@
                 evt.dataTransfer.effectAllowed = 'move'
                 const animalCard = JSON.stringify({ nameOfArray, index})
                 evt.dataTransfer.setData('animalCard',animalCard)
-                console.log(animalCard)
             },
             onDrop(evt,nameFillableArray,id){
                 const data = evt.dataTransfer.getData('animalCard')
                 let sourceData = JSON.parse(data)
                 let itemFromSource = this[sourceData.nameOfArray]
                 let destinationArray = this[nameFillableArray]
-                console.log(itemFromSource)
 
                 if(nameFillableArray == 'lettersSvgs'){
-                    console.log('попал')
+
                     destinationArray.length++
-                    if(itemFromSource[sourceData.index] != undefined){
-                       console.log(destinationArray.length)
-                        destinationArray[destinationArray.length-1] = itemFromSource[sourceData.index]
-                    }
-                    console.log(itemFromSource.splice(sourceData.index, 1,undefined))
+                    if(itemFromSource[sourceData.index] != undefined)
+
+                     destinationArray[destinationArray.length-1] = itemFromSource[sourceData.index]
+                     itemFromSource.splice(sourceData.index, 1,undefined)
+
                 }
                 else{
                     let inside = destinationArray.splice(id, 1, itemFromSource[sourceData.index])
+
                     if(sourceData.nameOfArray == nameFillableArray){
                         if(inside)
                             destinationArray[sourceData.index] = inside[0]
+
                     }
                     else {
-                        console.log(itemFromSource.splice(sourceData.index, 1))
+                          if((inside[0] != undefined) == true){
+                              let c =  itemFromSource[sourceData.index]
+                              itemFromSource[sourceData.index] = inside[0]
+                              inside[0] = c
+                           }
+                          else {
+                            itemFromSource.splice(sourceData.index, 1)
+                          }
                     }
                 }
             },
