@@ -96,11 +96,10 @@
                 let itemFromSource = this[sourceData.nameOfArray]
                 let destinationArray = this[nameFillableArray]
 
-                if(nameFillableArray == 'lettersSvgs'){
+                if(nameFillableArray == 'lettersSvgs' && itemFromSource[sourceData.index] != undefined && sourceData.nameOfArray == 'fillableArrayWords'){
                     destinationArray.length++
-                    if(itemFromSource[sourceData.index] != undefined)
-                     destinationArray[destinationArray.length-1] = itemFromSource[sourceData.index]
-                     itemFromSource.splice(sourceData.index, 1,undefined)
+                    destinationArray[destinationArray.length-1] = itemFromSource[sourceData.index]
+                    itemFromSource.splice(sourceData.index, 1,undefined)
                 }
                 else{
                     let inside = destinationArray.splice(id, 1, itemFromSource[sourceData.index])
@@ -109,7 +108,7 @@
                             destinationArray[sourceData.index] = inside[0]
                     }
                     else {
-                        if((inside[0] != undefined) == true){
+                        if((inside[0] != undefined)){
                             let c =  itemFromSource[sourceData.index]
                             itemFromSource[sourceData.index] = inside[0]
                             inside[0] = c
