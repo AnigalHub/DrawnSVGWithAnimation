@@ -11,7 +11,6 @@
                         </div>
                     </div>
                 </b-col>
-
                 <b-col cols="3">
                     <hr size=3.5px>
                 </b-col>
@@ -97,31 +96,26 @@
                 let destinationArray = this[nameFillableArray]
 
                 if(nameFillableArray == 'lettersSvgs'){
-
                     destinationArray.length++
                     if(itemFromSource[sourceData.index] != undefined)
-
                      destinationArray[destinationArray.length-1] = itemFromSource[sourceData.index]
                      itemFromSource.splice(sourceData.index, 1,undefined)
-
                 }
                 else{
                     let inside = destinationArray.splice(id, 1, itemFromSource[sourceData.index])
-
                     if(sourceData.nameOfArray == nameFillableArray){
                         if(inside)
                             destinationArray[sourceData.index] = inside[0]
-
                     }
                     else {
-                          if((inside[0] != undefined) == true){
-                              let c =  itemFromSource[sourceData.index]
-                              itemFromSource[sourceData.index] = inside[0]
-                              inside[0] = c
-                           }
-                          else {
+                        if((inside[0] != undefined) == true){
+                            let c =  itemFromSource[sourceData.index]
+                            itemFromSource[sourceData.index] = inside[0]
+                            inside[0] = c
+                        }
+                        else {
                             itemFromSource.splice(sourceData.index, 1)
-                          }
+                        }
                     }
                 }
             },
@@ -168,9 +162,7 @@
                this.currentSvgs = []
                this.showNewSvgs(this.svgsAmount,this.currentSvgs)
                this.littleCurrentSvgs = this.currentSvgs.slice(0,3)
-
                this.lettersSvgs = this.currentSvgs.map(i=>[Math.random(), i]).sort().map(i=>i[1])
-                this.lettersSvgs.length = this.svgsAmount
                this.fillableArrayWords = new Array(this.littleCurrentSvgs.length)
             }
         },
@@ -179,6 +171,13 @@
         }
     }
 </script>
+<style lang="scss">
+    #collectCouple{
+        .row #Letters{
+            display: none;
+        }
+    }
+</style>
 <style scoped lang="scss">
     .modal-body .card{
         display: block;
