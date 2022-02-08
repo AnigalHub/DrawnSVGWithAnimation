@@ -148,18 +148,6 @@
             showNameAnimal(){
                 this.$refs['modalHelp'].show()
             },
-            showNewSvgs:function(arraySvg,currentSvg){
-                for(let i = 0; i < arraySvg; i++){
-                    let isDuplicate = false
-                    do{
-                        let svgCollect = this.getRandomSvg()
-                        isDuplicate = !currentSvg.includes(svgCollect);
-                        if(isDuplicate){
-                            currentSvg.push(svgCollect)
-                        }
-                    } while (!isDuplicate)
-                }
-            },
             scoreCalculation:function(){
                 if(this.show == true){
                     this.point = 0
@@ -172,7 +160,16 @@
             },
             newWords:function () {
                this.currentSvgs = []
-               this.showNewSvgs(this.svgsAmount,this.currentSvgs)
+               for(let i = 0; i < this.svgsAmount; i++){
+                    let isDuplicate = false
+                    do{
+                        let svgCollect = this.getRandomSvg()
+                        isDuplicate = !this.currentSvgs.includes(svgCollect);
+                        if(isDuplicate){
+                            this.currentSvgs.push(svgCollect)
+                        }
+                    } while (!isDuplicate)
+                }
                this.littleCurrentSvgs = this.currentSvgs.slice(0,3)
                this.lettersSvgs = this.currentSvgs.map(i=>[Math.random(), i]).sort().map(i=>i[1])
                this.fillableArrayWords = new Array(this.littleCurrentSvgs.length)
