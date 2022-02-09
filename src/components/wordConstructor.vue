@@ -7,22 +7,26 @@
                 <component :is="currentSvg.svg"/>
             </div>
             <b-row  class="name_animal">
-                <b-col  v-for="(x,index) in animalName" :key="index" :id="index"
+                <b-col v-for="(x,index) in animalName" :key="index" :id="index"
                         @dragover.prevent @dragenter.prevent  @drop="onDrop($event, 'animalName',index)">
                     <div class="letter"  draggable @dragstart="startDrag($event,'animalName',index)">
                         {{x}}
                     </div>
                 </b-col>
             </b-row>
+            <hr>
             <b-row class="letters">
-                <b-col  v-for="(n,index) in  randomLettersAnimal" :id="index" class="letters_and_words"
+                <b-col v-for="(n,index) in  randomLettersAnimal" :id="index" class="letters_and_words"
                         @dragover.prevent @dragenter.prevent @drop="onDrop($event,'randomLettersAnimal',index)">
                     <div class="letter" draggable @dragstart="startDrag($event,'randomLettersAnimal',index)">
                         {{n}}
                     </div>
                 </b-col>
             </b-row>
-            <b-modal ref="modal">
+            <b-modal ref="modalCheck">
+                <p>{{answerGame}}</p>
+            </b-modal>
+            <b-modal ref="modalEnd">
                 <p>Игра завершена!</p>
                 <p>Количество набранных баллов:</p>
                 <p>За правильное написание животного - 1 балл.</p>
@@ -35,7 +39,7 @@
             <div class="buttonGame">
                 <b-button class="help" @click="showNameAnimal()">Подсказка</b-button>
                 <b-button @click="newAnimal()">Далее</b-button>
-                <b-button>Проверить</b-button>
+                <b-button @click="showModalCheck()" >Проверить</b-button>
                 <b-button @click="showModal()">Завершить</b-button>
             </div>
         </div>
@@ -56,6 +60,9 @@
                 currentSvg: null,
                 randomLettersAnimal:[],
                 animalName:[],
+                answerGame:'',
+                point:0,
+                show:false,
             }
         },
         methods:{
@@ -71,17 +78,23 @@
                 let itemFromSource = this[sourceData.nameOfArray]
                 let destinationArray = this[nameFillableArray]
 
-                if(nameFillableArray == 'randomLettersAnimal' && itemFromSource[sourceData.index] != undefined && sourceData.nameOfArray == 'animalName'){
-                    destinationArray.length++
-                    destinationArray[destinationArray.length-1] = itemFromSource[sourceData.index]
-                    itemFromSource.splice(sourceData.index, 1,undefined)
+                if(nameFillableArray == 'randomLettersAnimal' && sourceData.nameOfArray == 'animalName'){
+                    if(destinationArray[id] == undefined){
+                        destinationArray[id] = itemFromSource[sourceData.index]
+                        itemFromSource.splice(sourceData.index, 1,undefined)
+                    }
+                    else {
+                        let inside = destinationArray.splice(id, 1, itemFromSource[sourceData.index])
+                        let c =  itemFromSource[sourceData.index]
+                        itemFromSource[sourceData.index] = inside[0]
+                        inside[0] = c
+                    }
                 }
                 else{
                     let inside = destinationArray.splice(id, 1, itemFromSource[sourceData.index])
                     if(sourceData.nameOfArray == nameFillableArray){
-                        if(inside){
+                        if(inside)
                             destinationArray[sourceData.index] = inside[0]
-                        }
                     }
                     else {
                         if((inside[0] != undefined)){
@@ -90,7 +103,7 @@
                             inside[0] = c
                         }
                         else {
-                            itemFromSource.splice(sourceData.index, 1)
+                           itemFromSource.splice(sourceData.index, 1,undefined)
                         }
                     }
                 }
@@ -100,6 +113,11 @@
             },
             showNameAnimal(){
                 this.$refs['modalHelp'].show()
+
+            },
+            showModalCheck(){
+                this.checkArrays()
+                this.$refs['modalCheck'].show()
             },
             newAnimal:function(){
                 this.currentSvg = this.getRandomSvg()
@@ -109,6 +127,9 @@
             randomLetters:function (array) {
               return  array.map(i=>[Math.random(), i]).sort().map(i=>i[1])
             },
+            checkArrays:function () {
+
+            }
 
         },
         created() {
@@ -132,6 +153,9 @@
         max-width: max-content !important;
         margin: 0 auto;
     }
+    hr{
+        margin: 1rem 0 0 !important;
+    }
      svg {
          display: block;
          width: 450px;
@@ -144,7 +168,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 10px;
+        margin: 10px auto;
+
         height: 60px;
         .letter{
             background: rgba(255, 255, 255, 0.5);
