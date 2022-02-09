@@ -6,17 +6,22 @@
             <div class="animal">
                 <component :is="currentSvg.svg"/>
             </div>
-           <div class="letters" @dragover.prevent @dragenter.prevent @drop="onDrop($event,'randomLettersAnimal',index)">
-                <div class="letter" v-for="(n,index) in  randomLettersAnimal" :key="index">
-                   <div draggable @dragstart="startDrag($event,'randomLettersAnimal',index)">{{n}}</div>
-            </div>
-            </div>
-            <div class="name_animal" >
-                <div class="letter" v-for="(x,index) in animalName" :key="index" :id="index"
-                     @dragover.prevent @dragenter.prevent  @drop="onDrop($event, 'animalName',index)"
-                     draggable @dragstart="startDrag($event,'animalName',index)"
-                     >{{x}}</div>
-            </div>
+            <b-row  class="name_animal">
+                <b-col  v-for="(x,index) in animalName" :key="index" :id="index"
+                        @dragover.prevent @dragenter.prevent  @drop="onDrop($event, 'animalName',index)">
+                    <div class="letter"  draggable @dragstart="startDrag($event,'animalName',index)">
+                        {{x}}
+                    </div>
+                </b-col>
+            </b-row>
+            <b-row class="letters">
+                <b-col  v-for="(n,index) in  randomLettersAnimal" :id="index" class="letters_and_words"
+                        @dragover.prevent @dragenter.prevent @drop="onDrop($event,'randomLettersAnimal',index)">
+                    <div class="letter" draggable @dragstart="startDrag($event,'randomLettersAnimal',index)">
+                        {{n}}
+                    </div>
+                </b-col>
+            </b-row>
             <b-modal ref="modal">
                 <p>Игра завершена!</p>
                 <p>Количество набранных баллов:</p>
@@ -53,39 +58,18 @@
                 animalName:[],
             }
         },
-        created() {
-          this.newAnimal()
-        },
         methods:{
-            showModal(){
-                this.$refs['modal'].show()
-            },
-            showNameAnimal(){
-             this.$refs['modalHelp'].show()
-            },
-            newAnimal:function(){
-                this.currentSvg = this.getRandomSvg()
-                this.randomLettersAnimal = this.randomLetters(this.currentSvg.letters)
-                this.animalName = new Array(this.randomLettersAnimal.length)
-            },
-            randomLetters:function (array) {
-              return  array.map(i=>[Math.random(), i]).sort().map(i=>i[1])
-            },
-            startDrag(evt,nameOfArray,index){
-                console.log(evt)
+            startDrag(evt, nameOfArray, index){
                 evt.dataTransfer.dropEffect = 'move'
                 evt.dataTransfer.effectAllowed = 'move'
-                const letterCard = JSON.stringify({nameOfArray,index})
-                evt.dataTransfer.setData('letter', letterCard)
-                console.log(letterCard)
+                const animalCard = JSON.stringify({ nameOfArray, index})
+                evt.dataTransfer.setData('letter',animalCard)
             },
             onDrop(evt,nameFillableArray,id){
                 const data = evt.dataTransfer.getData('letter')
                 let sourceData = JSON.parse(data)
                 let itemFromSource = this[sourceData.nameOfArray]
                 let destinationArray = this[nameFillableArray]
-                console.log(itemFromSource[sourceData.index])
-                console.log(destinationArray[id])
 
                 if(nameFillableArray == 'randomLettersAnimal' && itemFromSource[sourceData.index] != undefined && sourceData.nameOfArray == 'animalName'){
                     destinationArray.length++
@@ -95,8 +79,9 @@
                 else{
                     let inside = destinationArray.splice(id, 1, itemFromSource[sourceData.index])
                     if(sourceData.nameOfArray == nameFillableArray){
-                        if(inside)
+                        if(inside){
                             destinationArray[sourceData.index] = inside[0]
+                        }
                     }
                     else {
                         if((inside[0] != undefined)){
@@ -109,7 +94,25 @@
                         }
                     }
                 }
-            }
+            },
+            showModal(){
+                this.$refs['modal'].show()
+            },
+            showNameAnimal(){
+                this.$refs['modalHelp'].show()
+            },
+            newAnimal:function(){
+                this.currentSvg = this.getRandomSvg()
+                this.randomLettersAnimal = this.randomLetters(this.currentSvg.letters)
+                this.animalName = new Array(this.randomLettersAnimal.length)
+            },
+            randomLetters:function (array) {
+              return  array.map(i=>[Math.random(), i]).sort().map(i=>i[1])
+            },
+
+        },
+        created() {
+            this.newAnimal()
         }
     }
 
@@ -125,6 +128,10 @@
         margin-top: -50px;
         font-size: 3.2rem;
     }
+    .row{
+        max-width: max-content !important;
+        margin: 0 auto;
+    }
      svg {
          display: block;
          width: 450px;
@@ -137,23 +144,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-bottom: 10px;
+        height: 60px;
         .letter{
             background: rgba(255, 255, 255, 0.5);
             border: 1.8px solid #9a9797;
             float: left;
-            margin: 0 10px;
+            margin: 5px;
             font-size: 2.25rem;
             text-align: center;
             width: 60px;
             height: 60px;
         }
-    }
-    .letters{
-        height: 60px;
-    }
-    .name_animal{
-        margin-top: 20px !important;
-        height: 60px;
     }
      @media screen and (min-width: 500px) and (max-width: 768px) {
          .letters,.name_animal{
