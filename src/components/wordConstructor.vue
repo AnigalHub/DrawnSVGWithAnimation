@@ -128,7 +128,23 @@
               return  array.map(i=>[Math.random(), i]).sort().map(i=>i[1])
             },
             checkArrays:function () {
-
+                let quantityCorrect = 0
+                for (let i=0;i<this.currentSvg.letters.length;i++){
+                    if(this.currentSvg.letters[i] != this.animalName[i]){
+                        console.log('ghf', this.currentSvg.letters[i])
+                        console.log(this.animalName[i] )
+                        if(this.animalName[i] == undefined || this.animalName[i+1]==undefined){
+                            this.answerGame = 'Не все ячейки заполнены!'
+                        }
+                        else {
+                            this.answerGame = 'Неверно!'
+                        }
+                        break
+                    }
+                    this.answerGame = 'Верно!'
+                    quantityCorrect++
+                }
+                return quantityCorrect
             }
 
         },
