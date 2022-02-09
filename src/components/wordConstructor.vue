@@ -40,7 +40,7 @@
                 <b-button class="help" @click="showNameAnimal()">Подсказка</b-button>
                 <b-button @click="newAnimal()">Далее</b-button>
                 <b-button @click="showModalCheck()" >Проверить</b-button>
-                <b-button @click="showModal()">Завершить</b-button>
+                <b-button @click="showModalEnd()">Завершить</b-button>
             </div>
         </div>
         <screen-rotation/>
@@ -108,25 +108,6 @@
                     }
                 }
             },
-            showModal(){
-                this.$refs['modal'].show()
-            },
-            showNameAnimal(){
-                this.$refs['modalHelp'].show()
-
-            },
-            showModalCheck(){
-                this.checkArrays()
-                this.$refs['modalCheck'].show()
-            },
-            newAnimal:function(){
-                this.currentSvg = this.getRandomSvg()
-                this.randomLettersAnimal = this.randomLetters(this.currentSvg.letters)
-                this.animalName = new Array(this.randomLettersAnimal.length)
-            },
-            randomLetters:function (array) {
-              return  array.map(i=>[Math.random(), i]).sort().map(i=>i[1])
-            },
             checkArrays:function () {
                 let quantityCorrect = 0
                 for (let i=0;i<this.currentSvg.letters.length;i++){
@@ -145,8 +126,35 @@
                     quantityCorrect++
                 }
                 return quantityCorrect
-            }
-
+            },
+            showModalCheck(){
+                this.checkArrays()
+                this.$refs['modalCheck'].show()
+            },
+            showModalEnd(){
+                this.$refs['modalEnd'].show()
+            },
+            showNameAnimal(){
+                this.$refs['modalHelp'].show()
+            },
+            scoreCalculation:function(){
+                if(this.show == true){
+                    this.point = 0
+                }
+                if(this.checkArrays() == 3){
+                    this.point++
+                }
+                this.show = false
+                return this.point
+            },
+            newAnimal:function(){
+                this.currentSvg = this.getRandomSvg()
+                this.randomLettersAnimal = this.randomLetters(this.currentSvg.letters)
+                this.animalName = new Array(this.randomLettersAnimal.length)
+            },
+            randomLetters:function (array) {
+              return  array.map(i=>[Math.random(), i]).sort().map(i=>i[1])
+            },
         },
         created() {
             this.newAnimal()
