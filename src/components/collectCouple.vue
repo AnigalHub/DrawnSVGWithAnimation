@@ -26,7 +26,8 @@
                 </b-col>
             </b-row>
             <b-row class="words">
-                <b-col v-for="(letter,index) in lettersSvgs" :key="index" :id="index" class="letters_and_words" @dragover.prevent @dragenter.prevent @drop="onDrop($event,'lettersSvgs',index)">
+                <b-col v-for="(letter,index) in lettersSvgs" :key="index" :id="index" class="letters_and_words"
+                       @dragover.prevent @dragenter.prevent @drop="onDrop($event,'lettersSvgs',index)">
                     <div class="card"  draggable @dragstart="startDrag($event,'lettersSvgs',index)">
                         <div class="letters"> {{lettersSvgs[index].letter}}</div>
                         <br>
@@ -54,9 +55,9 @@
             </b-modal>
             <div class="buttonGame">
                 <b-button class="help" @click="showNameAnimal()">Подсказка</b-button>
-                <b-button @click="onwards()">Далее</b-button>
+                <b-button @click="next()">Далее</b-button>
                 <b-button @click="showModalCheck()">Проверить</b-button>
-                <b-button @click="showModal()">Завершить</b-button>
+                <b-button @click="showModalEnd()">Завершить</b-button>
             </div>
         </div>
         <screen-rotation/>
@@ -123,10 +124,16 @@
                 let quantityCorrect = 0
                 for(let i =0; i < this.littleCurrentSvgs.length; i++){
                     if(this.littleCurrentSvgs[i] != this.fillableArrayWords[i]){
-                        this.answerGame = 'неверно'
+                        if(this.fillableArrayWords[i] == undefined){
+                            this.answerGame = 'Не все пары заполнены!'
+                        }
+                        else {
+                            this.answerGame = 'Неверно!'
+                        }
                         break
                     }
-                    this.answerGame = 'верно'
+                    this.answerGame = 'Верно!'
+
                     quantityCorrect++
                 }
                 return quantityCorrect
@@ -135,13 +142,13 @@
                 this.checkArrays()
                 this.$refs['modalCheck'].show()
             },
-            showModal(){
+            showModalEnd(){
                 this.scoreCalculation()
                 this.newWords()
                 this.$refs['modalEnd'].show()
                 this.show = true
             },
-            onwards(){
+            next(){
                 this.scoreCalculation()
                 this.newWords()
             },
