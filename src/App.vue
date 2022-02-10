@@ -13,7 +13,7 @@ export default {
 }
 </script>
 <style lang="scss">
-  #Square{fill: rgba(138, 235, 243, 0.35);stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
+  #Square{fill: rgba(104, 241, 253, 0.45);stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
   .close { /*"крестик" (размер) - кнопка закрытия модального окна*/
       border: none !important;
       background: none !important;
@@ -31,7 +31,6 @@ export default {
       font-size: 30px;
       font-family: 'Poiret One', cursive;
       font-weight: 800 !important;
-      p:first-child{margin-top: -40px !important;}
   }
   .modal-footer{ /*footer-модального окна*/
       display: none !important;
