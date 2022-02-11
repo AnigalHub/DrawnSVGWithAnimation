@@ -35,6 +35,12 @@ export default {
     methods: {
         getRandomSvg(){
             return this.Letters[Math.floor(Math.random()*this.Letters.length)]
+        },
+        swap:function(argument_1,argument_2){
+            let temp =  argument_1
+            argument_1 = argument_2
+            argument_2 = temp
+            return {argument_1,argument_2}
         }
     },
     data(){
