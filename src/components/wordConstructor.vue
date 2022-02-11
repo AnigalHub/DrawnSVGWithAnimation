@@ -28,7 +28,7 @@
             </b-modal>
             <b-modal ref="modalEnd">
                 <p>Игра завершена!</p>
-                <p>Количество набранных баллов:</p>
+                <p>Количество набранных баллов: {{point}}</p>
                 <p>За правильное написание животного - 1 балл.</p>
             </b-modal>
             <b-modal ref="modalHelp">
@@ -38,7 +38,7 @@
             </b-modal>
             <div class="buttonGame">
                 <b-button class="help" @click="showNameAnimal()">Подсказка</b-button>
-                <b-button @click="newAnimal()">Далее</b-button>
+                <b-button  @click="next()">Далее</b-button>
                 <b-button @click="showModalCheck()" >Проверить</b-button>
                 <b-button @click="showModalEnd()">Завершить</b-button>
             </div>
@@ -132,7 +132,13 @@
                 this.$refs['modalCheck'].show()
             },
             showModalEnd(){
+                this.scoreCalculation()
+                this.newAnimal()
                 this.$refs['modalEnd'].show()
+                this.show = true
+            },
+            next(){
+                this.newAnimal()
             },
             showNameAnimal(){
                 this.$refs['modalHelp'].show()
