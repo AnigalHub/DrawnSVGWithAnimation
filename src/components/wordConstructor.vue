@@ -138,6 +138,7 @@
                 this.show = true
             },
             next(){
+                this.scoreCalculation()
                 this.newAnimal()
             },
             showNameAnimal(){
