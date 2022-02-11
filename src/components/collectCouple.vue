@@ -109,10 +109,9 @@
                             destinationArray[sourceData.index] = inside[0]
                     }
                     else {
-                        if((inside[0] != undefined)){
-                            let c =  itemFromSource[sourceData.index]
-                            itemFromSource[sourceData.index] = inside[0]
-                            inside[0] = c
+                        if(inside[0] != undefined){
+                            itemFromSource[sourceData.index] = this.swap(itemFromSource[sourceData.index],inside[0]).argument_1
+                            inside[0] = this.swap(itemFromSource[sourceData.index],inside[0]).argument_2
                         }
                         else {
                             itemFromSource.splice(sourceData.index, 1)
