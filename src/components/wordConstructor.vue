@@ -85,9 +85,8 @@
                     }
                     else {
                         let inside = destinationArray.splice(id, 1, itemFromSource[sourceData.index])
-                        let c =  itemFromSource[sourceData.index]
-                        itemFromSource[sourceData.index] = inside[0]
-                        inside[0] = c
+                        itemFromSource[sourceData.index] = this.swap(itemFromSource[sourceData.index],inside[0]).argument_1
+                        inside[0] = this.swap(itemFromSource[sourceData.index],inside[0]).argument_2
                     }
                 }
                 else{
