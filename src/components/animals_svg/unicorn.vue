@@ -2,7 +2,7 @@
 	<svg version="1.1" id="Unicorn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 		 viewBox="0 0 850 850" style="enable-background:new 0 0 850 850;" xml:space="preserve">
 		<rect id="Square" x="80" y="80" class="st0" width="700" height="700"/>
-		<text transform="matrix(0.9748 -5.662271e-03 6.232580e-03 1 459.6732 254.4692)" class="st29 st30">Uu</text>
+		<text id="Letters" transform="matrix(0.9748 -5.662271e-03 6.232580e-03 1 459.6732 254.4692)" class="st29 st30">Uu</text>
 		<g class="Animal">
 			<g id="Moving_left_front_paw" class="st1">
 				<g class="st2">
