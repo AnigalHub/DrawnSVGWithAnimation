@@ -102,8 +102,8 @@ export default {
           width: 155px;
           padding:10px !important;
           margin: 0 8px;
-          &:first-child{background: #517952;}
-          &:last-child{background: #3a6f3a;}
+          background: #517952;
+          &:hover{background: #326132;}
       }
   }
   .flex-container {
