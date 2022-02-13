@@ -28,11 +28,13 @@
             <b-row class="words">
                 <b-col v-for="(letter,index) in lettersSvgs" :key="index" :id="index" class="letters_and_words"
                        @dragover.prevent @dragenter.prevent @drop="onDrop($event,'lettersSvgs',index)">
-                    <div class="card"  draggable @dragstart="startDrag($event,'lettersSvgs',index)">
-                        <div class="letters"> {{lettersSvgs[index].letter}}</div>
-                        <br>
-                        <div class="name_animals">{{lettersSvgs[index].letters.join('')}}</div>
-                    </div>
+                        <div class="card"  draggable @dragstart="startDrag($event,'lettersSvgs',index)">
+                            <div>
+                                <div class="letters"> {{lettersSvgs[index].letter}}</div>
+                                <br>
+                                <div class="name_animals">{{lettersSvgs[index].letters.join('')}}</div>
+                            </div>
+                        </div>
                 </b-col>
             </b-row>
             <b-modal ref="modalCheck">
