@@ -182,9 +182,7 @@
         max-width: max-content !important;
         margin: 0 auto;
     }
-    hr{
-        margin: 1rem 0 0 !important;
-    }
+    hr{margin: 1rem 0 0 !important;}
      svg {
          display: block;
          width: 450px;
@@ -198,7 +196,6 @@
         align-items: center;
         justify-content: center;
         margin: 10px auto;
-
         height: 60px;
         .letter{
             background: rgba(255, 255, 255, 0.5);

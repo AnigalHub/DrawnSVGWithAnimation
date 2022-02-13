@@ -203,9 +203,7 @@
         width: 70%;
         margin: 0 auto;
     }
-    .cardsGame {
-        width: 40%;
-    }
+    .cardsGame {width: 40%;}
     .help{margin-top: -5px !important;}
     svg {
         display: block;

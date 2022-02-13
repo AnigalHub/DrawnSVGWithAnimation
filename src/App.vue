@@ -25,7 +25,7 @@ export default {
       padding: 10px !important;
   }
   .modal-body { /*тело модального окна*/
-      padding:10px !important;
+      padding: 10px !important;
       min-height: 100px;
       text-align: center;
       font-size: 30px;
@@ -59,7 +59,7 @@ export default {
           display: block;
           background-color: #269e2b;
           width: 450px;
-          padding:20px 32px;
+          padding: 20px 32px;
           margin: 20px auto;
           cursor: pointer;
           transition-duration: 0.4s;
@@ -85,8 +85,7 @@ export default {
       padding:10px 32px;
       transition-duration: 0.4s;
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
       background-color: #517952 !important;
   }
   .buttonGame{
@@ -135,7 +134,7 @@ export default {
       #mainMenu, #gameMenu{
           padding-top: 8%;
           button{
-              padding:15px;
+              padding: 15px;
               margin: 10px auto;
           }
       }
