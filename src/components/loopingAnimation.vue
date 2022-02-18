@@ -21,5 +21,6 @@
 </script>
 
 <style scoped lang="scss">
+    /*svg*/
     svg{margin-top: -5px;}
 </style>

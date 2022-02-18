@@ -12,7 +12,9 @@
 </script>
 
 <style scoped lang="scss">
+    /*Компонент - ПоворотЭкрана (ScreenRotation) */
     #screenRotation{
+        /*картинка*/
        img{
            padding: 10% 0;
            margin: auto;
