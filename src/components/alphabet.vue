@@ -39,9 +39,3 @@
         .flex-container > div {width: 16%;}
     }
 </style>
-<style  lang="scss">
-    #alphabet{
-        #Square{//fill: none !important;
-        }
-    }
-</style>
