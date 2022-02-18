@@ -25,17 +25,24 @@
 </script>
 
 <style scoped lang="scss">
+    /*Компонент - Алфавит (Alphabet)*/
     #alphabet{padding-bottom: 35px;}
+    /*svg*/
     svg{margin: 3px;}
+    /*контейнер, который включает в себя повтор блоков*/
     .flex-container{
         margin-top: -13px;
         & > div {width: 14%;}
     }
+    /*Адаптивность*/
     @media screen and (min-width: 500px) and (max-width: 768px) {
+        /*svg*/
         svg{margin: 1px;}
+        /*контейнер, который включает в себя повтор блоков*/
         .flex-container > div {width: 20%;}
     }
     @media screen and (min-width: 768px )and (max-width: 992px) {
+        /*контейнер, который включает в себя повтор блоков*/
         .flex-container > div {width: 16%;}
     }
 </style>
