@@ -34,6 +34,7 @@
         margin-top: -13px;
         & > div {width: 14%;}
     }
+
     /*Адаптивность*/
     @media screen and (min-width: 500px) and (max-width: 768px) {
         /*svg*/

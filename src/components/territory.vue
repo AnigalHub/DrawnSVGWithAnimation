@@ -23,6 +23,7 @@
 <style scoped lang="scss">
     /*svg*/
     svg{margin-top: -15px;}
+
     /*Адаптивность*/
     @media screen and (min-width: 500px) and (max-width: 768px) {
         /*svg*/
