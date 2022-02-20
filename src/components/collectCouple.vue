@@ -69,7 +69,6 @@
 <script>
     import mixinLetters from "../mixins/mixinLetters";
     import ScreenRotation from "./screenRotation";
-
     export default {
         components: {ScreenRotation},
         mixins: [mixinLetters],
@@ -189,33 +188,33 @@
     }
 </script>
 <style lang="scss">
-    #collectCouple{
-        .row #Letters{
-            display: none;
-        }
-    }
+    /*Компонент - СобериПару (collectCouple) - буквы у SVG*/
+    #collectCouple #Letters{display: none;}
 </style>
 <style scoped lang="scss">
+    /*тело модального окна - карточка игры*/
     .modal-body .card{
         display: block;
         margin: 0 auto 7px;
         border: 1.5px solid #bfbaba;
     }
+    /*параметры сетки бутстрап*/
     .row{
         width: 70%;
         margin: 0 auto;
     }
+    /*блок для пары карточек*/
     .cardsGame {width: 40%;}
-    .help{margin-top: -5px !important;}
+    /*svg*/
     svg {
         display: block;
         width: 100%;
     }
+    /*карточка в игре, svg, блок с выбором карточек (для перетаскивания)*/
     .card,svg,.words{height: 145px;}
+    /*карточка в игре*/
     .card{
         border: 1.5px solid #8e8a8a;
-        display: flex;
-        align-items: center;
         justify-content: center;
         margin-top: -5px;
         margin-bottom: 20px;
@@ -224,10 +223,12 @@
         width: 145px;
         background: rgba(255, 255, 255, 0.4);
     }
+   /*параметры сетки бутстрап (изменен отступ)*/
    .col-3{
         width: 100px !important;
         margin-left: -70px;
         padding: 0 !important;
+       /*горизонтальная линия*/
         hr{
             background-color: #8e8a8a !important;
             opacity: 1 !important;
@@ -235,58 +236,79 @@
             margin-top: 50%;
         }
    }
+   /*буквы в карточке*/
    .letters{
        font-size:48px;
        letter-spacing: 2px;
    }
+   /*название животного в карточке*/
    .name_animals{
        margin-top: -28px;
        font-size:20px;
    }
-   .letters,.name_animals{
-      text-align: center;
-   }
+    /*буквы в карточке, название животного в карточке*/
+   .letters,.name_animals{text-align: center;}
 
+   /*Адаптивность*/
    @media screen and (min-width: 500px) and (max-width: 768px) {
+       /*параметры сетки бутстрап*/
        .row{width: 100%;}
+       /*блок с выбором карточек (для перетаскивания)*/
        .words{
            height: 220px;
            margin-bottom: 30px;
        }
+       /*блок для пары карточек*/
        .cardsGame {width: 77%;}
+       /*параметры сетки бутстрап (изменена ширина) - блок под горизонтальную линию*/
        .col-3{
            width: 80px !important;
            margin-left: 0;
        }
        .letters_and_words:nth-child(4){margin-left: 10%;}
+       /*карточка в игре*/
        .card{width: 110px;}
+       /*карточка в игре, svg*/
        .card,svg{height: 110px;}
+       /*буквы в карточке*/
        .letters{font-size:25px;}
+       /*название животного в карточке*/
        .name_animals{
            margin-top: -25px;
            font-size:15px;
        }
    }
    @media screen and (min-width: 768px) and (max-width: 992px) {
+       /*параметры сетки бутстрап*/
        .row{width: 100%;}
+       /*блок для пары карточек*/
        .cardsGame {width: 60%;}
+       /*параметры сетки бутстрап (изменен отступ) - блок под горизонтальную линию*/
        .col-3{margin-left: -20px;}
+       /*карточка в игре*/
        .card{width: 123px;}
-       .letters_and_words{
-           padding: 0 5px;
-       }
+       /*блок под каждую карточку в блоке с выбором карточек (для перетаскивания)*/
+       .letters_and_words{padding: 0 5px;}
+       /*карточка в игре, svg*/
        .card,svg{height: 123px;}
+       /*буквы в карточке*/
        .letters{font-size:35px;}
+       /*название животного в карточке*/
        .name_animals{
            margin-top: -30px;
            font-size:18px;
        }
    }
    @media screen and (min-width: 992px) and (max-width: 1200px) {
+       /*параметры сетки бутстрап*/
        .row{width: 95%;}
+       /*блок для пары карточек*/
        .cardsGame {width: 50%;}
+       /*параметры сетки бутстрап (изменен отступ) - блок под горизонтальную линию*/
        .col-3{margin-left: -20px;}
+       /*буквы в карточке*/
        .letters{font-size:35px;}
+       /*название животного в карточке*/
        .name_animals{
            margin-top: -30px;
            font-size:18px;
@@ -294,11 +316,13 @@
    }
    @media screen and (min-width: 1200px) and (max-width: 1400px) {
        .letters{font-size:35px;}
+       /*параметры сетки бутстрап*/
        .row{width: 80%;}
+       /*блок для пары карточек*/
        .cardsGame {width: 40%;}
-       .col-3{
-           margin-left: -20px;
-       }
+       /*параметры сетки бутстрап (изменен отступ) - блок под горизонтальную линию*/
+       .col-3{margin-left: -20px;}
+       /*название животного в карточке*/
        .name_animals{
            margin-top: -30px;
            font-size:18px;
