@@ -113,12 +113,20 @@
 </script>
 
 <style scoped lang="scss">
+    /*Кошка*/
     #Cat {
-        &:hover #Moving_tail {display: block;}
-        &:hover #Tail {display: none;}
+        /*при наведении*/
+        &:hover{
+            /*хвост, который движется - при наведении справа*/
+            #Moving_tail {display: block;}
+            /*хвост, который постоянно - слева*/
+            #Tail {display: none;}
+        }
     }
+    /*шрифт*/
     .st0{font-family:'CambriaMath';}
     .st1{font-size:190px;}
+    /*цвета svg*/
     .st2{display:none;fill:#B3B3B3;stroke:#161515;stroke-width:1.5;stroke-miterlimit:10;}
     .st3{fill:#B3B3B3;stroke:#161515;stroke-width:1.5;stroke-miterlimit:10;}
     .st4{fill:#666666;}
