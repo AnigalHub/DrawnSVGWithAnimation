@@ -84,10 +84,20 @@
 </script>
 
 <style scoped lang="scss">
+    /*Пчела*/
     #Bee {
-        &:hover #Moving_left_wing,&:hover #Moving_right_wing {display: block;}
-        &:hover #Main_left_wing, &:hover #Main_right_wing {display: none;}
+        /*при наведении*/
+        &:hover{
+            /*крылья, которые создают движение - левое и правое */
+            #Moving_left_wing, #Moving_right_wing {display: block;}
+            /*главные крылья - левое и правое*/
+            #Main_left_wing, #Main_right_wing {display: none;}
+        }
     }
+    /*шрифт*/
+    .st26{font-family:'CambriaMath';}
+    .st27{font-size:190px;}
+    /*цвета svg*/
     .st0{display:none;}
     .st1{display:inline;fill:#DDDDDD;stroke:#707070;stroke-width:2;stroke-miterlimit:10;}
     .st2{display:inline;stroke:#707070;stroke-width:2;stroke-miterlimit:10;}
@@ -114,6 +124,4 @@
     .st23{fill:#FFFFFF;}
     .st24{display:inline;stroke:#707070;stroke-width:1.7088;stroke-miterlimit:10;}
     .st25{display:inline;fill:#F2F2F2;stroke:#707070;stroke-width:1.7088;stroke-miterlimit:10;}
-    .st26{font-family:'CambriaMath';}
-    .st27{font-size:190px;}
 </style>
