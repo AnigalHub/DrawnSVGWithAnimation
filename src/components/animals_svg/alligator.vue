@@ -268,13 +268,18 @@
 </script>
 
 <style scoped lang="scss">
+    /*Крокодил*/
     #Alligator {
+        /*при наведении*/
+        /*правый спящий глаз, левый спящий глаз*/
         &:hover #Right_sleeping_eyes,&:hover #Left_sleeping_eyes, {display: block;}
-        &:hover #Left_eye {display: none;}
-        &:hover #Right_eye {display: none;}
+        /*левый глаз, правый глаз*/
+        &:hover #Left_eye,&:hover #Right_eye {display: none;}
     }
+    /*шрифт*/
     .st0{font-family:'CambriaMath';}
     .st1{font-size:190px;}
+    /*цвета svg*/
     .st2{fill:#A83E26;stroke:#000000;stroke-miterlimit:10;}
     .st3{fill:#61934A;stroke:#2E6017;stroke-width:2;stroke-miterlimit:10;}
     .st4{fill:#61934A;stroke:#2E6017;stroke-miterlimit:10;}
