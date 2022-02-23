@@ -268,15 +268,12 @@
 </script>
 
 <style scoped lang="scss">
-    /*Крокодил*/
-    #Alligator {
-        /*при наведении*/
-        &:hover{
-            /*правый спящий глаз, левый спящий глаз*/
-            #Right_sleeping_eyes,&:hover #Left_sleeping_eyes, {display: block;}
-            /*левый глаз, правый глаз*/
-            #Left_eye,&:hover #Right_eye {display: none;}
-        }
+    /*Крокодил при наведении*/
+    #Alligator:hover{
+        /*правый спящий глаз, левый спящий глаз*/
+        #Right_sleeping_eyes,&:hover #Left_sleeping_eyes, {display: block;}
+        /*левый глаз, правый глаз*/
+        #Left_eye,&:hover #Right_eye {display: none;}
     }
     /*шрифт*/
     .st0{font-family:'CambriaMath';}

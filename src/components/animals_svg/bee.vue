@@ -84,15 +84,12 @@
 </script>
 
 <style scoped lang="scss">
-    /*Пчела*/
-    #Bee {
-        /*при наведении*/
-        &:hover{
-            /*крылья, которые создают движение - левое и правое */
-            #Moving_left_wing, #Moving_right_wing {display: block;}
-            /*главные крылья - левое и правое*/
-            #Main_left_wing, #Main_right_wing {display: none;}
-        }
+    /*Пчела     при наведении*/
+    #Bee :hover{
+        /*крылья, которые создают движение - левое и правое */
+        #Moving_left_wing, #Moving_right_wing {display: block;}
+        /*главные крылья - левое и правое*/
+        #Main_left_wing, #Main_right_wing {display: none;}
     }
     /*шрифт*/
     .st26{font-family:'CambriaMath';}

@@ -113,15 +113,12 @@
 </script>
 
 <style scoped lang="scss">
-    /*Кошка*/
-    #Cat {
-        /*при наведении*/
-        &:hover{
-            /*хвост, который движется - при наведении справа*/
-            #Moving_tail {display: block;}
-            /*хвост, который постоянно - слева*/
-            #Tail {display: none;}
-        }
+    /*Кошка при наведении*/
+    #Cat :hover{
+        /*хвост, который движется - при наведении справа*/
+        #Moving_tail {display: block;}
+        /*хвост, который постоянно - слева*/
+        #Tail {display: none;}
     }
     /*шрифт*/
     .st0{font-family:'CambriaMath';}
