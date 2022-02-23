@@ -91,12 +91,17 @@
 </script>
 
 <style scoped lang="scss">
-    #Elephant{
-        &:hover #Moving_trunk {display: block;}
-        &:hover #Trunk {display: none;}
+    /*Слон при наведении*/
+    #Elephant :hover{
+        /*Хобот при наведении - правее*/
+        #Moving_trunk {display: block;}
+        /*Хобот постоянно - ниже*/
+        #Trunk {display: none;}
     }
+    /*шрифт*/
     .st0{font-family:'CambriaMath';}
     .st1{font-size:190px;}
+    /*цвета svg*/
     .st2{fill:#7F8FB5;stroke:#374151;stroke-width:2;stroke-miterlimit:10;}
     .st3{fill:#374151;stroke:#374151;stroke-miterlimit:10;}
     .st4{fill:#677CA5;stroke:#374151;stroke-width:2;stroke-miterlimit:10;}

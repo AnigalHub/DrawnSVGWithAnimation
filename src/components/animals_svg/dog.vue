@@ -97,7 +97,7 @@
 </script>
 
 <style scoped lang="scss">
-	/*Собака*/
+	/*Собака при наведении*/
     #Dog :hover{
 		/*хвост, который движется - ниже*/
 		#Moving_tail {display: block;}
