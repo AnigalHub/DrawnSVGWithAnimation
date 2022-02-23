@@ -271,10 +271,12 @@
     /*Крокодил*/
     #Alligator {
         /*при наведении*/
-        /*правый спящий глаз, левый спящий глаз*/
-        &:hover #Right_sleeping_eyes,&:hover #Left_sleeping_eyes, {display: block;}
-        /*левый глаз, правый глаз*/
-        &:hover #Left_eye,&:hover #Right_eye {display: none;}
+        &:hover{
+            /*правый спящий глаз, левый спящий глаз*/
+            #Right_sleeping_eyes,&:hover #Left_sleeping_eyes, {display: block;}
+            /*левый глаз, правый глаз*/
+            #Left_eye,&:hover #Right_eye {display: none;}
+        }
     }
     /*шрифт*/
     .st0{font-family:'CambriaMath';}
