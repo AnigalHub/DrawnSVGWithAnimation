@@ -34,9 +34,9 @@ export default {
     },
     methods: {
         getRandomSvg(){
-            return this.Letters[Math.floor(Math.random()*this.Letters.length)]
+            return this.Letters[Math.floor(Math.random()*this.Letters.length)] //рандом из массива Letters
         },
-        swap:function(argument_1,argument_2){
+        swap:function(argument_1,argument_2){ //изменение местами (обмен)
             let temp =  argument_1
             argument_1 = argument_2
             argument_2 = temp
@@ -45,7 +45,7 @@ export default {
     },
     data(){
         return{
-            Letters:[
+            Letters:[ //массив на алфавит с животными (svg, буквы из которых состоит название животного, буква
                 {svg: Alligator,letters:["a","l","l","i","g","a","t","o","r"],letter:"Aa"},
                 {svg: Bee,letters:["b","e","e"],letter:"Bb"},
                 {svg: Cat,letters:["c","a","t"],letter:"Cc"},
