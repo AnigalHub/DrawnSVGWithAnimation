@@ -71,6 +71,13 @@
 </script>
 
 <style scoped lang="scss">
+	/*Включено*/
+	.turnOn{
+		/*Хлеб, кнопка при включенном состоянии*/
+		#Bread,#Button2{display: block !important;}
+		/*Кнопка, огонечки при выключенном состоянии*/
+		#Button1,#Fire{display: none !important;}
+	}
     .st0{display:none;}
     .st1{display:inline;}
     .st2{fill:#363838;}
@@ -84,8 +91,4 @@
     .st10{fill:#344241;}
     .st11{fill:none;stroke:#991010;stroke-width:4;stroke-miterlimit:10;}
     .st12{fill:#E8DD1A;}
-	.turnOn{
-		#Bread,#Button2{display: block !important;}
-		#Button1,#Fire{display: none !important;}
-	}
 </style>

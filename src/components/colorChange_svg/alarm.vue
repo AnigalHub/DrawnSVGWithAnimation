@@ -78,6 +78,13 @@
 </script>
 
 <style scoped lang="scss">
+    /*Включено*/
+    .turnOn{
+        /*Линии, стрелка при включенном состоянии*/
+        #Lines,#Arrow2{display: block !important;}
+        /*Стрелка при выключенном состоянии*/
+        #Arrow1{display: none !important;}
+    }
     .st0{fill:#495154;}
     .st1{fill:#4D8D93;}
     .st2{fill:#626A6D;}
@@ -89,8 +96,5 @@
     .st8{display:inline;}
     .st9{fill:#838484;}
     .st10{fill:none;stroke:#000000;stroke-miterlimit:10;}
-    .turnOn{
-        #Lines,#Arrow2{display: block !important;}
-        #Arrow1{display: none !important;}
-    }
+
 </style>

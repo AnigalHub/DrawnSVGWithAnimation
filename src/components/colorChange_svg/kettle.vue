@@ -58,6 +58,13 @@
 </script>
 
 <style scoped lang="scss">
+    /*Включено*/
+    .turnOn{
+        /*Пар, стрелка при включенном состоянии*/
+        #Steam,#Arrow2{display: block !important;}
+        /*Стрелка при вЫключенном состоянии*/
+        #Arrow1{display: none !important;}
+    }
     .st1{fill:#AF310E;stroke:#84220B;stroke-width:3;stroke-miterlimit:10;}
     .st2{fill:#84220B;stroke:#84220B;stroke-width:3;stroke-miterlimit:10;}
     .st3{fill:#C4C4C4;stroke:#6D6A6A;stroke-width:4;stroke-miterlimit:10;}
@@ -73,8 +80,4 @@
     .st13{fill:#BFBEBE;stroke:#6D6A6A;stroke-width:4;stroke-miterlimit:10;}
     .st14{fill:#4F4F4F;stroke:#4F4F4F;stroke-width:3;stroke-miterlimit:10;}
     .st15{fill:#84220B;}
-    .turnOn{
-        #Steam,#Arrow2{display: block !important;}
-        #Arrow1{display: none !important;}
-    }
 </style>

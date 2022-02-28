@@ -51,6 +51,11 @@
 </script>
 
 <style scoped lang="scss">
+    /*Включено*/
+    .turnOn{
+        /*Огонь*/
+        #Fire{display: block !important;}
+    }
     .st0{fill:none;stroke:#000000;stroke-miterlimit:10;}
     .st1{fill:#E8DBCD;}
     .st2{fill:#C6B3A1;}
@@ -64,7 +69,4 @@
     .st10{fill:#605D5A;}
     .st11{fill:#4F4E4D;}
     .st12{fill:#686665;}
-    .turnOn{
-        #Fire{display: block !important;}
-    }
 </style>

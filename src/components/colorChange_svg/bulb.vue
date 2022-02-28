@@ -41,6 +41,19 @@
 </script>
 
 <style scoped lang="scss">
+    /*Включено*/
+    .turnOn{
+        /*Тело лампочки*/
+        #Body{fill:#FDEF9F !important;stroke: #e2d079 !important;}
+        /*Середина лампочки*/
+        #Middle{fill:#FDEF9F !important;}
+        /*Гильза лампочки*/
+        #Sleeve{fill:#FBCF73 !important;}
+        /*Правые линии*/
+        #RightLine{fill:#FBCF73 !important;stroke:#FCEE21 !important;}
+        /*Левые линии*/
+        #LeftLine{fill:#FFFAFA !important;stroke:#FFFFFF !important;}
+    }
     .st0{fill:#636362;stroke:#B3B3B3;stroke-width:0.75;stroke-miterlimit:10;}
     .st1{fill:#808080;stroke:#808080;stroke-miterlimit:10;}
     .st2{fill:#4D4D4D;stroke:#4D4D4D;stroke-width:1.5;stroke-miterlimit:10;}
@@ -50,12 +63,4 @@
     .st6{fill: #a8d6ec;}
     .st7{fill:#FFFFFF;stroke:#F2F2F2;stroke-miterlimit:10;}
     .st8{fill:none;stroke:#000000;stroke-miterlimit:10;}
-
-    .turnOn{
-    #Body{fill:#FDEF9F !important;stroke: #e2d079 !important;}
-    #Middle{fill:#FDEF9F !important;}
-    #Sleeve{fill:#FBCF73 !important;}
-    #RightLine{fill:#FBCF73 !important;stroke:#FCEE21 !important;}
-    #LeftLine{fill:#FFFAFA !important;stroke:#FFFFFF !important;}
-    }
 </style>

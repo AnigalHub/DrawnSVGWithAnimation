@@ -104,6 +104,13 @@
 </script>
 
 <style scoped lang="scss">
+	/*Включено*/
+	.turnOn{
+		/*Цветные полосы, выключатель при включенном состоянии*/
+		#Colors,#Switch2{display: block !important;}
+		/*выключатель при выключенном состоянии*/
+		#Switch1{display: none !important;}
+	}
    .st0{fill:#442F28;}
    .st1{fill:#684B3E;}
    .st2{fill:#543F3B;}
@@ -120,8 +127,4 @@
    .st13{fill:#234AAD;}
    .st14{fill:#6524AA;}
    .st15{fill:#852493;}
-   .turnOn{
-	   #Colors,#Switch2{display: block !important;}
-	   #Switch1{display: none !important;}
-   }
 </style>
