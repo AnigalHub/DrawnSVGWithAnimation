@@ -63,13 +63,18 @@
 </script>
 
 <style scoped lang="scss">
-    #Panda{
-        &:hover #Moving_paws {display: block;}
-        &:hover #Paws{display: none;}
+    /*Панда при наведении*/
+    #Panda:hover{
+        /*Лапы при движении*/
+        #Moving_paws {display: block;}
+        /*Лапы*/
+        #Paws{display: none;}
     }
-    .st0{fill:none;stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
+    /*шрифт*/
     .st1{font-family:'CambriaMath';}
     .st2{font-size:190px;}
+    /*цвета svg*/
+    .st0{fill:none;stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
     .st3{fill:#2D2D2D;}
     .st4{fill:#E6E6E6;stroke:#E6E6E6;stroke-miterlimit:10;}
     .st5{fill:#282626;stroke:#000000;stroke-width:2.2301;stroke-miterlimit:10;}

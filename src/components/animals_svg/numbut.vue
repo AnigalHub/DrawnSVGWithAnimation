@@ -134,12 +134,17 @@
 </script>
 
 <style scoped lang="scss">
-    #Numbut{
-        &:hover #Moving_tail {display: block;}
-        &:hover #Tail {display: none;}
+    /*Сумчатый муравьед при наведении*/
+    #Numbut:hover {
+        /*Хвост при движении*/
+        #Moving_tail {display: block;}
+        /*Хвост*/
+        #Tail {display: none;}
     }
+    /*шрифт*/
     .st0{font-family:'CambriaMath';}
     .st1{font-size:190px;}
+    /*цвета svg*/
     .st2{fill:#BFA055;stroke:#4C3C18;stroke-width:1.5764;stroke-miterlimit:10;}
     .st3{fill:#8E5613;stroke:#4C3C18;stroke-width:1.0574;stroke-miterlimit:10;}
     .st4{fill:#4C3C18;stroke:#4C3C18;stroke-width:1.0574;stroke-miterlimit:10;}

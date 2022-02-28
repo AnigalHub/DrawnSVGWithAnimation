@@ -313,12 +313,17 @@
 </script>
 
 <style scoped lang="scss">
-    #Jellyfish {
-        &:hover #Moving_tentacles {display: block;}
-        &:hover #Tentacles {display:none;}
+    /*Медуза при наведении*/
+    #Jellyfish:hover {
+        /*Щупальца, которые создают движение*/
+        #Moving_tentacles {display: block;}
+        /*Щупальца*/
+        #Tentacles {display:none;}
     }
+    /*шрифт*/
     .st0{font-family:'CambriaMath';}
     .st1{font-size:190px;}
+    /*цвета svg*/
     .st2{display:none;}
     .st3{display:inline;}
     .st4{fill:#CC7AD5;}

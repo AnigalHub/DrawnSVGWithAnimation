@@ -132,12 +132,17 @@
 </script>
 
 <style scoped lang="scss">
-    #Giraffe {
-        &:hover #Moving_left_ear, &:hover #Moving_right_ear {display: block;}
-        &:hover #Left_ear, &:hover #Right_ear {display: none;}
+    /*Жираф при наведении*/
+    #Giraffe:hover{
+        /*уши, которые создают движение - левое и правое */
+        #Moving_left_ear, #Moving_right_ear {display: block;}
+        /*левое ухо, правое ухо*/
+        #Left_ear, #Right_ear {display: none;}
     }
+    /*шрифт*/
     .st0{font-family:'CambriaMath';}
     .st1{font-size:190px;}
+    /*цвета svg*/
     .st2{display:none;}
     .st3{display:inline;fill:#EAA25C;stroke:#604630;stroke-width:2;stroke-miterlimit:10;}
     .st4{display:inline;fill:#603813;stroke:#604630;stroke-width:2;stroke-miterlimit:10;}

@@ -254,10 +254,17 @@
 </script>
 
 <style scoped lang="scss">
-	#Zebra {
-		&:hover #Moving_tail,&:hover #Moving_right_ear,&:hover #Moving_left_ear {display: block;}
-		&:hover #Tail,&:hover #Right_ear,&:hover #Left_ear {display: none;}
+	/*Зебра при наведении*/
+	#Zebra:hover{
+		/*Хвост, правое ухо, левое ухо - при движении*/
+		#Moving_tail, #Moving_right_ear, #Moving_left_ear {display: block;}
+		/*Хвост, правое ухо, левое ухо*/
+		#Tail, #Right_ear, #Left_ear {display: none;}
 	}
+	/*шрифт*/
+	.st21{font-family:'CambriaMath';}
+	.st22{font-size:190px;}
+	/*цвета svg*/
 	.st0{fill:none;stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
 	.st1{display:none;}
 	.st2{display:inline;fill:#F2F2F2;stroke:#474646;stroke-width:1.5;stroke-miterlimit:10;}
@@ -279,6 +286,4 @@
 	.st18{fill:#FFFFFF;stroke:#000000;stroke-width:7.390236e-02;stroke-miterlimit:10;}
 	.st19{fill:#2D2C2C;stroke:#3A3A3A;stroke-width:0.75;stroke-miterlimit:10;}
 	.st20{fill:#E0E0E0;stroke:#474646;stroke-width:1.5;stroke-miterlimit:10;}
-	.st21{font-family:'CambriaMath';}
-	.st22{font-size:190px;}
 </style>

@@ -104,10 +104,17 @@
 </script>
 
 <style scoped lang="scss">
-    #X-ray_fish {
-        &:hover #Moving_front_fin, &:hover #Bubbles{display: block;}
-        &:hover #Front_fin {display:none;}
+    /*Ренген-рыба (звездчатая пристелла) при наведении*/
+    #X-ray_fish:hover{
+        /*Передний плавник и пузыри при движении*/
+        #Moving_front_fin, #Bubbles{display: block;}
+        /*Передний плавник*/
+        #Front_fin {display:none;}
     }
+    /*шрифт*/
+    .st15{font-family:'CambriaMath';}
+    .st16{font-size:190px;}
+    /*цвета svg*/
     .st0{fill:none;stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
     .st1{fill:#BFBFDD;stroke:#404066;stroke-miterlimit:10;}
     .st2{fill:#9797C4;}
@@ -123,6 +130,4 @@
     .st12{display:inline;fill:#BFBFDD;stroke:#404066;stroke-miterlimit:10;}
     .st13{display:inline;}
     .st14{display:inline;fill:#45CAEC;stroke:#1D6297;stroke-miterlimit:10;}
-    .st15{font-family:'CambriaMath';}
-    .st16{font-size:190px;}
 </style>

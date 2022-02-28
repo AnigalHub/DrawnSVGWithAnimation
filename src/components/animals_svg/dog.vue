@@ -98,7 +98,7 @@
 
 <style scoped lang="scss">
 	/*Собака при наведении*/
-    #Dog :hover{
+    #Dog:hover{
 		/*хвост, который движется - ниже*/
 		#Moving_tail {display: block;}
 		/*хвост, который постоянно - выше*/

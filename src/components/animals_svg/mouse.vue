@@ -118,12 +118,17 @@
 </script>
 
 <style scoped lang="scss">
-    #Mouse {
-        &:hover #Whole_head {display:none;}
-        &:hover #Moving_head{display: block;}
+	/*Мышь при наведении*/
+    #Mouse:hover{
+		/*Голова*/
+		#Whole_head {display:none;}
+		/*Голова при движении*/
+        #Moving_head{display: block;}
     }
+	/*шрифт*/
     .st0{font-family:'CambriaMath';}
     .st1{font-size:190px;}
+	/*цвета svg*/
     .st2{fill:#83A9B1;stroke:#000000;stroke-miterlimit:10;}
     .st3{fill:#83A9B1;stroke:#000000;stroke-width:0.75;stroke-miterlimit:10;}
     .st4{fill:#C7E0E5;stroke:#000000;stroke-miterlimit:10;}

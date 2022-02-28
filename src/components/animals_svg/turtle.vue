@@ -135,10 +135,17 @@
 </script>
 
 <style scoped lang="scss">
-    #Turtle {
-        &:hover #Moving_whole_head {display: block;}
-        &:hover #Whole_head {display: none;}
+    /*Черепаха при наведении*/
+    #Turtle:hover{
+        /*Голова при движении*/
+        #Moving_whole_head {display: block;}
+        /*Голова*/
+        #Whole_head {display: none;}
     }
+    /*шрифт*/
+    .st18{font-family:'CambriaMath';}
+    .st19{font-size:190px;}
+    /*цвета svg*/
     .st0{fill:none;stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
     .st1{fill:#D6B9AE;}
     .st2{fill:#A0938A;}
@@ -157,6 +164,4 @@
     .st15{display:none;}
     .st16{display:inline;}
     .st17{display:inline;fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
-    .st18{font-family:'CambriaMath';}
-    .st19{font-size:190px;}
 </style>

@@ -93,10 +93,17 @@
 </script>
 
 <style scoped lang="scss">
-	#Whale{
-		&:hover #Moving_fountain {display: block;}
-		&:hover #Fountain {display:none;}
+	/*Кит при наведении*/
+	#Whale:hover{
+		/*Фонтан при движении*/
+		#Moving_fountain {display: block;}
+		/*Фонтан*/
+		#Fountain {display:none;}
 	}
+	/*шрифт*/
+	.st13{font-family:'CambriaMath';}
+	.st14{font-size:190px;}
+	/*цвета svg*/
 	.st0{fill:none;stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
 	.st1{fill:#5B89B2;}
 	.st2{fill:#0A4877;}
@@ -110,6 +117,4 @@
 	.st10{fill:#5EE1EF;stroke:#0A4877;stroke-miterlimit:10;}
 	.st11{display:none;}
 	.st12{display:inline;fill:#5EE1EF;stroke:#0A4877;stroke-miterlimit:10;}
-	.st13{font-family:'CambriaMath';}
-	.st14{font-size:190px;}
 </style>

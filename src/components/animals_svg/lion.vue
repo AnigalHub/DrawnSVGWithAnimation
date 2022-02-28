@@ -96,12 +96,17 @@
 </script>
 
 <style scoped lang="scss">
-    #Lion {
-        &:hover #Moving_mouth, &:hover #Moving_brows{display: block;}
-        &:hover #Mouth, &:hover #Brows {display:none;}
+    /*Лев при наведении*/
+    #Lion:hover{
+        /*Рот и брови, которые двигаются*/
+        #Moving_mouth, #Moving_brows{display: block;}
+        /*Рот, брови*/
+        #Mouth, #Brows {display:none;}
     }
+    /*шрифт*/
     .st0{font-family:'CambriaMath';}
     .st1{font-size:190px;}
+    /*цвета svg*/
     .st2{fill:#F2A50A;stroke:#604630;stroke-width:1.9757;stroke-miterlimit:10;}
     .st3{fill:#89590C;stroke:#604630;stroke-width:1.9757;stroke-miterlimit:10;}
     .st4{fill:#F2A50A;stroke:#000000;stroke-width:1.9757;stroke-miterlimit:10;}

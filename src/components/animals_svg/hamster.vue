@@ -80,12 +80,17 @@
 </script>
 
 <style scoped lang="scss">
-    #Hamster {
-        &:hover #Moving_nose_mustache {display: block;}
-        &:hover #Nose_mustache {display: none;}
+    /*Хомяк при наведении*/
+    #Hamster:hover {
+        /*усы и нос, которые создают движение*/
+        #Moving_nose_mustache {display: block;}
+        /*усы и нос*/
+        #Nose_mustache {display: none;}
     }
+    /*шрифт*/
     .st0{font-family:'CambriaMath';}
     .st1{font-size:190px;}
+    /*цвета svg*/
     .st2{fill:#DDC6BA;stroke:#77513E;stroke-width:2;stroke-miterlimit:10;}
     .st3{fill:#9A7D6A;stroke:#77513E;stroke-width:2;stroke-miterlimit:10;}
     .st4{fill:#CEBBB6;stroke:#77513E;stroke-width:2;stroke-miterlimit:10;}

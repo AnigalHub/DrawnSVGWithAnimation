@@ -138,12 +138,17 @@
 </script>
 
 <style scoped lang="scss">
-	#Raccoon {
-		&:hover #Moving_tail {display: block;}
-		&:hover #Tail {display: none;}
+	/*Енот при наведении*/
+	#Raccoon:hover{
+		/*Хвост при движении (наведении)*/
+		#Moving_tail {display: block;}
+		/*Хвост*/
+		#Tail {display: none;}
 	}
+	/*шрифт*/
 	.st0{font-family:'CambriaMath';}
 	.st1{font-size:190px;}
+	/*цвета svg*/
 	.st2{fill:none;stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
 	.st3{fill:#A5A5A5;}
 	.st4{fill:#5D6060;}

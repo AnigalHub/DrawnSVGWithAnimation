@@ -288,13 +288,18 @@
 </script>
 
 <style scoped lang="scss">
-    #Octopus {
-        &:hover #Moving_body {display: block;} 
-        &:hover #Body {display: none;}
+    /*Осьминог при наведении*/
+    #Octopus:hover{
+        /*Тело при движении*/
+        #Moving_body {display: block;}
+        /*Тело*/
+        #Body {display: none;}
     }
-    .st0{fill:none;stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
+    /*шрифт*/
     .st1{font-family:'CambriaMath';}
     .st2{font-size:190px;}
+    /*цвета svg*/
+    .st0{fill:none;stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
     .st3{display:none;fill:#9F79BA;stroke:#77167A;stroke-width:0.75;stroke-miterlimit:10;}
     .st4{fill:#9F79BA;stroke:#77167A;stroke-width:0.75;stroke-miterlimit:10;}
     .st5{fill:#FFFFFF;}

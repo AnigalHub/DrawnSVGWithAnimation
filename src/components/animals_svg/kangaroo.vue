@@ -94,12 +94,17 @@
 </script>
 
 <style scoped lang="scss">
-    #Kangaroo {
-        &:hover #Moving_front_left_paw,&:hover #Moving_front_right_paw {display: block;}
-        &:hover #Front_left_paw,&:hover #Front_right_paw {display:none;}
+    /*Кенгуру при наведении*/
+    #Kangaroo:hover {
+        /*Лапы, которые создают движение - передняя левая и передняя правая*/
+        #Moving_front_left_paw, #Moving_front_right_paw {display: block;}
+        /*передняя левая и передняя правая лапы*/
+        #Front_left_paw, #Front_right_paw {display:none;}
     }
+    /*шрифт*/
     .st0{font-family:'CambriaMath';}
     .st1{font-size:190px;}
+    /*цвета svg*/
     .st2{display:none;}
     .st3{display:inline;fill:#BF6B32;stroke:#603429;stroke-width:1.1789;stroke-miterlimit:10;}
     .st4{display:inline;fill:none;stroke:#603429;stroke-width:1.1789;stroke-miterlimit:10;}

@@ -200,12 +200,17 @@
 </script>
 
 <style scoped lang="scss">
-    #Iguana {
-        &:hover #Mouth_with_tongue {display: block;}
-        &:hover #Mouth {display: none;}
+    /*Игуанна при наведении*/
+    #Iguana:hover {
+        /*Рот с языком*/
+        #Mouth_with_tongue {display: block;}
+        /*Рот*/
+        #Mouth {display: none;}
     }
+    /*шрифт*/
     .st0{font-family:'CambriaMath';}
     .st1{font-size:190px;}
+    /*цвета svg*/
     .st2{fill:#51A151;stroke:#145B20;stroke-width:2;stroke-miterlimit:10;}
     .st3{fill:#51A151;}
     .st4{fill:#195E23;}

@@ -92,7 +92,7 @@
 
 <style scoped lang="scss">
     /*Слон при наведении*/
-    #Elephant :hover{
+    #Elephant:hover{
         /*Хобот при наведении - правее*/
         #Moving_trunk {display: block;}
         /*Хобот постоянно - ниже*/

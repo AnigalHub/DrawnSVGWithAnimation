@@ -86,9 +86,15 @@
 </script>
 
 <style scoped lang="scss">
-    #Viper {
-        &:hover #Tongue {display: block;}
+    /*Гадюка при наведении*/
+    #Viper:hover{
+        /*Язык*/
+        #Tongue {display: block;}
     }
+    /*шрифт*/
+    .st15{font-family:'CambriaMath';}
+    .st16{font-size:190px;}
+    /*цвета svg*/
     .st0{fill:none;stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
     .st1{fill:#EAEAB0;}
     .st2{fill:#56932E;}
@@ -104,6 +110,4 @@
     .st12{fill:#5D933A;}
     .st13{stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;}
     .st14{opacity:0.5;fill:#5D933A;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;}
-    .st15{font-family:'CambriaMath';}
-    .st16{font-size:190px;}
 </style>

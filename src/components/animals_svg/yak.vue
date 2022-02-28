@@ -158,10 +158,17 @@
 </script>
 
 <style scoped lang="scss">
-	#Yak{
-		&:hover #Moving_right_ear, &:hover #Moving_left_ear{display: block;}
-		&:hover #Right_ear,&:hover #Left_ear {display:none;}
+	/*Як при наведении*/
+	#Yak:hover{
+		/*Правое и левое уши при движении*/
+		#Moving_right_ear, #Moving_left_ear{display: block;}
+		/*Правое и левое уши*/
+		#Right_ear,#Left_ear {display:none;}
 	}
+	/*шрифт*/
+	.st21{font-family:'CambriaMath';}
+	.st22{font-size:190px;}
+	/*цвета svg*/
 	.st0{fill:none;stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
 	.st1{display:none;}
 	.st2{display:inline;fill:#916257;stroke:#663936;stroke-width:2;stroke-miterlimit:10;}
@@ -183,6 +190,4 @@
 	.st18{fill:#592F2C;stroke:#663936;stroke-miterlimit:10;}
 	.st19{fill:#F7ECDC;stroke:#846A45;stroke-width:1.5;stroke-miterlimit:10;}
 	.st20{fill:none;stroke:#A89F94;stroke-width:1.5;stroke-miterlimit:10;}
-	.st21{font-family:'CambriaMath';}
-	.st22{font-size:190px;}
 </style>

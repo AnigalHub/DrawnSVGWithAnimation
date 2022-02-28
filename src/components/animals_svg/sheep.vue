@@ -366,10 +366,17 @@
 </script>
 
 <style scoped lang="scss">
-    #Sheep {
-        &:hover #Moving_whole_head {display: block;}
-        &:hover #Whole_head {display: none;}
+    /*Овца при наведении*/
+    #Sheep:hover{
+        /*Голова при движении*/
+        #Moving_whole_head {display: block;}
+        /*Голова*/
+        #Whole_head {display: none;}
     }
+    /*шрифт*/
+    .st15{font-family:'CambriaMath';}
+    .st16{font-size:190px;}
+    /*цвета svg*/
     .st0{fill:#919191;}
     .st1{fill:#EFEFEF;}
     .st2{fill:#82622F;stroke:#000000;stroke-miterlimit:10;}
@@ -385,6 +392,4 @@
     .st12{display:none;}
     .st13{display:inline;fill:#FFE6B9;stroke:#000000;stroke-miterlimit:10;}
     .st14{display:inline;}
-    .st15{font-family:'CambriaMath';}
-    .st16{font-size:190px;}
 </style>

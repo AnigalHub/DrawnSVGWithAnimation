@@ -78,12 +78,17 @@
 </script>
 
 <style scoped lang="scss">
-    #Frog {
-        &:hover #Mouth_with_tongue {display: block;}
-        &:hover #Mouth {display: none;}
+    /*Лягушка при наведении*/
+    #Frog:hover{
+        /*Рот с языком*/
+        #Mouth_with_tongue {display: block;}
+        /*Рот*/
+        #Mouth {display: none;}
     }
+    /*шрифт*/
     .st0{font-family:'CambriaMath';}
     .st1{font-size:190px;}
+    /*цвета svg*/
     .st2{fill:#77973E;stroke:#145B20;stroke-width:1.5;stroke-miterlimit:10;}
     .st3{fill:#77973E;stroke:#145B20;stroke-width:1.4999;stroke-miterlimit:9.9995;}
     .st4{fill:#77973E;}

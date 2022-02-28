@@ -85,7 +85,7 @@
 
 <style scoped lang="scss">
     /*Пчела     при наведении*/
-    #Bee :hover{
+    #Bee:hover{
         /*крылья, которые создают движение - левое и правое */
         #Moving_left_wing, #Moving_right_wing {display: block;}
         /*главные крылья - левое и правое*/

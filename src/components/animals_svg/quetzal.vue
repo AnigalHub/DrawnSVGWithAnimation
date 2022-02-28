@@ -193,13 +193,18 @@
 </script>
 
 <style scoped lang="scss">
-    #Quetzal {
-        &:hover #Moving_right_feathers_wing,  &:hover #Moving_left_wing, &:hover #Moving_right_wing {display: block;}
-        &:hover #Left_wing,  &:hover #Right_wing, &:hover #Left_feathers_wing {display: none;}
+    /*Кетцаль при наведении*/
+    #Quetzal:hover{
+        /*Перья, левое и правое крылья - при движении*/
+        #Moving_right_feathers_wing, #Moving_left_wing, #Moving_right_wing {display: block;}
+        /*Перья, левое и правое крылья*/
+        #Left_wing, #Right_wing, #Left_feathers_wing {display: none;}
     }
-    .st0{fill:none;stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
+    /*шрифт*/
     .st1{font-family:'CambriaMath';}
     .st2{font-size:190px;}
+    /*цвета svg*/
+    .st0{fill:none;stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
     .st3{fill:#247689;}
     .st4{fill:#0F434C;}
     .st5{fill:#8C2A23;}

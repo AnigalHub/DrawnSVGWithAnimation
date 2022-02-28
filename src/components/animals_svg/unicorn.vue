@@ -182,10 +182,17 @@
 </script>
 
 <style scoped lang="scss">
-	#Unicorn {
-		&:hover #Moving_left_front_paw, &:hover #Lights{display: block;}
-		&:hover #Left_front_paw {display: none;}
+	/*Единорог при наведении*/
+	#Unicorn:hover{
+		/*Левая передняя лапа, огни - при наведении*/
+		#Moving_left_front_paw, #Lights{display: block;}
+		/*Левая передняя лапа*/
+		#Left_front_paw {display: none;}
 	}
+	/*шрифт*/
+	.st29{font-family:'CambriaMath';}
+	.st30{font-size:190px;}
+	/*цвета svg*/
 	.st0{fill:none;stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
 	.st1{display:none;}
 	.st2{display:inline;}
@@ -215,6 +222,4 @@
 	.st26{fill:none;stroke:#474646;stroke-width:1.5;stroke-miterlimit:10;}
 	.st27{display:inline;fill:#FFFFFF;stroke:#EFE745;stroke-width:4;stroke-miterlimit:10;}
 	.st28{display:inline;fill:none;stroke:#EFE745;stroke-width:4;stroke-miterlimit:10;}
-	.st29{font-family:'CambriaMath';}
-	.st30{font-size:190px;}
 </style>
