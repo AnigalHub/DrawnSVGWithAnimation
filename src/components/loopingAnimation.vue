@@ -21,6 +21,7 @@
 </script>
 
 <style scoped lang="scss">
+    /*блок цикличная анимация*/
     #loopingAnimation{
         width: 78%;
         margin: 0 auto;

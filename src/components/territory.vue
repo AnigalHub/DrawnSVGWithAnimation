@@ -21,6 +21,7 @@
 </script>
 
 <style scoped lang="scss">
+    /*блок территория*/
     #territory{
         width: 78%;
         margin: 0 auto;
