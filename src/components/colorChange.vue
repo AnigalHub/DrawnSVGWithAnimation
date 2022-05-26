@@ -103,8 +103,8 @@
     }
     /*svg*/
     svg{
-       width: 250px;
-       height: 250px;
+       width: 200px;
+       height: 200px;
        margin: 15px;
     }
 
@@ -152,8 +152,8 @@
         #colorChange .flex-container{width: 85%;}
         /*svg*/
         svg{
-            width: 230px;
-            height: 230px;
+            width: 190px;
+            height: 190px;
         }
     }
 </style>
