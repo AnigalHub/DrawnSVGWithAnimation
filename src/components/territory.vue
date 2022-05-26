@@ -21,6 +21,10 @@
 </script>
 
 <style scoped lang="scss">
+    #territory{
+        width: 78%;
+        margin: 0 auto;
+    }
     /*svg*/
     svg{margin-top: -15px;}
 
