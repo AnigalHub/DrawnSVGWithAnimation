@@ -189,8 +189,8 @@
     /*svg*/
     svg {
         display: block;
-        width: 450px;
-        height: 450px;
+        width: 300px;
+        height: 300px;
         margin: -25px auto 0 !important;
     }
     /*блок с буквами (для перетаскивания), блок с ячейками (куда перетаскиваем)*/
@@ -229,8 +229,8 @@
         }
         /*svg*/
         svg {
-            width: 250px;
-            height: 250px;
+            width: 200px;
+            height: 200px;
         }
         /*тело модального окна - карточка игры*/
         .modal-body svg{margin-top: -5% !important;}
@@ -251,8 +251,8 @@
         }
         /*svg*/
         svg {
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
         }
         /*тело модального окна - карточка игры*/
         .modal-body svg{margin-top: -5% !important;}
@@ -262,8 +262,8 @@
     @media screen and (min-width: 992px) and (max-width: 1200px) {
         /*svg*/
         svg {
-            width: 350px;
-            height: 350px;
+            width: 250px;
+            height: 250px;
         }
         /*тело модального окна - карточка игры*/
         .modal-body svg{margin-top: -5%  !important;}
