@@ -14,7 +14,7 @@ export default {
 </script>
 <style lang="scss">
   /*квадрат у Svg  играх (животные)*/
-  #Square{fill: rgba(104, 241, 253, 0.45);stroke:#000000;stroke-width:0.9709;stroke-miterlimit:10;}
+  #Square {fill: rgba(104, 241, 253, 0.45); stroke:#000000; stroke-width:0.9709; stroke-miterlimit:10;}
   /*"крестик" (размер) - кнопка закрытия модального окна*/
   .close {
       border: none !important;
@@ -22,7 +22,7 @@ export default {
       font-size: 30px;
   }
   /*модальное окно*/
-  .modal-dialog:first-child{margin-top: 5% !important;}
+  .modal-dialog:first-child {margin-top: 5% !important;}
   /*заголовок модального окна*/
   .modal-header{
       border: none !important;
@@ -38,26 +38,26 @@ export default {
       font-weight: 800 !important;
   }
   /*footer-модального окна*/
-  .modal-footer{display: none !important;}
+  .modal-footer {display: none !important;}
   /*Компонент в котором вызываются все другие компоненты*/
-  #app{
+  #app {
       height: 100%;
       min-height: 100vh;
       background: #8dccee;
   }
   /*заголовок*/
-  h1{
+  h1 {
       text-align: center;
       margin-bottom: 25px !important;
       font-family: 'Poiret One', cursive;
       font-weight: 800 !important;
   }
   /*Компонент - ГлавноеМеню (mainMenu), Компонент - МенюИгры (gameMenu)*/
-  #mainMenu, #gameMenu{
+  #mainMenu, #gameMenu {
       padding-top: 15%;
       padding-bottom: 20px;
       /*кнопки*/
-      button{
+      button {
           display: block;
           background-color: #269e2b;
           width: 450px;
@@ -85,18 +85,18 @@ export default {
   }
   /*Компоненты - Алфавит (alphabet), СменаЦвета (colorChange), ЦикличнаяАнимация (loopingAnimation),
    КонструкторСлов(wordConstructor), СобериПару (CollectCouple), ТерриторияРоссии (territory) */
-  #alphabet, #colorChange, #loopingAnimation, #wordConstructor, #collectCouple, #territory{padding-top: 15px;}
+  #alphabet, #colorChange, #loopingAnimation, #wordConstructor, #collectCouple, #territory {padding-top: 15px;}
   /*кнопка назад в компонентах игры*/
-  .back{
+  .back {
       width: 150px;
-      padding:10px 32px;
+      padding: 10px 32px;
       transition-duration: 0.4s;
       display: block;
       margin: 0 auto;
       background-color: #517952 !important;
   }
   /*блок под кнопки управления игрой (СобериПару, КонструкторCлов)*/
-  .buttonGame{
+  .buttonGame {
       font-size: 1.15rem;
       text-align: center;
       text-decoration: none;
@@ -106,13 +106,13 @@ export default {
       padding-bottom: 40px;
       width: 700px;
       /*кнопки*/
-      button{
+      button {
           width: 155px;
-          padding:10px !important;
+          padding: 10px !important;
           margin: 0 8px;
           background: #517952;
           /*кнопки при наведении*/
-          &:hover{background: #326132;}
+          &:hover {background: #326132;}
       }
   }
   /*контейнер, который включает в себя повтор блоков*/
@@ -121,51 +121,51 @@ export default {
       flex-wrap: wrap;
   }
   /*Компонент - ПоворотЭкрана (ScreenRotation) */
-  #screenRotation{display: none;}
+  #screenRotation {display: none;}
 
 
   /*Адаптивность*/
-  @media screen and  (max-width: 499px) {
+  @media screen and (max-width: 499px) {
       /*Компонент - Алфавит (alphabet)*/
-      #alphabet{padding-left: 0;}
+      #alphabet {padding-left: 0;}
       /*Компонент - ГлавноеМеню (mainMenu), Компонент - МенюИгры (gameMenu) - кнопки*/
-      #mainMenu button, #gameMenu button{width: 100%;}
+      #mainMenu button, #gameMenu button {width: 100%;}
       /*контент всех компонентов*/
-      #content{display: none;}
+      #content {display: none;}
       /*Компонент - ПоворотЭкрана (ScreenRotation) */
-      #screenRotation{display: block;}
+      #screenRotation {display: block;}
   }
   @media screen and (min-width: 500px) and (max-width: 768px) {
       /*заголовок компонентов СобериПару (CollectCouple), КонструкторСлов(wordConstructor)*/
-      #collectCouple h1, #wordConstructor h1{margin-left: -40px;}
+      #collectCouple h1, #wordConstructor h1 {margin-left: -40px;}
       /*блок под кнопки управления игрой (СобериПару, КонструкторCлов)*/
       .buttonGame {
           width: 100%;
           margin-top: 10px !important;
       }
   }
-  @media (min-width: 992px){
+  @media (min-width: 992px) {
       /*ширина модального окна на разных экранах*/
       .modal-lg, .modal-xl {max-width: 750px !important;}
   }
   @media screen and (max-width: 992px) {
       /*Компоненты - Алфавит (alphabet), СменаЦвета (colorChange), ЦикличнаяАнимация (loopingAnimation),
       КонструкторСлов(wordConstructor), СобериПару (CollectCouple), ТерриторияРоссии (territory) */
-      #alphabet, #colorChange, #loopingAnimation, #wordConstructor, #collectCouple, #territory{
+      #alphabet, #colorChange, #loopingAnimation, #wordConstructor, #collectCouple, #territory {
           /*кнопки*/
-          button{padding:7px;}
+          button {padding:7px;}
       }
       /*Компонент - ГлавноеМеню (mainMenu), Компонент - МенюИгры (gameMenu)*/
-      #mainMenu, #gameMenu{
+      #mainMenu, #gameMenu {
           padding-top: 8%;
           /*кнопки*/
-          button{
+          button {
               padding: 15px;
               margin: 10px auto;
           }
       }
       /*заголовок*/
-      h1{font-size: 1.5rem !important;}
+      h1 {font-size: 1.5rem !important;}
       /*Компоненты - ГлавноеМеню (mainMenu), МенюИгры (gameMenu), Алфавит (alphabet), СменаЦвета (colorChange),
       ЦикличнаяАнимация (loopingAnimation), КонструкторСлов(wordConstructor), СобериПару (CollectCouple), ТерриторияРоссии (territory) */
       #mainMenu, #gameMenu, #alphabet, #colorChange, #loopingAnimation, #wordConstructor, #collectCouple,#territory {

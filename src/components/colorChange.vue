@@ -62,7 +62,7 @@
         margin-left: 20px;
     }
     /*элемент с галочкой*/
-    input{display: none;}
+    input {display: none;}
     /*ползунок переключения*/
     .slider {
         position: absolute;
@@ -111,9 +111,9 @@
     /*Адаптивность*/
     @media screen and (min-width: 500px) and (max-width: 768px) {
         /*Компонент - СменаЦвета (colorChange) - контейнер, который включает в себя повтор блоков*/
-        #colorChange .flex-container{width: 100%;}
+        #colorChange .flex-container {width: 100%;}
         /*svg*/
-        svg{
+        svg {
             width: 135px;
             height: 135px;
             margin: 5px;
@@ -131,7 +131,7 @@
     }
     @media screen and (min-width: 768px) and (max-width: 992px) {
         /*Компонент - СменаЦвета (colorChange) - контейнер, который включает в себя повтор блоков*/
-        #colorChange .flex-container{width: 85%;}
+        #colorChange .flex-container {width: 85%;}
         /*svg*/
         svg{
             width: 190px;
@@ -149,7 +149,7 @@
     }
     @media screen and (min-width: 992px) and (max-width: 1200px) {
         /*Компонент - СменаЦвета (colorChange) - контейнер, который включает в себя повтор блоков*/
-        #colorChange .flex-container{width: 85%;}
+        #colorChange .flex-container {width: 85%;}
         /*svg*/
         svg{
             width: 190px;

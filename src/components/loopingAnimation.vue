@@ -22,10 +22,10 @@
 
 <style scoped lang="scss">
     /*блок цикличная анимация*/
-    #loopingAnimation{
+    #loopingAnimation {
         width: 78%;
         margin: 0 auto;
     }
     /*svg*/
-    svg{margin-top: -5px;}
+    svg {margin-top: -5px;}
 </style>

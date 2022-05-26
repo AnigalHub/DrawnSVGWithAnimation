@@ -169,23 +169,23 @@
 
 <style scoped lang="scss">
     /*тело модального окна - карточка игры*/
-    .modal-body svg{
+    .modal-body svg {
         display: block;
         width: 400px;
         margin: -10% auto 0 !important;
     }
     /*название животного в модальном окне (подсказка)*/
-    .nameSelectAnimal{
+    .nameSelectAnimal {
         margin-top: -50px;
         font-size: 3.2rem;
     }
     /*параметры сетки бутстрап*/
-    .row{
+    .row {
         max-width: max-content !important;
         margin: 0 auto;
     }
     /*горизонтальная линия*/
-    hr{margin: 1rem 0 0 !important;}
+    hr {margin: 1rem 0 0 !important;}
     /*svg*/
     svg {
         display: block;
@@ -194,7 +194,7 @@
         margin: -25px auto 0 !important;
     }
     /*блок с буквами (для перетаскивания), блок с ячейками (куда перетаскиваем)*/
-    .letters,.name_animal{
+    .letters,.name_animal {
         width: 100%;
         display: flex;
         align-items: center;
@@ -202,7 +202,7 @@
         margin: 10px auto 25px;
         height: 60px;
         /*буква в ячейке*/
-        .letter{
+        .letter {
             background: rgba(255, 255, 255, 0.5);
             border: 1.8px solid #9a9797;
             float: left;
@@ -217,10 +217,10 @@
     /*Адаптивность*/
     @media screen and (min-width: 500px) and (max-width: 768px) {
         /*блок с буквами (для перетаскивания), блок с ячейками (куда перетаскиваем)*/
-        .letters,.name_animal{
+        .letters,.name_animal {
             margin-top: 10px !important;
             /*буква в ячейке*/
-            .letter{
+            .letter {
                 width: 45px;
                 height: 45px;
                 margin: 0 4px;
@@ -233,16 +233,16 @@
             height: 200px;
         }
         /*тело модального окна - карточка игры*/
-        .modal-body svg{margin-top: -5% !important;}
+        .modal-body svg {margin-top: -5% !important;}
         /*название животного в модальном окне (подсказка)*/
-        .nameSelectAnimal{margin-top: -35px;}
+        .nameSelectAnimal {margin-top: -35px;}
     }
     @media screen and (min-width: 768px) and (max-width: 992px) {
         /*блок с буквами (для перетаскивания), блок с ячейками (куда перетаскиваем)*/
-        .letters,.name_animal{
+        .letters, .name_animal {
             margin-top: 10px !important;
             /*буква в ячейке*/
-            .letter{
+            .letter {
                 width: 50px;
                 height: 50px;
                 margin: 0 8px;
@@ -255,9 +255,9 @@
             height: 200px;
         }
         /*тело модального окна - карточка игры*/
-        .modal-body svg{margin-top: -5% !important;}
+        .modal-body svg {margin-top: -5% !important;}
         /*название животного в модальном окне (подсказка)*/
-        .nameSelectAnimal{margin-top: -35px;}
+        .nameSelectAnimal {margin-top: -35px;}
     }
     @media screen and (min-width: 992px) and (max-width: 1200px) {
         /*svg*/
@@ -266,9 +266,9 @@
             height: 250px;
         }
         /*тело модального окна - карточка игры*/
-        .modal-body svg{margin-top: -5%  !important;}
+        .modal-body svg {margin-top: -5% !important;}
         /*название животного в модальном окне (подсказка)*/
-        .nameSelectAnimal{margin-top: -35px;}
+        .nameSelectAnimal {margin-top: -35px;}
     }
 </style>
 

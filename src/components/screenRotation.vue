@@ -15,7 +15,7 @@
     /*Компонент - ПоворотЭкрана (ScreenRotation) */
     #screenRotation{
         /*картинка*/
-       img{
+       img {
            padding: 10% 0;
            margin: auto;
            display: block;
