@@ -34,11 +34,16 @@ export default {
       min-height: 100px;
       text-align: center;
       font-size: 30px;
+      /*выделенный текст*/
+      u{
+          font-weight: 100 !important;
+          font-family: 'Bad Script', cursive !important;
+      }
   }
   /*выделенный текст*/
   u{
-      font-weight: 600 !important;
-      font-family: 'Bad Script', cursive;
+      font-weight: 600;
+      font-family: 'Bad Script', cursive !important;
   }
   /*footer-модального окна*/
   .modal-footer{display: none !important;}
@@ -53,14 +58,14 @@ export default {
       text-align: center;
       font-size: 2rem !important;
       margin-bottom: 25px !important;
-      font-weight: 600 !important;
+      font-weight: 500 !important;
       font-family: 'Bad Script', cursive;
   }
   /*контент всех компонентов*/
-  #content{padding-top: 2%;}
+  #content{padding-top: 1%;}
   /*Компонент - ГлавноеМеню (mainMenu), Компонент - МенюИгры (gameMenu)*/
   #mainMenu, #gameMenu{
-      padding-top: 15%;
+      padding-top: 12%;
       padding-bottom: 20px;
       /*кнопки*/
       button{
