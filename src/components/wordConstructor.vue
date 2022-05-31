@@ -172,12 +172,12 @@
     .modal-body svg {
         display: block;
         width: 400px;
-        margin: -10% auto 0 !important;
+        margin: -7% auto 0 !important;
     }
     /*название животного в модальном окне (подсказка)*/
     .nameSelectAnimal {
-        margin-top: -50px;
-        font-size: 3.2rem;
+        margin-top: -20px;
+        font-size: 2.5rem;
     }
     /*параметры сетки бутстрап*/
     .row {

@@ -50,11 +50,11 @@
             width: 70%;
             margin: 0 auto;
             /*блоки, которые повторяются*/
-            &> div {width: 33%;}
+            & > div{width: 33%;}
         }
     }
     /*переключатель вкл-выкл*/
-    .switch {
+    .switch{
         position: relative;
         display: inline-block;
         width: 190px;
@@ -62,9 +62,9 @@
         margin-left: 20px;
     }
     /*элемент с галочкой*/
-    input {display: none;}
+    input{display: none;}
     /*ползунок переключения*/
-    .slider {
+    .slider{
         position: absolute;
         cursor: pointer;
         top: 0;
@@ -77,7 +77,7 @@
         font-weight: bold;
         font-family: 'Alegreya', serif;
         /*шарик - который перемещается в ползунке переключения*/
-        &:before {
+        &:before{
             position: absolute;
             content: "";
             height: 26px;
@@ -90,16 +90,16 @@
         }
     }
     /*элемент ползунка переключения в момент переключения*/
-    input:checked + .slider {
+    input:checked + .slider{
         background-color: #2196F3;
         padding: 5px 0 0 20px;
     }
     /*на сколько перемещаем шарик от элемента начала ползунка переключения*/
-    input:checked + .slider:before {transform: translateX(145px);}
+    input:checked + .slider:before{transform: translateX(145px);}
     /*сам шарик который перемещаем в ползунке переключения*/
-    .slider.round {
+    .slider.round{
         border-radius: 34px;
-        &:before {border-radius: 50%;}
+        &:before{border-radius: 50%;}
     }
     /*svg*/
     svg{
@@ -111,45 +111,45 @@
     /*Адаптивность*/
     @media screen and (min-width: 500px) and (max-width: 768px) {
         /*Компонент - СменаЦвета (colorChange) - контейнер, который включает в себя повтор блоков*/
-        #colorChange .flex-container {width: 100%;}
+        #colorChange .flex-container{width: 100%;}
         /*svg*/
-        svg {
+        svg{
             width: 135px;
             height: 135px;
             margin: 5px;
         }
         /*ползунок переключения*/
-        .slider {padding: 5px 45px 0 90px;}
+        .slider{padding: 5px 45px 0 90px;}
         /*переключатель вкл-выкл*/
-        .switch {
+        .switch{
             margin-left: 0;
             width: 130px;
             height: 32px;
         }
         /*на сколько перемещаем шарик от элемента начала ползунка переключения*/
-        input:checked + .slider:before {transform: translateX(85px);}
+        input:checked + .slider:before{transform: translateX(85px);}
     }
     @media screen and (min-width: 768px) and (max-width: 992px) {
         /*Компонент - СменаЦвета (colorChange) - контейнер, который включает в себя повтор блоков*/
-        #colorChange .flex-container {width: 85%;}
+        #colorChange .flex-container{width: 85%;}
         /*svg*/
         svg{
             width: 190px;
             height: 190px;
         }
         /*ползунок переключения*/
-        .slider {padding: 5px 45px 0 105px;}
+        .slider{padding: 5px 45px 0 105px;}
         /*переключатель вкл-выкл*/
-        .switch {
+        .switch{
             width: 190px;
             height: 32px;
         }
         /*на сколько перемещаем шарик от элемента начала ползунка переключения*/
-        input:checked + .slider:before {transform: translateX(105px);}
+        input:checked + .slider:before{transform: translateX(105px);}
     }
     @media screen and (min-width: 992px) and (max-width: 1200px) {
         /*Компонент - СменаЦвета (colorChange) - контейнер, который включает в себя повтор блоков*/
-        #colorChange .flex-container {width: 85%;}
+        #colorChange .flex-container{width: 85%;}
         /*svg*/
         svg{
             width: 190px;

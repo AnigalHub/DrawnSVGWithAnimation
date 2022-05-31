@@ -22,16 +22,16 @@
 
 <style scoped lang="scss">
     /*блок территория*/
-    #territory {
+    #territory{
         width: 78%;
         margin: 0 auto;
     }
     /*svg*/
-    svg {margin-top: -15px;}
+    svg{margin-top: -15px;}
 
     /*Адаптивность*/
     @media screen and (min-width: 500px) and (max-width: 768px) {
         /*svg*/
-        svg {margin-bottom: 20px;}
+        svg{margin-bottom: 20px;}
     }
 </style>

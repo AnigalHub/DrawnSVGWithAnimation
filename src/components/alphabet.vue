@@ -26,13 +26,13 @@
 
 <style scoped lang="scss">
     /*Компонент - Алфавит (Alphabet)*/
-    #alphabet {padding-bottom: 35px;}
+    #alphabet{padding-bottom: 35px;}
     /*svg*/
-    svg {margin: 3px;}
+    svg{margin: 3px;}
     /*контейнер, который включает в себя повтор блоков*/
-    .flex-container {
+    .flex-container{
         margin-top: -13px;
-        & > div {width: 11%;}
+        & > div{width: 11%;}
     }
 
     /*Адаптивность*/
@@ -40,10 +40,10 @@
         /*svg*/
         svg{margin: 1px;}
         /*контейнер, который включает в себя повтор блоков*/
-        .flex-container > div {width: 20%;}
+        .flex-container > div{width: 20%;}
     }
     @media screen and (min-width: 768px) and (max-width: 992px) {
         /*контейнер, который включает в себя повтор блоков*/
-        .flex-container > div {width: 16%;}
+        .flex-container > div{width: 16%;}
     }
 </style>
