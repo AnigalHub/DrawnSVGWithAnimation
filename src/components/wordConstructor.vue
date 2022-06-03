@@ -212,6 +212,7 @@
             width: 60px;
             height: 60px;
         }
+        .col{padding: 0 !important;}
     }
 
     /*Адаптивность*/
@@ -221,8 +222,8 @@
             margin-top: 10px !important;
             /*буква в ячейке*/
             .letter {
-                width: 45px;
-                height: 45px;
+                width: 35px;
+                height: 35px;
                 margin: 0 4px;
                 font-size: 1.5rem;
             }
