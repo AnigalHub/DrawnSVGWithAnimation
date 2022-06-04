@@ -1,6 +1,6 @@
 export default[
     {
-        path: '/svggames/',
+        path: '/',
         name: 'MainMenu',
         component: () => import("./components/mainMenu")
     },
