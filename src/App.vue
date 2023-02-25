@@ -13,6 +13,9 @@ export default {
 }
 </script>
 <style lang="scss">
+   body{
+       background: #EAF5FC !important;
+   }
   /*квадрат у Svg  играх (животные)*/
   #Square {fill:#F8F8FF; stroke:#000000; stroke-width:0.9709; stroke-miterlimit:10;}
   /*"крестик" (размер) - кнопка закрытия модального окна*/
@@ -47,6 +50,7 @@ export default {
   }
   /*footer-модального окна*/
   .modal-footer{display: none !important;}
+
   /*Компонент в котором вызываются все другие компоненты*/
   #app{
       height: 100%;
